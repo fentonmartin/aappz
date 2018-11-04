@@ -2,6 +2,7 @@ package io.github.fentonmartin.aappz.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 class IntentZ {
@@ -36,6 +37,15 @@ class IntentZ {
     Intent intentClear(Context context, Class activity) {
         Intent intent = new Intent(context, activity);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        return intent;
+    }
+    Intent intentMarket(int id) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        try {
+            intent.setData(Uri.parse("market://details?id=" + id));
+        } catch (android.content.ActivityNotFoundException e) {
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + id));
+        }
         return intent;
     }
 }
