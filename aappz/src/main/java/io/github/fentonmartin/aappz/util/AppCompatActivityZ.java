@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.util;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -12,42 +13,50 @@ public class AppCompatActivityZ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         logZ = new LogZ();
-        logZ.setLog(this,"onCreate | ACTIVITY");
+        setLog(this,"onCreate | ACTIVITY");
     }
 
     @Override
     protected void onStart() {
-        logZ.setLog(this,"onStart | ACTIVITY");
+        setLog(this,"onStart | ACTIVITY");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        logZ.setLog(this,"onResume | ACTIVITY");
+        setLog(this,"onResume | ACTIVITY");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        logZ.setLog(this,"onPause | ACTIVITY");
+        setLog(this,"onPause | ACTIVITY");
         super.onPause();
     }
 
     @Override
     protected void onStop() {
-        logZ.setLog(this,"onStop | ACTIVITY");
+        setLog(this,"onStop | ACTIVITY");
         super.onStop();
     }
 
     @Override
     protected void onRestart() {
-        logZ.setLog(this,"onRestart | ACTIVITY");
+        setLog(this,"onRestart | ACTIVITY");
         super.onRestart();
     }
 
     @Override
     protected void onDestroy() {
-        logZ.setLog(this,"onDestroy | ACTIVITY");
+        setLog(this,"onDestroy | ACTIVITY");
         super.onDestroy();
+    }
+
+    public void setLog(String log) {
+        logZ.setLog(log);
+    }
+
+    public void setLog(Activity activity, String log) {
+        logZ.setLog(activity, log);
     }
 }
