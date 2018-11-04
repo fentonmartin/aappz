@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class AppCompatActivityZ extends AppCompatActivity {
+public class ActivityZ extends AppCompatActivity {
 
     LogZ logZ;
 
