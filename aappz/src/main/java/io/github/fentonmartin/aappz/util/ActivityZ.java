@@ -106,7 +106,15 @@ public class ActivityZ extends AppCompatActivity {
         startActivity(intentZ.intentClear(getApplicationContext(), activity));
     }
 
+    public void setActivityEmail(String email, String subject) {
+        startActivity(intentZ.intentEmail(email, subject));
+    }
+
     public void setActivityMarket(int id) {
         startActivity(intentZ.intentMarket(id));
+    }
+
+    public void setActivityWebsite(String website) {
+        startActivity(intentZ.intentWebsite(website));
     }
 }
