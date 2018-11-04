@@ -18,4 +18,16 @@ public class DateZ {
     public static String getDatetimeSimple() {
         return new SimpleDateFormat().format(new Date());
     }
+    public static long getTimestamp() {
+        return new Date().getTime();
+    }
+    public static String getTimestampString() {
+        return String.valueOf(getTimestamp());
+    }
+    public static String getTimestampTime(long timestamp) {
+        return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date(timestamp));
+    }
+    public static String getTimestampTime(String pattern, long timestamp) {
+        return new SimpleDateFormat(pattern).format(new Date(timestamp));
+    }
 }
