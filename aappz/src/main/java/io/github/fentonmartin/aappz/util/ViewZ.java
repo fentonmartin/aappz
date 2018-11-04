@@ -18,7 +18,7 @@ class ViewZ {
             view.setAlpha(1);
             view.setEnabled(true);
         } else {
-            view.setAlpha((float) 0.5);
+            view.setAlpha((float) 0.3);
             view.setEnabled(false);
         }
     }
