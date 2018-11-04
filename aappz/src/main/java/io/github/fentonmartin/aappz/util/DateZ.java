@@ -27,7 +27,13 @@ public class DateZ {
     public static String getTimestampTime(long timestamp) {
         return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date(timestamp));
     }
+    public static String getTimestampTime(String timestamp) {
+        return getTimestampTime(Long.parseLong(timestamp));
+    }
     public static String getTimestampTime(String pattern, long timestamp) {
         return new SimpleDateFormat(pattern).format(new Date(timestamp));
+    }
+    public static String getTimestampTime(String pattern, String timestamp) {
+        return getTimestampTime(pattern, Long.parseLong(timestamp));
     }
 }
