@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AndroidRuntimeException;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -199,5 +200,9 @@ public class ActivityZ extends AppCompatActivity {
 
     public int getValueInt(EditText editText) {
         return viewZ.getValueInt(editText);
+    }
+
+    public void setViewEnabled(View view, boolean isEnabled) {
+        viewZ.setViewEnabled(view, isEnabled);
     }
 }

@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.util;
 
+import android.view.View;
 import android.widget.EditText;
 
 class ViewZ {
@@ -11,5 +12,14 @@ class ViewZ {
     }
     int getValueInt(EditText text) {
         return Integer.parseInt(getValue(text));
+    }
+    void setViewEnabled(View view, boolean isEnabled) {
+        if (isEnabled) {
+            view.setAlpha(1);
+            view.setEnabled(true);
+        } else {
+            view.setAlpha((float) 0.5);
+            view.setEnabled(false);
+        }
     }
 }
