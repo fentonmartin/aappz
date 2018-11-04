@@ -96,6 +96,18 @@ public class ActivityZ extends AppCompatActivity {
         }
     }
 
+    public void setTitle(String title) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
+    }
+
+    public void setSubtitle(String subtitle) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setSubtitle(subtitle);
+        }
+    }
+
     /* HERE: LogZ --------------------------------------------------------------------------------*/
 
     public void setLog(String log) {
