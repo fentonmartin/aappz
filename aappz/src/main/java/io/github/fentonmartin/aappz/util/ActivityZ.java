@@ -7,12 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 public class ActivityZ extends AppCompatActivity {
 
     LogZ logZ;
+    ToastZ toastZ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /* Initializations */
         logZ = new LogZ();
+        toastZ = new ToastZ();
+
         setLog(this,"onCreate | ACTIVITY");
     }
 
@@ -52,11 +56,23 @@ public class ActivityZ extends AppCompatActivity {
         super.onDestroy();
     }
 
+    /* HERE: LogZ --------------------------------------------------------------------------------*/
+
     public void setLog(String log) {
         logZ.setLog(log);
     }
 
     public void setLog(Activity activity, String log) {
         logZ.setLog(activity, log);
+    }
+
+    /* HERE: ToastZ ------------------------------------------------------------------------------*/
+
+    public void setToast(String message){
+        toastZ.setToast(getApplicationContext(), message);
+    }
+
+    public void setToast(CharSequence message){
+        toastZ.setToast(getApplicationContext(), message);
     }
 }
