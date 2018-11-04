@@ -3,7 +3,10 @@ package io.github.fentonmartin.aappz.util;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AndroidRuntimeException;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import io.github.fentonmartin.aappz.constant.IntentConstant;
 
@@ -99,6 +102,16 @@ public class ActivityZ extends AppCompatActivity {
     public void setActionBarHide() {
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
+    }
+
+    public void setActionBarFull() {
+        /* WARNING: You have to put in onCreate (before setContentView) */
+        try {
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        } catch (AndroidRuntimeException exception) {
+            setLog(exception.getMessage());
+        }
     }
 
     public void setTitle(String title) {
