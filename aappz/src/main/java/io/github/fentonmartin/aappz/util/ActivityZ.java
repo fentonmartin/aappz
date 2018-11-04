@@ -7,6 +7,7 @@ import android.util.AndroidRuntimeException;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import io.github.fentonmartin.aappz.constant.IntentConstant;
 
@@ -15,6 +16,7 @@ public class ActivityZ extends AppCompatActivity {
     IntentZ intentZ;
     LogZ logZ;
     ToastZ toastZ;
+    ViewZ viewZ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class ActivityZ extends AppCompatActivity {
         intentZ = new IntentZ();
         logZ = new LogZ();
         toastZ = new ToastZ();
+        viewZ = new ViewZ();
 
         setLog(this, "onCreate | ACTIVITY");
     }
@@ -182,5 +185,19 @@ public class ActivityZ extends AppCompatActivity {
 
     public void setActivityWebsite(String website) {
         startActivity(intentZ.intentWebsite(website));
+    }
+
+    /* HERE: ViewZ -------------------------------------------------------------------------------*/
+
+    public String getValue(EditText editText) {
+        return viewZ.getValue(editText);
+    }
+
+    public boolean getValueBoolean(EditText editText) {
+        return viewZ.getValueBoolean(editText);
+    }
+
+    public int getValueInt(EditText editText) {
+        return viewZ.getValueInt(editText);
     }
 }
