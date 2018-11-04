@@ -1,6 +1,7 @@
 package io.github.fentonmartin.aappz.util;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AndroidRuntimeException;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import io.github.fentonmartin.aappz.constant.IntentConstant;
@@ -204,5 +206,12 @@ public class ActivityZ extends AppCompatActivity {
 
     public void setViewEnabled(View view, boolean isEnabled) {
         viewZ.setViewEnabled(view, isEnabled);
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
