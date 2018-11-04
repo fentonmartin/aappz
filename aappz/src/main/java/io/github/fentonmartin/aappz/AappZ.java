@@ -1,7 +1,7 @@
 package io.github.fentonmartin.aappz;
 
-public class AappZ {
+import io.github.fentonmartin.aappz.util.ActivityZ;
 
-    private AappZ() {
-    }
+public class AappZ extends ActivityZ {
+
 }
