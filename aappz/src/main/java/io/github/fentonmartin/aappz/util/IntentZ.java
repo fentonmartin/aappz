@@ -39,6 +39,12 @@ class IntentZ {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
     }
+    Intent intentEmail(String email, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", email, null));
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, "");
+        return intent;
+    }
     Intent intentMarket(int id) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         try {
@@ -46,6 +52,11 @@ class IntentZ {
         } catch (android.content.ActivityNotFoundException e) {
             intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + id));
         }
+        return intent;
+    }
+    Intent intentWebsite(String website) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(website));
         return intent;
     }
 }
