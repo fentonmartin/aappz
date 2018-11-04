@@ -25,7 +25,7 @@ ext {
     siteUrl = 'https://github.com/fentonmartin/aappz'
     gitUrl = 'git@github.com:fentonmartin/aappz.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.2.0'
 
     developerId = 'fentonmartin'
     developerName = 'Fenton Martin'
@@ -42,8 +42,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "0.1.0"
+        versionCode 2
+        versionName "0.2.0"
     }
 
     buildTypes {
@@ -59,7 +59,6 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
 }
 
-group = publishedGroupId
 version = libraryVersion
 
 install {
