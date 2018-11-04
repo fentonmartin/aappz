@@ -96,6 +96,11 @@ public class ActivityZ extends AppCompatActivity {
         }
     }
 
+    public void setActionBarHide() {
+        if (getSupportActionBar() != null)
+            getSupportActionBar().hide();
+    }
+
     public void setTitle(String title) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
