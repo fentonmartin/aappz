@@ -60,6 +60,25 @@ public class ActivityZ extends AppCompatActivity {
         super.onDestroy();
     }
 
+    /* HERE: ActionBarZ --------------------------------------------------------------------------*/
+
+    public void setActionBar() {
+        setActionBar(false);
+    }
+
+    public void setActionBar(boolean isMain) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setElevation(0);
+            if (isMain) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                getSupportActionBar().setHomeButtonEnabled(false);
+            } else {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setHomeButtonEnabled(true);
+            }
+        }
+    }
+
     /* HERE: LogZ --------------------------------------------------------------------------------*/
 
     public void setLog(String log) {
