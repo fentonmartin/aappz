@@ -3,6 +3,7 @@ package io.github.fentonmartin.aappz.util;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import io.github.fentonmartin.aappz.constant.IntentConstant;
 
@@ -58,6 +59,22 @@ public class ActivityZ extends AppCompatActivity {
     protected void onDestroy() {
         setLog(this, "onDestroy | ACTIVITY");
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setLog(this, "onBackPressed | ACTIVITY");
+        super.onBackPressed();
     }
 
     /* HERE: ActionBarZ --------------------------------------------------------------------------*/
