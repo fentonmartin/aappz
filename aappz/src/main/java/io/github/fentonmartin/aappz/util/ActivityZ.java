@@ -105,4 +105,8 @@ public class ActivityZ extends AppCompatActivity {
     public void setActivityClear(Class activity) {
         startActivity(intentZ.intentClear(getApplicationContext(), activity));
     }
+
+    public void setActivityMarket(int id) {
+        startActivity(intentZ.intentMarket(id));
+    }
 }
