@@ -1,9 +1,10 @@
 package io.github.fentonmartin.sample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import io.github.fentonmartin.aappz.AappZ;
+
+public class MainActivity extends AappZ {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
