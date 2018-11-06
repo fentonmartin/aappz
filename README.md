@@ -24,16 +24,19 @@ AappZ library offers convenient tools for android application:
 * ToastZ: Just toast for create any messages
 * ViewZ: Some functions for view and layout
 
-How to use
+Installation
 -----
 I suppose you already have jcenter() in your build.gradle. So, just add a dependency:
 
 ```
-implementation 'io.github.fentonmartin:aappz:0.1.0'
+implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 ```
 
+How to use
+-----
+[Check AappZ's Wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
 
-AappZ library by [Fenton Martin](https://www.linkedin.com/in/fentonmartin) is licensed under a [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+AappZ library by [Fenton Martin](https://www.linkedin.com/in/fentonmartin) is licensed under an [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
