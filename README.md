@@ -32,9 +32,19 @@ I suppose you already have jcenter() in your build.gradle. So, just add a depend
 implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 ```
 
-How to use
+Usage
 -----
-[Check AappZ's Wiki](https://github.com/fentonmartin/aappz/wiki)
+If you use AppCompatActivity, just extend AappZ:
+
+```
+public class MainActivity extends AappZ {...}
+```
+And that's it, now you can call any function directly:
+
+```
+setToast("Hello world!");
+```
+[More check AappZ's Wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
