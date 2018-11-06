@@ -51,9 +51,11 @@ setToast("Hello world!");
 * setActionBarFull()
 * setTitle(String title)
 * setSubtitle(String subtitle)
+
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
 * getRootException(Throwable exception)
+
 **IntentZ**
 * setActivity(Class activity)
 * setActivity(Class activity, int flag)
@@ -64,12 +66,14 @@ setToast("Hello world!");
 * setActivityEmail(String email, String subject)
 * setActivityMarket(int id)
 * setActivityWebsite(String website)
+
 **LogZ**
 * setLog(String log)
 * setLog(Activity activity, String log)
 * ToastZ
 * setToast(String message)
 * setToast(CharSequence message)
+
 **ViewZ**
 * getValue(EditText editText)
 * getValueBoolean(EditText editText)
@@ -78,7 +82,7 @@ setToast("Hello world!");
 * hideKeyboard(View view)
 
 
-[More check AappZ's Wiki](https://github.com/fentonmartin/aappz/wiki)
+[More check AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
