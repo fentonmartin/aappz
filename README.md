@@ -44,6 +44,40 @@ And that's it, now you can call any function directly:
 ```
 setToast("Hello world!");
 ```
+**ActionBarZ**
+* setActionBar
+* setActionBar(boolean isMain)
+* setActionBarHide()
+* setActionBarFull()
+* setTitle(String title)
+* setSubtitle(String subtitle)
+**ExceptionZ**
+* setDefaultUncaughtException(Class activity)
+* getRootException(Throwable exception)
+**IntentZ**
+* setActivity(Class activity)
+* setActivity(Class activity, int flag)
+* setActivity(Class activity, boolean bool)
+* setActivity(Class activity, String text)
+* setActivity(Class activity, Bundle bundle)
+* setActivityClear(Class activity)
+* setActivityEmail(String email, String subject)
+* setActivityMarket(int id)
+* setActivityWebsite(String website)
+**LogZ**
+* setLog(String log)
+* setLog(Activity activity, String log)
+* ToastZ
+* setToast(String message)
+* setToast(CharSequence message)
+**ViewZ**
+* getValue(EditText editText)
+* getValueBoolean(EditText editText)
+* getValueInt(EditText editText)
+* setViewEnabled(View view, boolean isEnabled)
+* hideKeyboard(View view)
+
+
 [More check AappZ's Wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
