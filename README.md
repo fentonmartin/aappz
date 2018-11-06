@@ -1,4 +1,4 @@
-# aappz
+# AappZ | A to Z Application Functions in One Library
 
  [ ![Download](https://api.bintray.com/packages/fentonmartin/maven/AappZ/images/download.svg) ](https://bintray.com/fentonmartin/maven/AappZ/_latestVersion)
 
