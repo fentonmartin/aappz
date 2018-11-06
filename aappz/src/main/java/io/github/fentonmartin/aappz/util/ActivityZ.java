@@ -1,7 +1,10 @@
 package io.github.fentonmartin.aappz.util;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AndroidRuntimeException;
@@ -130,6 +133,50 @@ public class ActivityZ extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setSubtitle(subtitle);
         }
+    }
+
+    /* HERE: ExceptionZ --------------------------------------------------------------------------------*/
+
+    public void setDefaultUncaughtException(Class activity) {
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionZ(activity));
+    }
+
+    private class ExceptionZ implements Thread.UncaughtExceptionHandler {
+
+        Class activity;
+
+        ExceptionZ(Class activity) {
+            this.activity = activity;
+        }
+
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            handleUncaughtException(e, activity);
+        }
+    }
+
+    private void handleUncaughtException(Throwable e, Class activity) {
+        setLog("ExceptionZ " + getRootException(e).getMessage());
+        e.printStackTrace();
+
+        Intent intent = new Intent(this, activity);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_CRASH, true);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
+
+        finish();
+        System.exit(2);
+    }
+
+    public static Throwable getRootException(Throwable exception) {
+        Throwable rootException = exception;
+        while (rootException.getCause() != null) {
+            rootException = rootException.getCause();
+        }
+        return rootException;
     }
 
     /* HERE: LogZ --------------------------------------------------------------------------------*/
