@@ -45,7 +45,7 @@ class IntentZ {
         intent.putExtra(Intent.EXTRA_TEXT, "");
         return intent;
     }
-    Intent intentMarket(int id) {
+    Intent intentMarket(String id) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         try {
             intent.setData(Uri.parse("market://details?id=" + id));

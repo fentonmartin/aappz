@@ -230,6 +230,10 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     public void setActivityMarket(int id) {
+        startActivity(intentZ.intentMarket(getString(id)));
+    }
+
+    public void setActivityMarket(String id) {
         startActivity(intentZ.intentMarket(id));
     }
 
