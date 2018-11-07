@@ -44,6 +44,13 @@ And that's it, now you can call any function directly:
 ```
 setToast("Hello world!");
 ```
+If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on AndroidManifest.xml
+```
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+```
+
 **ActionBarZ**
 * setActionBar
 * setActionBar(boolean isMain)
@@ -52,9 +59,34 @@ setToast("Hello world!");
 * setTitle(String title)
 * setSubtitle(String subtitle)
 
+**DateZ**
+* getDatetime()
+* getDatetime(String pattern)
+* getDatetimeSimple()
+* getTimestamp()
+* getTimestampString()
+* getTimestampTime(long timestamp)
+* getTimestampTime(String timestamp)
+* getTimestampTime(String pattern, long timestamp)
+* getTimestampTime(String pattern, String timestamp)
+
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
 * getRootException(Throwable exception)
+
+**FirebaseZ**
+* firebaseLog(String type, String log)
+* firebaseLog(String event, String type, String log)
+* firebaseScreen()
+* firebaseProperty(String property, String type)
+
+**GoogleAdsZ**
+* adsGoogleBanner(String unitId, int id)
+* adsGoogleInterstitial(final String unitId)
+* adsGoogleInterstitialShow()
+* adsGoogleVideo(final String unitId)
+* adsGoogleVideoLoad(String unitId)
+* adsGoogleVideoShow()
 
 **IntentZ**
 * setActivity(Class activity)
@@ -71,28 +103,6 @@ setToast("Hello world!");
 * setLog(String log)
 * setLog(Activity activity, String log)
 
-**ToastZ**
-* setToast(String message)
-* setToast(CharSequence message)
-
-**ViewZ**
-* getValue(EditText editText)
-* getValueBoolean(EditText editText)
-* getValueInt(EditText editText)
-* setViewEnabled(View view, boolean isEnabled)
-* hideKeyboard(View view)
-
-**DateZ**
-* getDatetime()
-* getDatetime(String pattern)
-* getDatetimeSimple()
-* getTimestamp()
-* getTimestampString()
-* getTimestampTime(long timestamp)
-* getTimestampTime(String timestamp)
-* getTimestampTime(String pattern, long timestamp)
-* getTimestampTime(String pattern, String timestamp)
-
 **TextZ**
 * isEmailValid(String email)
 * isPasswordValid(String password, int min)
@@ -103,6 +113,17 @@ setToast("Hello world!");
 * getNumberRandom()
 * setFormatMoney(String number)
 * setFormatName(String name)
+
+**ToastZ**
+* setToast(String message)
+* setToast(CharSequence message)
+
+**ViewZ**
+* getValue(EditText editText)
+* getValueBoolean(EditText editText)
+* getValueInt(EditText editText)
+* setViewEnabled(View view, boolean isEnabled)
+* hideKeyboard(View view)
 
 [More: check AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
