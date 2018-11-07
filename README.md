@@ -86,9 +86,12 @@ If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on A
 
 **GoogleAdsZ**
 * adsGoogleBanner(String unitId, int id)
+* adsGoogleBanner(String unitId, int id, AdListener listener)
 * adsGoogleInterstitial(final String unitId)
+* adsGoogleInterstitial(String unitId, AdListener listener)
 * adsGoogleInterstitialShow()
 * adsGoogleVideo(final String unitId)
+* adsGoogleVideo(String unitId, RewardedVideoAdListener listener)
 * adsGoogleVideoLoad(String unitId)
 * adsGoogleVideoShow()
 
