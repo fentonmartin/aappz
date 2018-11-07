@@ -234,6 +234,13 @@ public class AappZ extends ActivityZ {
         adsGoogleVideoLoad(unitId);
     }
 
+    public void adsGoogleVideo(String unitId, RewardedVideoAdListener listener) {
+        setLog("GoogleAdsZ | adsGoogleVideo: onInitial");
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
+        mRewardedVideoAd.setRewardedVideoAdListener(listener);
+        adsGoogleVideoLoad(unitId);
+    }
+
     public void adsGoogleVideoLoad(String unitId) {
         setLog("GoogleAdsZ | adsGoogleVideoLoad: onInitial");
         mRewardedVideoAd.loadAd(unitId, new PublisherAdRequest.Builder().build());
