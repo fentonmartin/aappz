@@ -35,6 +35,11 @@ I suppose you already have jcenter() in your build.gradle. So, just add a depend
 ```
 implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 ```
+If you only want to use basic functions without Google Service, use this dependency:
+
+```
+implementation 'io.github.fentonmartin:aappz:0.2.0''
+```
 
 Usage
 -----
