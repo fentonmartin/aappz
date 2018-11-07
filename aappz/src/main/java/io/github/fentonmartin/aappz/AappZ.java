@@ -111,6 +111,18 @@ public class AappZ extends ActivityZ {
         }
     }
 
+    public void adsGoogleBanner(String unitId, int id, AdListener listener) {
+        setLog("GoogleAdsZ | adsGoogleBanner: onInitial");
+        MobileAds.initialize(this, unitId);
+
+        AdView mAdView = findViewById(id);
+        if (mAdView != null) {
+            setLog("GoogleAdsZ | adsGoogleBanner: onRequest");
+            mAdView.loadAd(new AdRequest.Builder().build());
+            mAdView.setAdListener(listener);
+        }
+    }
+
     public void adsGoogleInterstitial(final String unitId) {
         setLog("GoogleAdsZ | adsGoogleInterstitial: onInitial");
         mInterstitialAd = new InterstitialAd(getApplicationContext());
