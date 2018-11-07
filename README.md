@@ -16,8 +16,12 @@ AappZ library is an all in one library for android application.
 Content
 -----
 AappZ library offers convenient tools for android application:
+* ActionBarZ: Some functions for customize ActionBar
 * ActivityZ: Activity class extends AppCompatActivity
 * DateZ: Date class for datetime and timestamp
+* ExceptionZ: Some functions for handle exceptions
+* FirebaseZ: Firebase tools for your development
+* GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
 * TextZ: Text validation and formatting tools
@@ -125,7 +129,7 @@ If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on A
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
-[More: check AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
+[More: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
