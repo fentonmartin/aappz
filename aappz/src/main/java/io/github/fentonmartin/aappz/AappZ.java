@@ -56,6 +56,7 @@ public class AappZ extends ActivityZ {
     }
 
     public void firebaseScreen() {
+        /* Note: Add firebaseScreen at onCreate and onResume */
         setLog("FirebaseZ | firebaseScreen: " + getClass().getSimpleName());
         mFirebaseAnalytics.setCurrentScreen(this, getClass().getSimpleName(), null);
     }
