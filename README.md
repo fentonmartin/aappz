@@ -70,7 +70,8 @@ setToast("Hello world!");
 **LogZ**
 * setLog(String log)
 * setLog(Activity activity, String log)
-* ToastZ
+
+**ToastZ**
 * setToast(String message)
 * setToast(CharSequence message)
 
@@ -81,8 +82,29 @@ setToast("Hello world!");
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
+**DateZ**
+* getDatetime()
+* getDatetime(String pattern)
+* getDatetimeSimple()
+* getTimestamp()
+* getTimestampString()
+* getTimestampTime(long timestamp)
+* getTimestampTime(String timestamp)
+* getTimestampTime(String pattern, long timestamp)
+* getTimestampTime(String pattern, String timestamp)
 
-[More check AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
+**TextZ**
+* isEmailValid(String email)
+* isPasswordValid(String password, int min)
+* isTextMatch(String text1, String text2)
+* isTextContain(String text, String contain)
+* getNumberClear(String number)
+* getNumberFormat(String number)
+* getNumberRandom()
+* setFormatMoney(String number)
+* setFormatName(String name)
+
+[More: check AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
