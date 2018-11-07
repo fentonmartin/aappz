@@ -35,6 +35,11 @@ I suppose you already have jcenter() in your build.gradle. So, just add a depend
 ```
 implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 ```
+If you only want to use basic functions without Google Service, use this dependency:
+
+```
+implementation 'io.github.fentonmartin:aappz:0.2.0''
+```
 
 Usage
 -----
@@ -86,9 +91,12 @@ If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on A
 
 **GoogleAdsZ**
 * adsGoogleBanner(String unitId, int id)
+* adsGoogleBanner(String unitId, int id, AdListener listener)
 * adsGoogleInterstitial(final String unitId)
+* adsGoogleInterstitial(String unitId, AdListener listener)
 * adsGoogleInterstitialShow()
 * adsGoogleVideo(final String unitId)
+* adsGoogleVideo(String unitId, RewardedVideoAdListener listener)
 * adsGoogleVideoLoad(String unitId)
 * adsGoogleVideoShow()
 
