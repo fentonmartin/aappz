@@ -191,6 +191,10 @@ public class ActivityZ extends AppCompatActivity {
 
     /* HERE: ToastZ ------------------------------------------------------------------------------*/
 
+    public void setToast(int id) {
+        toastZ.setToast(getApplicationContext(), getString(id));
+    }
+
     public void setToast(String message) {
         toastZ.setToast(getApplicationContext(), message);
     }
