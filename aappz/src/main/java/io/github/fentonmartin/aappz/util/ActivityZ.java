@@ -141,21 +141,11 @@ public class ActivityZ extends AppCompatActivity {
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionZ(activity));
     }
 
-    private class ExceptionZ implements Thread.UncaughtExceptionHandler {
-
-        Class activity;
-
-        ExceptionZ(Class activity) {
-            this.activity = activity;
-        }
-
-        @Override
-        public void uncaughtException(Thread t, Throwable e) {
-            handleUncaughtException(e, activity);
-        }
+    public void setDefaultUncaughtException(Thread.UncaughtExceptionHandler handler) {
+        Thread.setDefaultUncaughtExceptionHandler(handler);
     }
 
-    private void handleUncaughtException(Throwable e, Class activity) {
+    public void setUncaughtExceptionHandler(Throwable e, Class activity) {
         setLog("ExceptionZ " + getRootException(e).getMessage());
         e.printStackTrace();
 
@@ -171,12 +161,26 @@ public class ActivityZ extends AppCompatActivity {
         System.exit(2);
     }
 
-    public static Throwable getRootException(Throwable exception) {
+    private static Throwable getRootException(Throwable exception) {
         Throwable rootException = exception;
         while (rootException.getCause() != null) {
             rootException = rootException.getCause();
         }
         return rootException;
+    }
+
+    private class ExceptionZ implements Thread.UncaughtExceptionHandler {
+
+        Class activity;
+
+        ExceptionZ(Class activity) {
+            this.activity = activity;
+        }
+
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            setUncaughtExceptionHandler(e, activity);
+        }
     }
 
     /* HERE: LogZ --------------------------------------------------------------------------------*/
