@@ -245,6 +245,14 @@ public class ActivityZ extends AppCompatActivity {
         startActivity(intentZ.intentMarket(id));
     }
 
+    public void setActivityShare(String subject, String text) {
+        startActivity(Intent.createChooser(intentZ.intentSend(subject, text), subject));
+    }
+
+    public void setActivityShare(String subject, String text, String chooser) {
+        startActivity(Intent.createChooser(intentZ.intentSend(subject, text), chooser));
+    }
+
     public void setActivityWebsite(String website) {
         startActivity(intentZ.intentWebsite(website));
     }
