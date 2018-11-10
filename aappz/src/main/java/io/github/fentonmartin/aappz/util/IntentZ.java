@@ -54,6 +54,13 @@ class IntentZ {
         }
         return intent;
     }
+    Intent intentSend(String subject, String text) {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, text);
+        return intent;
+    }
     Intent intentWebsite(String website) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(website));
