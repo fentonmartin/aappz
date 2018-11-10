@@ -12,7 +12,7 @@
 
 Description
 -----
-AappZ library is an all in one library for android application.
+AappZ library is an A-Z all in one library for android application.
 
 Content
 -----
@@ -25,6 +25,7 @@ AappZ library offers convenient tools for android application:
 * GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
+* PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
 * ToastZ: Just toast for create any messages
 * ViewZ: Some functions for view and layout
@@ -32,7 +33,6 @@ AappZ library offers convenient tools for android application:
 Installation
 -----
 I suppose you already have jcenter() in your build.gradle. So, just add a dependency:
-
 ```
 implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 ```
@@ -40,22 +40,33 @@ implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 Usage
 -----
 If you use AppCompatActivity, just extend AappZ:
-
 ```
 public class MainActivity extends AappZ {...}
 ```
-And that's it, now you can call any function directly:
 
+And that's it, now you can call any function directly:
 ```
 setToast("Hello world!");
 ```
-If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on AndroidManifest.xml
+If want to use FirebaseZ and GoogleAdsZ functions, just configure:
+```
+Firebase SDK: https://firebase.google.com/docs/android/setup
+```
+Don't forget permissions on AndroidManifest.xml:
 ```
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
+Copy FirebaseZ and GoogleAdsZ functions to your project:
+```
+- FirebaseZ
+- GoogleAdsZ
+```
+If you only want to use basic functions without Google Service, just leave it. :)
 
+Functions
+-----
 **ActionBarZ**
 * setActionBar
 * setActionBar(boolean isMain)
@@ -108,6 +119,8 @@ If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on A
 * setLog(String log)
 * setLog(Activity activity, String log)
 
+**PrefZ**
+
 **TextZ**
 * isEmailValid(String email)
 * isPasswordValid(String password, int min)
@@ -130,10 +143,9 @@ If want to use FirebaseZ and GoogleAdsZ functions, don't forget permissions on A
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
-[More: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
+[More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
 License
 -----
 
 AappZ library by [Fenton Martin](https://www.linkedin.com/in/fentonmartin) is licensed under an [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
