@@ -86,42 +86,42 @@ public final class PrefZ {
         }
         return defValue;
     }
-    public static void putLong(final String key, final long value) {
+    public static void setLong(final String key, final long value) {
         final Editor editor = getPreferences().edit();
         editor.putLong(key, value);
         editor.apply();
     }
-    public static void putInt(final String key, final int value) {
+    public static void setInt(final String key, final int value) {
         final Editor editor = getPreferences().edit();
         editor.putInt(key, value);
         editor.apply();
     }
-    public static void putDouble(final String key, final double value) {
+    public static void setDouble(final String key, final double value) {
         final Editor editor = getPreferences().edit();
         editor.putLong(key, Double.doubleToRawLongBits(value));
         editor.apply();
     }
-    public static void putFloat(final String key, final float value) {
+    public static void setFloat(final String key, final float value) {
         final Editor editor = getPreferences().edit();
         editor.putFloat(key, value);
         editor.apply();
     }
-    public static void putBoolean(final String key, final boolean value) {
+    public static void setBoolean(final String key, final boolean value) {
         final Editor editor = getPreferences().edit();
         editor.putBoolean(key, value);
         editor.apply();
     }
-    public static void putString(final String key, final String value) {
+    public static void setString(final String key, final String value) {
         final Editor editor = getPreferences().edit();
         editor.putString(key, value);
         editor.apply();
     }
-    public static void putStringSet(final String key, final Set<String> value) {
+    public static void setStringSet(final String key, final Set<String> value) {
         final Editor editor = getPreferences().edit();
         editor.putStringSet(key, value);
         editor.apply();
     }
-    public static void putStringSetOrdered(String key, Set<String> value) {
+    public static void setStringSetOrdered(String key, Set<String> value) {
         final Editor editor = getPreferences().edit();
         int stringSetLength = 0;
         if (mPrefZ.contains(key + LENGTH)) {
