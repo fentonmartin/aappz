@@ -8,6 +8,7 @@ import android.widget.TextView;
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
 import io.github.fentonmartin.aappz.util.DateZ;
+import io.github.fentonmartin.aappz.util.PrefZ;
 
 public class MainActivity extends AappZ {
 
@@ -44,5 +45,9 @@ public class MainActivity extends AappZ {
                 setUncaughtExceptionHandler(e, MainActivity.class);
             }
         });
+
+        PrefZ.setString("test", "Hello world!");
+
+        setToast(PrefZ.getString("test"));
     }
 }
