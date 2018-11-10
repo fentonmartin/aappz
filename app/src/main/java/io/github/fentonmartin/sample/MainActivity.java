@@ -35,5 +35,14 @@ public class MainActivity extends AappZ {
                 DateZ.getTimestampTime(910198934000L) + "\n" +
                 DateZ.getTimestampTime("910198934000") + "\n" +
                 DateZ.getDatetimeSimple());
+
+        setDefaultUncaughtException(new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread t, Throwable e) {
+                // Send StackTrace of the errors
+
+                setUncaughtExceptionHandler(e, MainActivity.class);
+            }
+        });
     }
 }
