@@ -11,7 +11,7 @@ public class EncryptZ {
     private static Map<String, String> stringMap;
 
     private static Map<Character, Character> prepare() {
-        Map<Character, Character> charMap = new HashMap<>();
+        charMap = new HashMap<>();
         for (int i = 0; i < EncryptConstant.ARRAY_NUMERIC_ASC.length - 1; i++) {
             charMap.put(EncryptConstant.ARRAY_NUMERIC_ASC[i], EncryptConstant.ARRAY_NUMERIC_DSC[i]);
         }
@@ -25,7 +25,7 @@ public class EncryptZ {
     }
 
     private static Map<String, String> prepare(String[] before, String[] after) {
-        Map<String, String> stringMap = new HashMap<>();
+        stringMap = new HashMap<>();
         for (int i = 0; i < before.length - 1; i++) {
             stringMap.put(before[i], after[i]);
         }
