@@ -8,6 +8,7 @@ import io.github.fentonmartin.aappz.constant.EncryptConstant;
 public class EncryptZ {
 
     private static Map<Character, Character> charMap;
+    private static Map<String, String> stringMap;
 
     private static Map<Character, Character> prepare() {
         Map<Character, Character> charMap = new HashMap<>();
@@ -21,6 +22,14 @@ public class EncryptZ {
             charMap.put(EncryptConstant.ARRAY_ALPHABET_UPPER_ASC[i], EncryptConstant.ARRAY_ALPHABET_UPPER_DSC[i]);
         }
         return charMap;
+    }
+
+    private static Map<String, String> prepare(String[] before, String[] after) {
+        Map<String, String> stringMap = new HashMap<>();
+        for (int i = 0; i < before.length - 1; i++) {
+            stringMap.put(before[i], after[i]);
+        }
+        return stringMap;
     }
 
     static {
