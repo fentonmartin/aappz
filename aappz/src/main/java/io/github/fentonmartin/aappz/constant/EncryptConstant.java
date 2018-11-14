@@ -1,6 +1,7 @@
 package io.github.fentonmartin.aappz.constant;
 
 public class EncryptConstant {
+    private static String ALL = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static String NUMERIC_ASC = "0123456789";
     private static String NUMERIC_DSC = "9876543210";
     private static String ALPHABET_LOWER_ASC = "abcdefghijklmnopqrstuvwxyz";
@@ -8,6 +9,7 @@ public class EncryptConstant {
     private static String ALPHABET_UPPER_ASC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static String ALPHABET_UPPER_DSC = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
 
+    public static char[] ARRAY_ALL = ALL.toCharArray();
     public static char[] ARRAY_NUMERIC_ASC = NUMERIC_ASC.toCharArray();
     public static char[] ARRAY_NUMERIC_DSC = NUMERIC_DSC.toCharArray();
     public static char[] ARRAY_ALPHABET_LOWER_ASC = ALPHABET_LOWER_ASC.toCharArray();
