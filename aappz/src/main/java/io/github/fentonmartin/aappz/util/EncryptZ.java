@@ -41,11 +41,8 @@ public class EncryptZ {
         return stringMap;
     }
 
-    static {
-        charMap = prepare();
-    }
-
     public static String encryptToMirror(String inputString) {
+        charMap = prepare();
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
             temp.append(charMap.get(c));
