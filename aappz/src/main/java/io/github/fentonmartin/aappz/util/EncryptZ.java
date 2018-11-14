@@ -34,9 +34,9 @@ public class EncryptZ {
 
     private static Map<String, String> prepare(String[] after) {
         stringMap = new HashMap<>();
-        char[] chars = TextZ.convertStringToArray(EncryptConstant.ALL);
+        String[] chars = TextZ.convertStringToArrayString(EncryptConstant.ALL);
         for (int i = 0; i < EncryptConstant.ARRAY_ALL.length - 1; i++) {
-            stringMap.put(String.valueOf(chars), after[i]);
+            stringMap.put(chars[i], after[i]);
         }
         return stringMap;
     }
@@ -49,6 +49,15 @@ public class EncryptZ {
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
             temp.append(charMap.get(c));
+        }
+        return temp.toString();
+    }
+
+    public static String convertTo(String inputString, String[] after) {
+        stringMap = prepare(after);
+        StringBuilder temp = new StringBuilder();
+        for (Character c : inputString.toCharArray()) {
+            temp.append(stringMap.get(String.valueOf(c)));
         }
         return temp.toString();
     }
