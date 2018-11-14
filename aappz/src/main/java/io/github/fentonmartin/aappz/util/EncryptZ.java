@@ -32,6 +32,15 @@ public class EncryptZ {
         return stringMap;
     }
 
+    private static Map<String, String> prepare(String[] after) {
+        stringMap = new HashMap<>();
+        char[] chars = TextZ.convertStringToArray(EncryptConstant.ALL);
+        for (int i = 0; i < EncryptConstant.ARRAY_ALL.length - 1; i++) {
+            stringMap.put(String.valueOf(chars), after[i]);
+        }
+        return stringMap;
+    }
+
     static {
         charMap = prepare();
     }
