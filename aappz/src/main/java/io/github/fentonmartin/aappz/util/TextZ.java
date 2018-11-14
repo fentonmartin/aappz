@@ -79,4 +79,7 @@ public class TextZ {
         }
         return b;
     }
+    public static char[] convertStringToArray(String inputString) {
+        return inputString.toCharArray();
+    }
 }
