@@ -45,7 +45,7 @@ public class EncryptZ {
         charMap = prepare();
     }
 
-    public static String convertToMirror(String inputString) {
+    public static String encryptToMirror(String inputString) {
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
             temp.append(charMap.get(c));
@@ -53,7 +53,7 @@ public class EncryptZ {
         return temp.toString();
     }
 
-    public static String convertTo(String inputString, String[] after) {
+    public static String encryptTo(String inputString, String[] after) {
         stringMap = prepare(after, 1);
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
@@ -62,7 +62,7 @@ public class EncryptZ {
         return temp.toString();
     }
 
-    public static String convertTo(String inputString, String[] after, int totalAfter) {
+    public static String encryptTo(String inputString, String[] after, int totalAfter) {
         stringMap = prepare(after, totalAfter);
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
