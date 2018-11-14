@@ -26,16 +26,16 @@ public class EncryptZ {
 
     private static Map<String, String> prepare(String[] before, String[] after) {
         stringMap = new HashMap<>();
-        for (int i = 0; i < before.length - 1; i++) {
+        for (int i = 0; i < before.length; i++) {
             stringMap.put(before[i], after[i]);
         }
         return stringMap;
     }
 
-    private static Map<String, String> prepare(String[] after) {
+    private static Map<String, String> prepare(String[] after, int totalAfter) {
         stringMap = new HashMap<>();
-        String[] chars = TextZ.convertStringToArrayString(EncryptConstant.ALL);
-        for (int i = 0; i < EncryptConstant.ARRAY_ALL.length - 1; i++) {
+        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, totalAfter);
+        for (int i = 0; i < EncryptConstant.ARRAY_ALL.length; i++) {
             stringMap.put(chars[i], after[i]);
         }
         return stringMap;
@@ -54,7 +54,16 @@ public class EncryptZ {
     }
 
     public static String convertTo(String inputString, String[] after) {
-        stringMap = prepare(after);
+        stringMap = prepare(after, 1);
+        StringBuilder temp = new StringBuilder();
+        for (Character c : inputString.toCharArray()) {
+            temp.append(stringMap.get(String.valueOf(c)));
+        }
+        return temp.toString();
+    }
+
+    public static String convertTo(String inputString, String[] after, int totalAfter) {
+        stringMap = prepare(after, totalAfter);
         StringBuilder temp = new StringBuilder();
         for (Character c : inputString.toCharArray()) {
             temp.append(stringMap.get(String.valueOf(c)));
