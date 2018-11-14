@@ -63,4 +63,20 @@ public class TextZ {
         }
         return sb.toString();
     }
+    public static String[] convertStringToArray(String inputString, int n) {
+        int total = inputString.length() / n;
+        int rest = inputString.length() - (total * n);
+        if (rest > 0)
+            total = total + rest;
+
+        String[] b = new String[total];
+        for (int i = 0; i < total; i++) {
+            try {
+                b[i] = inputString.substring(i * n, i * n + n);
+            } catch (StringIndexOutOfBoundsException e) {
+                b[i] = inputString.substring(i * n, inputString.length());
+            }
+        }
+        return b;
+    }
 }
