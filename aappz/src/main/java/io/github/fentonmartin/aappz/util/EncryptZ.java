@@ -59,6 +59,15 @@ public class EncryptZ {
         return temp.toString();
     }
 
+    public static String decryptTo(String inputString, String[] before) {
+        stringMap = prepare(before, 1);
+        StringBuilder temp = new StringBuilder();
+        for (Character c : inputString.toCharArray()) {
+            temp.append(stringMap.get(String.valueOf(c)));
+        }
+        return temp.toString();
+    }
+
     public static String encryptTo(String inputString, String[] after, int totalAfter) {
         stringMap = prepare(after, totalAfter);
         StringBuilder temp = new StringBuilder();
