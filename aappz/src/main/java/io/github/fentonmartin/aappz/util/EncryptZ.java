@@ -10,37 +10,44 @@ public class EncryptZ {
     private static Map<String, String> map;
 
     /**
-     * Preparation for make encryption key based on Map(String, String).
+     * Preparation for make default of Map(String, String)
      *
-     * @param key   is a collection of characters
-     * @param index is a number of characters
+     * @param input       is a collection of input characters
+     * @param inputIndex  is an index of input characters
+     * @param output      is a collection of output characters
+     * @param outputIndex is an index of output characters
      * @return Map(String, String) from key
      */
-    private static Map<String, String> prepare(String key, int index) {
+    private static Map<String, String> prepare(String input, String output, int inputIndex, int outputIndex) {
         map = new HashMap<>();
-        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, 1);
-        String[] keys = TextZ.convertStringToArray(key, index);
+        String[] inputs = TextZ.convertStringToArray(input, inputIndex);
+        String[] outputs = TextZ.convertStringToArray(output, outputIndex);
         for (int i = 0; i < EncryptConstant.ALL.length(); i++) {
-            map.put(chars[i], keys[i]);
+            map.put(inputs[i], outputs[i]);
         }
         return map;
     }
 
     /**
-     * Preparation for make encryption key based on Map(String, String).
+     * Preparation for make encryption based on Map(String, String)
      *
      * @param key   is a collection of characters
-     * @param index is a number of characters
+     * @param index is an index of characters
+     * @return Map(String, String) from key
+     */
+    private static Map<String, String> prepareEncrypt(String key, int index) {
+        return prepare(EncryptConstant.ALL, key, 1, index);
+    }
+
+    /**
+     * Preparation for make decryption based on Map(String, String)
+     *
+     * @param key   is a collection of characters
+     * @param index is an index of characters
      * @return Map(String, String) from key
      */
     private static Map<String, String> prepareDecrypt(String key, int index) {
-        map = new HashMap<>();
-        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, 1);
-        String[] keys = TextZ.convertStringToArray(key, index);
-        for (int i = 0; i < EncryptConstant.ALL.length(); i++) {
-            map.put(keys[i], chars[i]);
-        }
-        return map;
+        return prepare(key, EncryptConstant.ALL, index, 1);
     }
 
     /**
@@ -48,14 +55,13 @@ public class EncryptZ {
      *
      * @param text is an unencrypted text/string/sentences
      * @param key  is a collection of characters
-     * @return Map(String, String) from key
+     * @return ENCRYPTED Map(String, String) from key
      */
     public static String encryptTo(String text, String key) {
         if (key.length() != 86)
             return "";
-        map = prepare(key, 1);
+        map = prepareEncrypt(key, 1);
         StringBuilder temp = new StringBuilder();
-
         for (int i = 0; i < text.length(); i++) {
             temp.append(map.get(String.valueOf(text.substring(i, i + 1))));
         }
@@ -67,7 +73,7 @@ public class EncryptZ {
      *
      * @param text is an encrypted text/string/sentences
      * @param key  is a collection of characters
-     * @return Map(String, String) from key
+     * @return DECRYPTED Map(String, String) from key
      */
     public static String decryptTo(String text, String key) {
         if (key.length() != 86)
