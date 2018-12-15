@@ -7,7 +7,9 @@ import android.widget.TextView;
 
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
+import io.github.fentonmartin.aappz.constant.EncryptConstant;
 import io.github.fentonmartin.aappz.util.DateZ;
+import io.github.fentonmartin.aappz.util.EncryptZ;
 import io.github.fentonmartin.aappz.util.PrefZ;
 
 public class MainActivity extends AappZ {
@@ -42,12 +44,30 @@ public class MainActivity extends AappZ {
             public void uncaughtException(Thread t, Throwable e) {
                 // Send StackTrace of the errors
 
-                setUncaughtExceptionHandler(e, MainActivity.class);
+//                setUncaughtExceptionHandler(e, MainActivity.class);
             }
         });
 
-        PrefZ.setString("test", "Hello world!");
+        PrefZ.setString("test", "Hello! world ABCxyz");
+        String a = "Hello! world ABCxyz";
+        String b = "LP882A5&2e8m53~S";
+        String c = "fxbUuMuMp5bPqxivp5C2uMRtqxz9vSH6";
+        String encrypted, decrypted;
 
-        setToast(PrefZ.getString("test"));
+        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_86);
+        setLog("EncryptZ 86 EncryptTo " + encrypted);
+
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_86);
+        setLog("EncryptZ 86 DecryptTo " + decrypted);
+
+        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_172);
+        setLog("EncryptZ 172 EncryptTo " + encrypted);
+
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_172);
+        setLog("EncryptZ 172 DecryptTo " + decrypted);
+
+        setToast(decrypted);
+        textView.setText(decrypted);
+
     }
 }
