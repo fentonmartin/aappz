@@ -7,72 +7,75 @@ import io.github.fentonmartin.aappz.constant.EncryptConstant;
 
 public class EncryptZ {
 
-    private static Map<Character, Character> charMap;
-    private static Map<String, String> stringMap;
+    private static Map<String, String> map;
 
-    private static Map<Character, Character> prepare() {
-        charMap = new HashMap<>();
-        for (int i = 0; i < EncryptConstant.ARRAY_NUMERIC_ASC.length - 1; i++) {
-            charMap.put(EncryptConstant.ARRAY_NUMERIC_ASC[i], EncryptConstant.ARRAY_NUMERIC_DSC[i]);
+    /**
+     * Preparation for make encryption key based on Map(String, String).
+     *
+     * @param key   is a collection of characters
+     * @param index is a number of characters
+     * @return Map(String, String) from key
+     */
+    private static Map<String, String> prepare(String key, int index) {
+        map = new HashMap<>();
+        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, 1);
+        String[] keys = TextZ.convertStringToArray(key, index);
+        for (int i = 0; i < EncryptConstant.ALL.length(); i++) {
+            map.put(chars[i], keys[i]);
         }
-        for (int i = 0; i < EncryptConstant.ARRAY_ALPHABET_LOWER_ASC.length - 1; i++) {
-            charMap.put(EncryptConstant.ARRAY_ALPHABET_LOWER_ASC[i], EncryptConstant.ARRAY_ALPHABET_LOWER_DSC[i]);
-        }
-        for (int i = 0; i < EncryptConstant.ARRAY_ALPHABET_UPPER_ASC.length - 1; i++) {
-            charMap.put(EncryptConstant.ARRAY_ALPHABET_UPPER_ASC[i], EncryptConstant.ARRAY_ALPHABET_UPPER_DSC[i]);
-        }
-        return charMap;
+        return map;
     }
 
-    private static Map<String, String> prepare(String[] before, String[] after) {
-        stringMap = new HashMap<>();
-        for (int i = 0; i < before.length; i++) {
-            stringMap.put(before[i], after[i]);
+    /**
+     * Preparation for make encryption key based on Map(String, String).
+     *
+     * @param key   is a collection of characters
+     * @param index is a number of characters
+     * @return Map(String, String) from key
+     */
+    private static Map<String, String> prepareDecrypt(String key, int index) {
+        map = new HashMap<>();
+        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, 1);
+        String[] keys = TextZ.convertStringToArray(key, index);
+        for (int i = 0; i < EncryptConstant.ALL.length(); i++) {
+            map.put(keys[i], chars[i]);
         }
-        return stringMap;
+        return map;
     }
 
-    private static Map<String, String> prepare(String[] after, int totalAfter) {
-        stringMap = new HashMap<>();
-        String[] chars = TextZ.convertStringToArray(EncryptConstant.ALL, totalAfter);
-        for (int i = 0; i < EncryptConstant.ARRAY_ALL.length; i++) {
-            stringMap.put(chars[i], after[i]);
-        }
-        return stringMap;
-    }
-
-    public static String encryptToMirror(String inputString) {
-        charMap = prepare();
+    /**
+     * Encryption based on Map(String, String) key
+     *
+     * @param text is an unencrypted text/string/sentences
+     * @param key  is a collection of characters
+     * @return Map(String, String) from key
+     */
+    public static String encryptTo(String text, String key) {
+        if (key.length() != 86)
+            return "";
+        map = prepare(key, 1);
         StringBuilder temp = new StringBuilder();
-        for (Character c : inputString.toCharArray()) {
-            temp.append(charMap.get(c));
+
+        for (int i = 0; i < text.length(); i++) {
+            temp.append(map.get(String.valueOf(text.substring(i, i + 1))));
         }
         return temp.toString();
     }
 
-    public static String encryptTo(String inputString, String[] after) {
-        stringMap = prepare(after, 1);
+    /**
+     * Decryption based on Map(String, String) key
+     *
+     * @param text is an encrypted text/string/sentences
+     * @param key  is a collection of characters
+     * @return Map(String, String) from key
+     */
+    public static String decryptTo(String text, String key) {
+        if (key.length() != 86)
+            return "";
+        map = prepareDecrypt(key, 1);
         StringBuilder temp = new StringBuilder();
-        for (Character c : inputString.toCharArray()) {
-            temp.append(stringMap.get(String.valueOf(c)));
-        }
-        return temp.toString();
-    }
-
-    public static String decryptTo(String inputString, String[] before) {
-        stringMap = prepare(before, 1);
-        StringBuilder temp = new StringBuilder();
-        for (Character c : inputString.toCharArray()) {
-            temp.append(stringMap.get(String.valueOf(c)));
-        }
-        return temp.toString();
-    }
-
-    public static String encryptTo(String inputString, String[] after, int totalAfter) {
-        stringMap = prepare(after, totalAfter);
-        StringBuilder temp = new StringBuilder();
-        for (Character c : inputString.toCharArray()) {
-            temp.append(stringMap.get(String.valueOf(c)));
+        for (Character c : text.toCharArray()) {
+            temp.append(map.get(String.valueOf(c)));
         }
         return temp.toString();
     }
