@@ -18,7 +18,7 @@ public class EncryptConstant {
     private static String ALPHABET_UPPER_DSC = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
 
     /* List of default encryption key */
-    public static String ENCRYPT_86 = "5A=Bc|aFZGOJk(ME9KgRILlz}XH%rh/v<73~S-YCqu#@)[yn?s!jU*D>pNiQ$6mP4d0f_T8x]2oWeV1w{&b+t ";
-    public static String ENCRYPT_172 = "X8Vi4F6RCPX2cbVazIgunuXsBwE0bb4eReYuqwiUSkvQCLO7jNLCuv3cRi1hmTBxnqiQeObmkEsiXFHk4oIhOwj3BdbOCJ77vpivqQR0Mctxp6yFOUyHEwiWIwdoxVQhacKua6CDDsnE0m0vICITUfgM2XsJr57XmOYfKmtuJN";
-    public static String ENCRYPT_258 = "N7L8nwxN1aNIZOWbqeD1VL7JTYqe9q2mPnPzy9ZcL39yTNGaDjEdgb2PZlRN9FcItrFlTYGXkqL5UJfFnKfXwZUnwKmH7tZW9iqK3x7yG5Ul7NEi0T6gmEaUiMRNoXYazy1A9GUMHOtpITyuTJeRhFhjYyZeidiZ8fRqIz9H5xbHha71W5a1AfEPj9KpoWUOquy1xOshXewWW1Fv9jGDDyOnBopCJyaIOxr2KX69qQUgekd3bmlPF4VYxUW14M5";
+    public static String ENCRYPT_86 = "5A=Bc|aFZGOJk(ME9KgRI lz}XH%rh/v<73~S-YCqLu#@)[yn?s!jU*D>pNiQ$6mP4d0f_T8x]2oWeV1w{&b+t";
+    public static String ENCRYPT_172 = "qxbPxqSsBFAhVFzVspatV4WO0ikdR25u1qE9UkSPEX0e7yZkhYsFa2Ap3QbwHGOr1Swvz9vSH6ov7dfJsWfx6d97Dd82L4QnbYYbWiR4RldtnrfUt51YgVVZZ0ZVgbRtbUydBm07Q4yU7zuMU7kep5IoI5C2x3efvFqIivxjAVs6";
+    public static String ENCRYPT_258 = "FFrs0I2lCU0zznFJc8gZ1ccz8GwW6znC7IbLGvo1hN1rslYZzqVJRjbufop7DX5sLqoZzV9nSfWdempK2Q6mKE2nvAFqPC95KRW9bVzOZLQzu8mn2RFRZVUyyB4kUwWoF515tIuJTi7c9hrfJmDunGqxrtdVilgguiqQfPBCTq8hRBusQjQOtyqphMnp4jBDWAAju8CixkhnObU0Vf9g0g8sspzYTfyf07Z9DwkoLnH9twVaCmkNMRIdp7beQkrZDk";
 }
