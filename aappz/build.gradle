@@ -57,6 +57,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
+
+    /* Libraries of a scalable size unit (for non text views) */
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    /* Libraries of a scalable size unit (for text views)*/
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }
 
 group = publishedGroupId
