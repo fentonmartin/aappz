@@ -43,6 +43,8 @@ public class EncryptZ {
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < text.length() / index; i++) {
             temp.append(map.get(String.valueOf(text.substring(i * index, (i * index) + index))));
+            if (map.get(String.valueOf(text.substring(i * index, (i * index) + index))) == null)
+                return "";
         }
         return temp.toString();
     }
@@ -68,7 +70,7 @@ public class EncryptZ {
      * @return DECRYPTED Map(String, String) from key
      */
     public static String decryptTo(String text, String key) {
-        if (key.length() % 86 > 0)
+        if (key.length() % 86 > 0 || text.length() % (key.length() / 86) > 0)
             return "";
         return decryptTo(text, key, key.length() / 86);
     }
