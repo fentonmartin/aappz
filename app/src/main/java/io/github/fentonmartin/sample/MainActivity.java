@@ -54,17 +54,17 @@ public class MainActivity extends AappZ {
         String c = "fxbUuMuMp5bPqxivp5C2uMRtqxz9vSH6";
         String encrypted, decrypted;
 
-        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_86);
-        setLog("EncryptZ 86 EncryptTo " + encrypted);
+        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_92);
+        setLog("EncryptZ 92 EncryptTo " + encrypted);
 
-        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_86);
-        setLog("EncryptZ 86 DecryptTo " + decrypted);
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_92);
+        setLog("EncryptZ 92 DecryptTo " + decrypted);
 
-        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_172);
-        setLog("EncryptZ 172 EncryptTo " + encrypted);
+        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_184);
+        setLog("EncryptZ 184 EncryptTo " + encrypted);
 
-        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_172);
-        setLog("EncryptZ 172 DecryptTo " + decrypted);
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_184);
+        setLog("EncryptZ 184 DecryptTo " + decrypted);
 
         setToast(decrypted);
         textView.setText(decrypted);
