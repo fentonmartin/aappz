@@ -8,6 +8,8 @@ import io.github.fentonmartin.aappz.constant.EncryptConstant;
 public class EncryptZ {
 
     private static Map<String, String> map;
+    private static final String ERROR_NOT_SUPPORTED = "EncryptZ Error: Not supported character ";
+    private static final String ERROR_NOT_VALID_INDEX = "EncryptZ Error: Index is valid (not a multiples of 92 characters)";
 
     private static Map<String, String> prepare(String input, String output, int inputIndex, int outputIndex) {
         map = new HashMap<>();
@@ -29,22 +31,28 @@ public class EncryptZ {
 
     private static String encryptTo(String text, String key, int index) {
         if (key.length() != 92 * index)
-            return "";
+            return ERROR_NOT_VALID_INDEX;
         map = prepareEncrypt(key, index);
+        String s;
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            temp.append(map.get(String.valueOf(text.substring(i, i + 1))));
+            s = String.valueOf(text.substring(i, i + 1));
+            if (map.get(s) == null)
+                return ERROR_NOT_SUPPORTED + s;
+            temp.append(map.get(s));
         }
         return temp.toString();
     }
 
     private static String decryptTo(String text, String key, int index) {
         map = prepareDecrypt(key, index);
+        String s;
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < text.length() / index; i++) {
-            temp.append(map.get(String.valueOf(text.substring(i * index, (i * index) + index))));
-            if (map.get(String.valueOf(text.substring(i * index, (i * index) + index))) == null)
-                return "";
+            s = String.valueOf(text.substring(i * index, (i * index) + index));
+            temp.append(map.get(s));
+            if (map.get(s) == null)
+                return ERROR_NOT_SUPPORTED + s;
         }
         return temp.toString();
     }
@@ -58,7 +66,7 @@ public class EncryptZ {
      */
     public static String encryptTo(String text, String key) {
         if (key.length() % 92 > 0)
-            return "";
+            return ERROR_NOT_VALID_INDEX;
         return encryptTo(text, key, key.length() / 92);
     }
 
@@ -71,7 +79,7 @@ public class EncryptZ {
      */
     public static String decryptTo(String text, String key) {
         if (key.length() % 92 > 0 || text.length() % (key.length() / 92) > 0)
-            return "";
+            return ERROR_NOT_VALID_INDEX;
         return decryptTo(text, key, key.length() / 92);
     }
 }
