@@ -34,17 +34,17 @@ public class AappZ extends ActivityZ {
                 .listener(new OnPermissionListener() {
                     @Override
                     public void onAllPermissionsGranted(@NonNull List<String> permissions) {
-                        setLog("PermissionZ: All permissions granted");
+                        setLog("PermissionZ: All permissions granted: " + permissions.toString());
                     }
 
                     @Override
                     public void onPermissionsGranted(@NonNull List<String> permissions) {
-                        setLog("PermissionZ: Permissions is granted");
+                        setLog("PermissionZ: Permissions is granted: " + permissions.toString());
                     }
 
                     @Override
                     public void onPermissionsDenied(@NonNull List<String> permissions) {
-                        setLog("PermissionZ: Permissions is denied");
+                        setLog("PermissionZ: Permissions is denied: " + permissions.toString());
                     }
                 })
                 .build();
