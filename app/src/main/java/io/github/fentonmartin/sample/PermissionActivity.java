@@ -16,11 +16,11 @@ import io.github.fentonmartin.aappz.util.PermissionZ;
 public class PermissionActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String[] ALL_PERMISSIONS = {
-            Manifest.permission.READ_SMS,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA
     };
-
     private Button mStorageButton, mCameraButton, mSmsButton, mAllButton;
     private PermissionZ permissions;
 
@@ -39,13 +39,13 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onPermissionsGranted(@NonNull List<String> permissions) {
-                        Toast.makeText(PermissionActivity.this, "permissions granted", Toast.LENGTH_SHORT)
+                        Toast.makeText(PermissionActivity.this, "Permissions granted", Toast.LENGTH_SHORT)
                                 .show();
                     }
 
                     @Override
                     public void onPermissionsDenied(@NonNull List<String> permissions) {
-                        Toast.makeText(PermissionActivity.this, "permissions denied", Toast.LENGTH_SHORT)
+                        Toast.makeText(PermissionActivity.this, "Permissions denied", Toast.LENGTH_SHORT)
                                 .show();
                     }
                 })
@@ -93,15 +93,15 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
                 permissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
         } else if (v.equals(mSmsButton)) {
-            if (permissions.hasPermission(Manifest.permission.READ_SMS)) {
-                Toast.makeText(PermissionActivity.this, Manifest.permission.READ_SMS + " already granted",
+            if (permissions.hasPermission(Manifest.permission.ACCESS_COARSE_LOCATION) && permissions.hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                Toast.makeText(PermissionActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION + " already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
                 permissions.request(Manifest.permission.READ_SMS);
             }
         } else if (v.equals(mAllButton)) {
             if (permissions.hasPermission(ALL_PERMISSIONS)) {
-                Toast.makeText(PermissionActivity.this, "all permissions already granted",
+                Toast.makeText(PermissionActivity.this, "All permissions already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
                 permissions.request(ALL_PERMISSIONS);
