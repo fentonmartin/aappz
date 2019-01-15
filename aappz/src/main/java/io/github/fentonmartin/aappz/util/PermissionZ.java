@@ -42,8 +42,7 @@ public class PermissionZ {
     public void request(String... permissions) {
         List<String> permissionNeeded = new ArrayList<>();
         for (String permission : permissions) {
-            if (ActivityCompat.checkSelfPermission(activity, permission)
-                    != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
                 permissionNeeded.add(permission);
             }
         }
@@ -54,8 +53,7 @@ public class PermissionZ {
 
     public boolean hasPermission(String... permissions) {
         for (String permission : permissions) {
-            if (ActivityCompat.checkSelfPermission(activity, permission)
-                    != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
                 return false;
             }
         }
