@@ -27,7 +27,7 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_permission);
         permissions = new PermissionZ.Builder()
                 .with(this)
                 .listener(new OnPermissionListener() {
