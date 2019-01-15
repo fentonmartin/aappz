@@ -64,7 +64,7 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
     private void initializeUI() {
         mStorageButton = findViewById(R.id.storage_button);
         mCameraButton = findViewById(R.id.camera_button);
-        mSmsButton = findViewById(R.id.sms_button);
+        mSmsButton = findViewById(R.id.location_button);
         mAllButton = findViewById(R.id.all_button);
     }
 

@@ -7,10 +7,10 @@
     android:padding="@dimen/_16sdp">
 
     <Button
-        android:id="@+id/sms_button"
+        android:id="@+id/location_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SMS"
+        android:text="GPS"
         tools:ignore="HardcodedText" />
 
     <Button
