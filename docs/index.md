@@ -26,6 +26,7 @@ AappZ library offers convenient tools for android application:
 * GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
+* PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
 * ToastZ: Just toast for create any messages
@@ -133,6 +134,11 @@ Functions
 **LogZ**
 * setLog(String log)
 * setLog(Activity activity, String log)
+
+**PermissionZ**
+* request(String... permissions)
+* hasPermission(String... permissions)
+* onRequestPermissionsResult(String permissions, int grantResults)
 
 **PrefZ**
 * getAll()
