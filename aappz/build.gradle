@@ -25,7 +25,7 @@ ext {
     siteUrl = 'https://github.com/fentonmartin/aappz'
     gitUrl = 'git@github.com:fentonmartin/aappz.git'
 
-    libraryVersion = '0.9.0'
+    libraryVersion = '1.0.0'
 
     developerId = 'fentonmartin'
     developerName = 'Fenton Martin'
@@ -42,8 +42,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 8
-        versionName "0.9.0"
+        versionCode 10
+        versionName "1.0.0"
     }
 
     buildTypes {
