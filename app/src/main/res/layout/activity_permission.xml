@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_16sdp">
+
+    <Button
+        android:id="@+id/sms_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMS"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/storage_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write external storage"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request all permissions at once"
+        tools:ignore="HardcodedText" />
+    
+</LinearLayout>
