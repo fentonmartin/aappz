@@ -31,7 +31,8 @@ AappZ library offers convenient tools for android application:
 * TextZ: Text validation and formatting tools
 * ToastZ: Just toast for create any messages
 * ViewZ: Some functions for view and layout
-Bonus library:
+
+**Bonus library:**
 * SDP: Library of a scalable size unit (for non text views)
 * SSP: Library of a scalable size unit (for text views)
 
