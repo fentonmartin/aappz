@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import io.github.fentonmartin.aappz.AappZ;
+import io.github.fentonmartin.aappz.permission.PermissionZ;
 
 public class PermissionActivity extends AappZ implements View.OnClickListener {
 
@@ -43,33 +44,34 @@ public class PermissionActivity extends AappZ implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.equals(mCameraButton)) {
-            if (permissionZ.hasPermission(Manifest.permission.CAMERA)) {
+            if (PermissionZ.hasPermission(this, Manifest.permission.CAMERA)) {
                 Toast.makeText(PermissionActivity.this, Manifest.permission.CAMERA + " already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
-                permissionZ.request(Manifest.permission.CAMERA);
+                PermissionZ.check(this, Manifest.permission.CAMERA);
             }
         } else if (v.equals(mStorageButton)) {
-            if (permissionZ.hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            if (PermissionZ.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                 Toast.makeText(PermissionActivity.this,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE + " already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
-                permissionZ.request(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                PermissionZ.check(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
         } else if (v.equals(mSmsButton)) {
-            if (permissionZ.hasPermission(Manifest.permission.ACCESS_COARSE_LOCATION) && permissionZ.hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if (PermissionZ.hasPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) &&
+                    PermissionZ.hasPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 Toast.makeText(PermissionActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION + " already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
-                permissionZ.request(Manifest.permission.READ_SMS);
+                PermissionZ.check(this, Manifest.permission.READ_SMS);
             }
         } else if (v.equals(mAllButton)) {
-            if (permissionZ.hasPermission(ALL_PERMISSIONS)) {
-                Toast.makeText(PermissionActivity.this, "All permissionZ already granted",
+            if (PermissionZ.hasPermission(this, ALL_PERMISSIONS)) {
+                Toast.makeText(PermissionActivity.this, "All permissions already granted",
                         Toast.LENGTH_SHORT).show();
             } else {
-                permissionZ.request(ALL_PERMISSIONS);
+                PermissionZ.check(this, ALL_PERMISSIONS);
             }
         }
     }
