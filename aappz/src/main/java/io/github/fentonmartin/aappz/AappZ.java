@@ -13,6 +13,7 @@ import io.github.fentonmartin.aappz.util.PrefZ;
 
 public class AappZ extends ActivityZ {
 
+    @Deprecated
     public PermissionZ permissionZ;
 
     @Override
