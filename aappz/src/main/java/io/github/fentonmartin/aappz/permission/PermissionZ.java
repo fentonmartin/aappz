@@ -32,6 +32,16 @@ public class PermissionZ {
     }
 
     /**
+     * Check/Request a permission only.
+     *
+     * @param context    the android context.
+     * @param permission the permission to be requested.
+     */
+    public static void check(Context context, String permission) {
+        check(context, new String[]{permission}, null, null, null);
+    }
+
+    /**
      * Check/Request a permission and call the callback methods of permission handler accordingly.
      *
      * @param context    the android context.
@@ -78,6 +88,15 @@ public class PermissionZ {
         check(context, new String[]{permission}, rationale, null, handler);
     }
 
+    /**
+     * Check/Request permissions only.
+     *
+     * @param context     Android context.
+     * @param permissions The array of one or more permission(s) to request.
+     */
+    public static void check(final Context context, String[] permissions) {
+        check(context, permissions, null, null, null);
+    }
 
     /**
      * Check/Request permissions and call the callback methods of permission handler accordingly.
@@ -88,35 +107,7 @@ public class PermissionZ {
      *                    actions such as permission granted, permission denied, etc.
      */
     public static void check(final Context context, String[] permissions, final PermissionHandler handler) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            handler.onGranted();
-            log("Android version < 23");
-        } else {
-            Set<String> permissionsSet = new LinkedHashSet<>();
-            Collections.addAll(permissionsSet, permissions);
-            boolean allPermissionProvided = true;
-            for (String aPermission : permissionsSet) {
-                if (context.checkSelfPermission(aPermission) != PackageManager.PERMISSION_GRANTED) {
-                    allPermissionProvided = false;
-                    break;
-                }
-            }
-
-            if (allPermissionProvided) {
-                handler.onGranted();
-                log("Permission(s) " + (PermissionActivity.permissionHandler == null ?
-                        "already granted." : "just granted from settings."));
-                PermissionActivity.permissionHandler = null;
-
-            } else {
-                PermissionActivity.permissionHandler = handler;
-                ArrayList<String> permissionsList = new ArrayList<>(permissionsSet);
-
-                Intent intent = new Intent(context, PermissionActivity.class)
-                        .putExtra(PermissionActivity.EXTRA_PERMISSIONS, permissionsList);
-                context.startActivity(intent);
-            }
-        }
+        check(context, permissions, null, null, handler);
     }
 
     /**
@@ -145,7 +136,6 @@ public class PermissionZ {
                     break;
                 }
             }
-
             if (allPermissionProvided) {
                 handler.onGranted();
                 log("Permission(s) " + (PermissionActivity.permissionHandler == null ?
@@ -196,7 +186,7 @@ public class PermissionZ {
      * @param context     Android context.
      * @param permissions The array of one or more permission(s) to request.
      */
-    public boolean hasPermission(final Context context, String... permissions) {
+    public static boolean hasPermission(final Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (String aPermission : permissions) {
                 if (context.checkSelfPermission(aPermission) != PackageManager.PERMISSION_GRANTED) {
