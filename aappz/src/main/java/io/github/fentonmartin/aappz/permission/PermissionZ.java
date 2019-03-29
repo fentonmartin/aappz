@@ -150,6 +150,23 @@ public class PermissionZ {
     }
 
     /**
+     * Check permissions is already granted or not.
+     *
+     * @param context     Android context.
+     * @param permissions The array of one or more permission(s) to request.
+     */
+    public boolean hasPermission(final Context context, String... permissions) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            for (String aPermission : permissions) {
+                if (context.checkSelfPermission(aPermission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
      * Options to customize while requesting permissions.
      */
     public static class Options implements Serializable {
