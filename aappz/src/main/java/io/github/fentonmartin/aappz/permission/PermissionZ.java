@@ -78,6 +78,47 @@ public class PermissionZ {
         check(context, new String[]{permission}, rationale, null, handler);
     }
 
+
+    /**
+     * Check/Request permissions and call the callback methods of permission handler accordingly.
+     *
+     * @param context     Android context.
+     * @param permissions The array of one or more permission(s) to request.
+     * @param handler     The permission handler object for handling callbacks of various user
+     *                    actions such as permission granted, permission denied, etc.
+     */
+    public static void check(final Context context, String[] permissions, final PermissionHandler handler) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            handler.onGranted();
+            log("Android version < 23");
+        } else {
+            Set<String> permissionsSet = new LinkedHashSet<>();
+            Collections.addAll(permissionsSet, permissions);
+            boolean allPermissionProvided = true;
+            for (String aPermission : permissionsSet) {
+                if (context.checkSelfPermission(aPermission) != PackageManager.PERMISSION_GRANTED) {
+                    allPermissionProvided = false;
+                    break;
+                }
+            }
+
+            if (allPermissionProvided) {
+                handler.onGranted();
+                log("Permission(s) " + (PermissionActivity.permissionHandler == null ?
+                        "already granted." : "just granted from settings."));
+                PermissionActivity.permissionHandler = null;
+
+            } else {
+                PermissionActivity.permissionHandler = handler;
+                ArrayList<String> permissionsList = new ArrayList<>(permissionsSet);
+
+                Intent intent = new Intent(context, PermissionActivity.class)
+                        .putExtra(PermissionActivity.EXTRA_PERMISSIONS, permissionsList);
+                context.startActivity(intent);
+            }
+        }
+    }
+
     /**
      * Check/Request permissions and call the callback methods of permission handler accordingly.
      *

@@ -72,7 +72,10 @@ public class PermissionActivity extends Activity {
         }
 
         String rationale = intent.getStringExtra(EXTRA_RATIONALE);
-        if (noRationale || TextUtils.isEmpty(rationale)) {
+        if (rationale == null) {
+            PermissionZ.log("Null rationale.");
+            requestPermissions(toArray(deniedPermissions), RC_PERMISSION);
+        } else if (noRationale || TextUtils.isEmpty(rationale)) {
             PermissionZ.log("No rationale.");
             requestPermissions(toArray(deniedPermissions), RC_PERMISSION);
         } else {
