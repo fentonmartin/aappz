@@ -2,6 +2,7 @@ package io.github.fentonmartin.aappz.util;
 
 import android.annotation.SuppressLint;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -84,5 +85,44 @@ public class DateZ {
      */
     public static String getTimestampTime(String pattern, String timestamp) {
         return getTimestampTime(pattern, Long.parseLong(timestamp));
+    }
+
+    /**
+     * Get timestamp date from inputted string
+     *
+     * @param pattern the target pattern (See: DateConstant)
+     * @param text    the string timestamp
+     */
+    public static Date getTimestampDateFrom(String pattern, String text) {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat(pattern);
+            return format.parse(text);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
+
+    /**
+     * Get timestamp long from inputted string
+     *
+     * @param pattern the target pattern (See: DateConstant)
+     * @param text    the string timestamp
+     */
+    public static long getTimestampLongFrom(String pattern, String text) {
+        Date parsedDate = getTimestampDateFrom(pattern, text);
+        if (parsedDate != null)
+            return parsedDate.getTime();
+        else
+            return 0;
+    }
+
+    /**
+     * Get timestamp string from inputted string
+     *
+     * @param pattern the target pattern (See: DateConstant)
+     * @param text    the string timestamp
+     */
+    public static String getTimestampStringFrom(String pattern, String text) {
+        return String.valueOf(getTimestampLongFrom(pattern, text));
     }
 }
