@@ -57,6 +57,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 
     /* Libraries of a scalable size unit (for non text views) */
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
