@@ -1,8 +1,9 @@
 package io.github.fentonmartin.aappz.constant;
 
+@SuppressWarnings("unused")
 public class DateConstant {
     /*----------------------------------------------------------------------
-    Letter	Component	        Type	Examples	        API Levels
+        Component	            Type	Examples	        API Levels
     ------------------------------------------------------------------------
     G	Era designator	        Text	AD	                    1+
     y	Year	                Year	1996; 96	            1+
@@ -36,8 +37,22 @@ public class DateConstant {
 
     public static final String DATE_FULL = "yyyy-MM-dd HH:mm:ss";
     public static final String DATE_FULL_REVERSE = "dd-MM-yyyy HH:mm:ss";
+    public static final String DATE_DETAIL_FULL = "yyyy-MM-dd HH:mm:ss.SSS";
+    public static final String DATE_DETAIL_FULL_REVERSE = "dd-MM-yyyy HH:mm:ss.SSS";
+
     public static final String DATE_DAY = "MMMM d, yyyy";
     public static final String DATE_DAY_REVERSE = "d MMMM yyyy";
     public static final String DATE_DAY_FULL = "EEEE, MMMM d, yyyy";
     public static final String DATE_DAY_FULL_REVERSE = "EEEE, d MMMM yyyy";
+
+    public static final String CUSTOM_1 = "yyMMddHHmmss";
+    public static final String CUSTOM_2 = "yyMMddHHmmssSSS";
+    public static final String CUSTOM_3 = "yyyyMMddHHmmss";
+    public static final String CUSTOM_4 = "yyyyMMddHHmmssSSS";
+    public static final String CUSTOM_5 = "yy.MM.dd.HH.mm";
+    public static final String CUSTOM_6 = "yy.MM.dd.HH.mm.ss";
+    public static final String CUSTOM_7 = "yy.MM.dd.HH.mm.ss.SSS";
+    public static final String CUSTOM_8 = "yy:MM:dd:HH:mm";
+    public static final String CUSTOM_9 = "yy:MM:dd:HH:mm:ss";
+    public static final String CUSTOM_10 = "yy:MM:dd:HH:mm:ss:SSS";
 }
