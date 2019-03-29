@@ -11,16 +11,19 @@ import java.util.List;
 
 import io.github.fentonmartin.aappz.implementation.OnPermissionListener;
 
+@Deprecated
 public class PermissionZ {
 
     private final Activity activity;
     private final OnPermissionListener onPermissionListener;
 
+    @Deprecated
     private PermissionZ(Builder builder) {
         this.activity = builder.activity;
         this.onPermissionListener = builder.listener;
     }
 
+    @Deprecated
     public void onRequestPermissionsResult(String[] permissions, int[] grantResults) {
         List<String> grantedPermissions = new ArrayList<>();
         List<String> deniedPermissions = new ArrayList<>();
@@ -39,6 +42,7 @@ public class PermissionZ {
         }
     }
 
+    @Deprecated
     public void request(String... permissions) {
         List<String> permissionNeeded = new ArrayList<>();
         for (String permission : permissions) {
@@ -51,6 +55,7 @@ public class PermissionZ {
         }
     }
 
+    @Deprecated
     public boolean hasPermission(String... permissions) {
         for (String permission : permissions) {
             if (ActivityCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -60,21 +65,25 @@ public class PermissionZ {
         return true;
     }
 
+    @Deprecated
     public static class Builder {
 
         private Activity activity;
         private OnPermissionListener listener;
 
+        @Deprecated
         public Builder with(@NonNull Activity activity) {
             this.activity = activity;
             return this;
         }
 
+        @Deprecated
         public Builder listener(@NonNull OnPermissionListener listener) {
             this.listener = listener;
             return this;
         }
 
+        @Deprecated
         public PermissionZ build() {
             return new PermissionZ(this);
         }
