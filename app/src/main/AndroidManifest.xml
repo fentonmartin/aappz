@@ -18,7 +18,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".PermissionActivity">
+        <activity android:name=".PermissionActivity" />
+        <activity android:name=".PermissionV2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
