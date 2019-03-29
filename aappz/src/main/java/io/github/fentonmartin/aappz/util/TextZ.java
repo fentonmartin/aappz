@@ -1,7 +1,7 @@
 package io.github.fentonmartin.aappz.util;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.text.TextUtils;
+import android.util.Patterns;
 
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -10,19 +10,64 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class TextZ {
+
+    /**
+     * Check email is valid
+     *
+     * @param email parameter for text matcher
+     */
     public static boolean isEmailValid(String email) {
-        String expression = "^[\\w.\\-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
-    public static boolean isPasswordValid(String password, int min) {
-        return password != null && password.length() >= min;
+
+    /**
+     * Check phone number is valid
+     *
+     * @param phone parameter for text matcher
+     */
+    public static boolean isPhoneValid(String phone) {
+        return !TextUtils.isEmpty(phone) && Patterns.PHONE.matcher(phone).matches();
     }
+
+    /**
+     * Check text length is below the parameter
+     *
+     * @param text text/password is being checked
+     * @param min  minimum length
+     */
+    public static boolean isTextLength(String text, int min) {
+        return text != null && text.length() >= min;
+    }
+
+    /**
+     * Check text length is between the parameter
+     *
+     * @param text text/password is being checked
+     * @param min  minimum length
+     * @param max  maximum length
+     */
+    public static boolean isTextLength(String text, int min, int max) {
+        return text != null && text.length() >= min && text.length() <= max;
+    }
+
+    /**
+     * Check text is matched
+     *
+     * @param text1 first text
+     * @param text2 second text
+     */
     public static boolean isTextMatch(String text1, String text2) {
         return Arrays.equals(new String[]{text1}, new String[]{text2});
     }
+
+    /**
+     * Check text is contained in another text
+     *
+     * @param text    sentence/long text/base text
+     * @param contain contained text is being checked
+     */
     public static boolean isTextContain(String text, String contain) {
         if (contain.equals(""))
             return true;
@@ -32,57 +77,102 @@ public class TextZ {
         Matcher matcher = pattern.matcher(text);
         return matcher.find();
     }
+
+    /**
+     * Get number only string
+     *
+     * @param number text is being number checked
+     */
     public static String getNumberClear(String number) {
         return number.replaceAll("\\D+", "");
     }
+
+    /**
+     * Get number formatted string
+     *
+     * @param number text is being number checked
+     */
     public static String getNumberFormat(String number) {
         if (number.isEmpty())
             return "0";
         else
             return NumberFormat.getNumberInstance(Locale.GERMAN).format(Integer.parseInt(number));
     }
+
+    /**
+     * Get random integer number
+     */
     public static int getNumberRandom() {
         return (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
     }
+
+    /**
+     * Get money formatted string
+     *
+     * @param number text is being checked
+     */
     public static String setFormatMoney(String number) {
         if (number.isEmpty())
             return "Rp 0";
         else
             return "Rp " + NumberFormat.getNumberInstance(Locale.GERMAN).format(Integer.parseInt(number));
     }
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+
+    /**
+     * Get name formatted string
+     *
+     * @param name text is being checked
+     */
     public static String setFormatName(String name) {
-        final int sl = name.length();
-        final StringBuilder sb = new StringBuilder(sl);
-        boolean lod = false;
-        for (int s = 0; s < sl; s++) {
-            final int cp = name.codePointAt(s);
-            sb.appendCodePoint(lod ? Character.toLowerCase(cp) : Character.toUpperCase(cp));
-            lod = Character.isLetterOrDigit(cp);
-            if (!Character.isBmpCodePoint(cp)) s++;
+        String c = (name != null) ? name.trim() : "";
+        String[] words = c.replaceAll("\\s{2,}", " ")
+                .split(" ");
+        StringBuilder result = new StringBuilder();
+        for (String w : words) {
+            result.append(w.length() > 1 ? w.substring(0, 1).toUpperCase(Locale.US) + w.substring(1).toLowerCase(Locale.US) : w)
+                    .append(" ");
         }
-        return sb.toString();
+        return result.toString().trim();
     }
-    public static String[] convertStringToArrayChar(String inputString) {
-        return convertStringToArray(inputString, 1);
+
+    /**
+     * Get array string char from inputted text
+     *
+     * @param text text is being inputted
+     */
+    public static String[] convertStringToArrayChar(String text) {
+        return convertStringToArray(text, 1);
     }
-    public static String[] convertStringToArray(String inputString, int n) {
-        int total = inputString.length() / n;
-        int rest = inputString.length() - (total * n);
+
+    /**
+     * Get array string from inputted text
+     *
+     * @param text text is being inputted
+     * @param n    number of length
+     */
+    public static String[] convertStringToArray(String text, int n) {
+        int total = text.length() / n;
+        int rest = text.length() - (total * n);
         if (rest > 0)
             total = total + rest;
 
         String[] b = new String[total];
         for (int i = 0; i < total; i++) {
             try {
-                b[i] = inputString.substring(i * n, i * n + n);
+                b[i] = text.substring(i * n, i * n + n);
             } catch (StringIndexOutOfBoundsException e) {
-                b[i] = inputString.substring(i * n, i * n + rest);
+                b[i] = text.substring(i * n, i * n + rest);
             }
         }
         return b;
     }
-    public static char[] convertStringToArray(String inputString) {
-        return inputString.toCharArray();
+
+    /**
+     * Get array char from inputted text
+     *
+     * @param text text is being inputted
+     */
+    public static char[] convertStringToArray(String text) {
+        return text.toCharArray();
     }
 }
