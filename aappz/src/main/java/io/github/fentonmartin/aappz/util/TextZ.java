@@ -3,6 +3,7 @@ package io.github.fentonmartin.aappz.util;
 import android.text.TextUtils;
 import android.util.Patterns;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,15 +91,75 @@ public class TextZ {
     }
 
     /**
+     * Get decimal formatted string
+     *
+     * @param number is being number formatted
+     * @param digits the maximum fraction digits
+     */
+    public static String getDecimalFormat(int number, int digits) {
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(digits);
+        return decimalFormat.format(number);
+    }
+
+    /**
+     * Get decimal formatted string
+     *
+     * @param number is being number formatted
+     * @param digits the maximum fraction digits
+     */
+    public static String getDecimalFormat(float number, int digits) {
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(digits);
+        return decimalFormat.format(number);
+    }
+
+    /**
+     * Get decimal formatted string
+     *
+     * @param number is being number formatted
+     * @param digits the maximum fraction digits
+     */
+    public static String getDecimalFormat(double number, int digits) {
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(digits);
+        return decimalFormat.format(number);
+    }
+
+    /**
+     * Get decimal formatted string
+     *
+     * @param number is being number formatted
+     * @param digits the maximum fraction digits
+     */
+    public static String getDecimalFormat(long number, int digits) {
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(digits);
+        return decimalFormat.format(number);
+    }
+
+    /**
      * Get number formatted string
      *
      * @param number text is being number checked
      */
     public static String getNumberFormat(String number) {
+        return getNumberFormat(getNumberClear(number), false);
+    }
+
+    /**
+     * Get number formatted string with thousand delimiter (comma/dot)
+     *
+     * @param number            text is being number formatted
+     * @param isUseDotSeparator set thousand separator default = false (comma)
+     */
+    public static String getNumberFormat(String number, boolean isUseDotSeparator) {
         if (number.isEmpty())
             return "0";
+        else if (isUseDotSeparator)
+            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Long.parseLong(getNumberClear(number)));
         else
-            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Integer.parseInt(number));
+            return NumberFormat.getNumberInstance(Locale.ENGLISH).format(Long.parseLong(getNumberClear(number)));
     }
 
     /**
