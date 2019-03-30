@@ -26,6 +26,7 @@ public class DeviceZ {
      * Sometimes be null, can change upon factory reset. This value can be altered on a rooted phone.
      *
      * @param context the application context
+     * @return the result
      */
     @SuppressLint("HardwareIds")
     public static String getAndroidID(Context context) {
@@ -40,6 +41,7 @@ public class DeviceZ {
      * Identify a particular installation (not a physical device). Method generates an unique
      * identifier for a specific installation. You have just to store that value and your
      * user will be identified at the next launch of your application.
+     * @return the result
      */
     public static String getUUID() {
         if (uniqueID == null) {
@@ -62,6 +64,7 @@ public class DeviceZ {
      * WARNING: 'android.permission.READ_PHONE_STATE' permission needed
      *
      * @param context the application context
+     * @return the result
      */
     @SuppressLint({"HardwareIds", "MissingPermission"})
     public static String getIMEI(Context context) {
@@ -78,6 +81,7 @@ public class DeviceZ {
      * WARNING: 'android.permission.ACCESS_WIFI_STATE' permission needed
      *
      * @param context the application context
+     * @return the result
      */
     @SuppressLint("HardwareIds")
     public static String getMacAddress(Context context) {
@@ -92,6 +96,7 @@ public class DeviceZ {
      * It read details like ROM Version, Manufacturer name, CPU type, and other hardware details.
      * This is possible get two devices with the same ID, based on the same hardware and rom image.
      * No special permission are required, making this approach very convenient.
+     * @return the result
      */
     public static String getPseudoUniqueID() {
         return "35" +

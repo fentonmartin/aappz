@@ -10,7 +10,6 @@ import android.view.View;
  * SnapHelper is a helper class that helps in snapping any child view of the RecyclerView.
  * For example, you can snap the first visible item of the RecyclerView and make it always be
  * completely visible when scrolling comes to the idle position.
- * <p>
  * <p> How to use:
  * <p> RecyclerViewSnapHelper snapHelper = new RecyclerViewSnapHelper();
  * <p> snapHelper.attachToRecyclerView(recyclerView);

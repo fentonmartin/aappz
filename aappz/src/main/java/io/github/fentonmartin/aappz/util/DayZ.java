@@ -21,6 +21,7 @@ public class DayZ {
      * Get current day state
      * <p>
      * return static int value (DAY_MORNING, DAY_AFTERNOON, DAY_EVENING, or DAY_NIGHT)
+     * @return the result
      */
     public static int getCurrentDay() {
         Calendar calendar = Calendar.getInstance();
@@ -33,6 +34,7 @@ public class DayZ {
      * return static int value of DAY_MORNING, DAY_AFTERNOON, DAY_EVENING, or DAY_NIGHT
      *
      * @param calendar the calendar time
+     * @return the result
      */
     public static int getCurrentDay(Calendar calendar) {
         return getCurrentDay(calendar, DEFAULT_START_MORNING, DEFAULT_START_AFTERNOON, DEFAULT_START_EVENING, DEFAULT_START_NIGHT);
@@ -47,6 +49,7 @@ public class DayZ {
      * @param afternoon the afternoon state
      * @param evening   the evening state
      * @param night     the night state
+     * @return the result
      */
     public static int getCurrentDay(int morning, int afternoon, int evening, int night) {
         Calendar calendar = Calendar.getInstance();
@@ -63,6 +66,7 @@ public class DayZ {
      * @param afternoon the afternoon state
      * @param evening   the evening state
      * @param night     the night state
+     * @return the result
      */
     public static int getCurrentDay(Calendar calendar, int morning, int afternoon, int evening, int night) {
         int hours = calendar.get(Calendar.HOUR_OF_DAY);

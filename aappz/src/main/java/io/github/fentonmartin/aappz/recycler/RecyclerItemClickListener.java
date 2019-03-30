@@ -13,7 +13,6 @@ import android.view.View;
  * An OnItemTouchListener allows the application to intercept touch events in progress
  * at the view hierarchy level of the RecyclerView before those touch events are considered
  * for RecyclerView's own scrolling behavior.
- * <p>
  * <p> How to use:
  * <p> recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(...));
  */

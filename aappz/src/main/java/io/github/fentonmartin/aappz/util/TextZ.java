@@ -20,6 +20,7 @@ public class TextZ {
      * Check email is valid
      *
      * @param email parameter for text matcher
+     * @return the result
      */
     public static boolean isEmailValid(String email) {
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
@@ -29,6 +30,7 @@ public class TextZ {
      * Check phone number is valid
      *
      * @param phone parameter for text matcher
+     * @return the result
      */
     public static boolean isPhoneValid(String phone) {
         return !TextUtils.isEmpty(phone) && Patterns.PHONE.matcher(phone).matches();
@@ -39,6 +41,7 @@ public class TextZ {
      *
      * @param text text/password is being checked
      * @param min  minimum length
+     * @return the result
      */
     public static boolean isTextLength(String text, int min) {
         return text != null && text.length() >= min;
@@ -50,6 +53,7 @@ public class TextZ {
      * @param text text/password is being checked
      * @param min  minimum length
      * @param max  maximum length
+     * @return the result
      */
     public static boolean isTextLength(String text, int min, int max) {
         return text != null && text.length() >= min && text.length() <= max;
@@ -60,6 +64,7 @@ public class TextZ {
      *
      * @param text1 first text
      * @param text2 second text
+     * @return the result
      */
     public static boolean isTextMatch(String text1, String text2) {
         return Arrays.equals(new String[]{text1}, new String[]{text2});
@@ -70,6 +75,7 @@ public class TextZ {
      *
      * @param text    sentence/long text/base text
      * @param contain contained text is being checked
+     * @return the result
      */
     public static boolean isTextContain(String text, String contain) {
         if (contain.equals(""))
@@ -86,6 +92,7 @@ public class TextZ {
      *
      * @param number is being number formatted
      * @param digits the maximum fraction digits
+     * @return the result
      */
     public static String getDecimalFormat(int number, int digits) {
         DecimalFormat decimalFormat = new DecimalFormat();
@@ -98,6 +105,7 @@ public class TextZ {
      *
      * @param number is being number formatted
      * @param digits the maximum fraction digits
+     * @return the result
      */
     public static String getDecimalFormat(float number, int digits) {
         DecimalFormat decimalFormat = new DecimalFormat();
@@ -110,6 +118,7 @@ public class TextZ {
      *
      * @param number is being number formatted
      * @param digits the maximum fraction digits
+     * @return the result
      */
     public static String getDecimalFormat(double number, int digits) {
         DecimalFormat decimalFormat = new DecimalFormat();
@@ -122,6 +131,7 @@ public class TextZ {
      *
      * @param number is being number formatted
      * @param digits the maximum fraction digits
+     * @return the result
      */
     public static String getDecimalFormat(long number, int digits) {
         DecimalFormat decimalFormat = new DecimalFormat();
@@ -133,6 +143,7 @@ public class TextZ {
      * Get number only string
      *
      * @param number text is being number checked
+     * @return the result
      */
     public static String getNumber(String number) {
         return number.replaceAll("\\D+", "");
@@ -142,6 +153,7 @@ public class TextZ {
      * Get number formatted string
      *
      * @param number text is being number checked
+     * @return the result
      */
     public static String getNumberFormat(String number) {
         return getNumberFormat(getNumber(number), false);
@@ -152,6 +164,7 @@ public class TextZ {
      *
      * @param number            text is being number formatted
      * @param isUseDotSeparator set thousand separator default = false (comma)
+     * @return the result
      */
     public static String getNumberFormat(String number, boolean isUseDotSeparator) {
         if (number.isEmpty())
@@ -164,6 +177,8 @@ public class TextZ {
 
     /**
      * Get random integer number
+     *
+     * @return the result
      */
     public static int getNumberRandom() {
         return (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
@@ -173,6 +188,7 @@ public class TextZ {
      * Get money formatted string (use IDR currency)
      *
      * @param number text is being checked
+     * @return the result
      */
     public static String getMoneyFormat(String number) {
         return getMoneyFormat("Rp ", number, false);
@@ -183,6 +199,7 @@ public class TextZ {
      *
      * @param currency custom pre-currency (before number)
      * @param number   text is being checked
+     * @return the result
      */
     public static String getMoneyFormat(String currency, String number) {
         return getMoneyFormat(currency, number, false);
@@ -194,6 +211,7 @@ public class TextZ {
      * @param currency     custom pre-currency (before number)
      * @param number       text is being checked
      * @param postCurrency custom post-currency (after number)
+     * @return the result
      */
     public static String getMoneyFormat(String currency, String number, String postCurrency) {
         return getMoneyFormat(currency, number, postCurrency, false);
@@ -204,6 +222,7 @@ public class TextZ {
      *
      * @param number            text is being checked
      * @param isUseDotSeparator set thousand separator default = false (comma)
+     * @return the result
      */
     public static String getMoneyFormat(String number, boolean isUseDotSeparator) {
         return "Rp " + getNumberFormat(number, isUseDotSeparator);
@@ -215,6 +234,7 @@ public class TextZ {
      * @param currency          custom pre-currency (before number)
      * @param number            text is being checked
      * @param isUseDotSeparator set thousand separator default = false (comma)
+     * @return the result
      */
     public static String getMoneyFormat(String currency, String number, boolean isUseDotSeparator) {
         return currency + getNumberFormat(number, isUseDotSeparator);
@@ -227,6 +247,7 @@ public class TextZ {
      * @param number            text is being checked
      * @param postCurrency      custom post-currency (after number)
      * @param isUseDotSeparator set thousand separator default = false (comma)
+     * @return the result
      */
     public static String getMoneyFormat(String currency, String number, String postCurrency, boolean isUseDotSeparator) {
         return currency + getNumberFormat(number, isUseDotSeparator) + postCurrency;
@@ -236,6 +257,7 @@ public class TextZ {
      * Get space and enter formatted string (remove doubled spaces)
      *
      * @param text text is being checked
+     * @return the result
      */
     public static String getFormatAll(String text) {
         return getFormatName(getFormatSpace(getFormatEnter(text)));
@@ -245,6 +267,7 @@ public class TextZ {
      * Get name formatted string
      *
      * @param name text is being checked
+     * @return the result
      */
     public static String getFormatName(String name) {
         String c = (name != null) ? name.trim() : "";
@@ -262,6 +285,7 @@ public class TextZ {
      * Get space formatted string (remove doubled spaces)
      *
      * @param text text is being checked
+     * @return the result
      */
     public static String getFormatSpace(String text) {
         return text.replaceAll("\\s{2,}", " ");
@@ -271,6 +295,7 @@ public class TextZ {
      * Get space formatted string (remove doubled spaces)
      *
      * @param text text is being checked
+     * @return the result
      */
     public static String getFormatEnter(String text) {
         return text.replaceAll("\\n{2,}", "\n");
@@ -280,6 +305,7 @@ public class TextZ {
      * Get array string char from inputted text
      *
      * @param text text is being inputted
+     * @return the result
      */
     public static String[] getArrayCharFrom(String text) {
         return getArrayFrom(text, 1);
@@ -290,6 +316,7 @@ public class TextZ {
      *
      * @param text text is being inputted
      * @param n    number of length
+     * @return the result
      */
     public static String[] getArrayFrom(String text, int n) {
         int total = text.length() / n;
@@ -312,6 +339,7 @@ public class TextZ {
      * Get array char from inputted text
      *
      * @param text text is being inputted
+     * @return the result
      */
     public static char[] getArrayFrom(String text) {
         return text.toCharArray();
@@ -320,7 +348,8 @@ public class TextZ {
     /**
      * Join string from inputted text list by comma
      *
-     * @param list the List<String>
+     * @param list the String List
+     * @return the result
      */
     public static String getStringFrom(List<String> list) {
         return getStringFrom(list, ",");
@@ -329,27 +358,30 @@ public class TextZ {
     /**
      * Join string from inputted text list
      *
-     * @param list      the List<String>
+     * @param list      the String List
      * @param delimiter the delimiter
+     * @return the result
      */
     public static String getStringFrom(List<String> list, String delimiter) {
         return TextUtils.join(delimiter, list);
     }
 
     /**
-     * Split List<String> from inputted text by comma
+     * Split List from inputted text by comma
      *
      * @param text the inputted text
+     * @return the result
      */
     public static List<String> getListFrom(String text) {
         return getListFrom(text, ",");
     }
 
     /**
-     * Split List<String> from inputted text
+     * Split List from inputted text
      *
      * @param text      the inputted text
      * @param delimiter the delimiter
+     * @return the result
      */
     public static List<String> getListFrom(String text, String delimiter) {
         List<String> list = new ArrayList<>();

@@ -418,6 +418,7 @@ public class ActivityZ extends AppCompatActivity {
      * Get string value from EditText
      *
      * @param editText the current view
+     * @return the result
      */
     public String getValue(EditText editText) {
         return viewZ.getValue(editText);
@@ -427,6 +428,7 @@ public class ActivityZ extends AppCompatActivity {
      * Get boolean value from EditText
      *
      * @param editText the current view
+     * @return the result
      */
     public boolean getValueBoolean(EditText editText) {
         return viewZ.getValueBoolean(editText);
@@ -436,6 +438,7 @@ public class ActivityZ extends AppCompatActivity {
      * Get integer value from EditText
      *
      * @param editText the current view
+     * @return the result
      */
     public int getValueInt(EditText editText) {
         return viewZ.getValueInt(editText);

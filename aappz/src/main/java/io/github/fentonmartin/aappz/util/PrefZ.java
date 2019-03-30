@@ -31,6 +31,8 @@ public final class PrefZ {
 
     /**
      * Get static SharedPreferences
+     *
+     * @return the result
      */
     public static SharedPreferences getPreferences() {
         if (preferences != null)
@@ -39,7 +41,9 @@ public final class PrefZ {
     }
 
     /**
-     * Get all Map<String> SharedPreferences
+     * Get all Map String SharedPreferences
+     *
+     * @return the result
      */
     public static Map<String, ?> getAll() {
         return getPreferences().getAll();
@@ -50,6 +54,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static int getInt(final String key, final int defValue) {
         return getPreferences().getInt(key, defValue);
@@ -59,6 +64,7 @@ public final class PrefZ {
      * Get integer from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static int getInt(final String key) {
         return getPreferences().getInt(key, 0);
@@ -69,6 +75,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static boolean getBoolean(final String key, final boolean defValue) {
         return getPreferences().getBoolean(key, defValue);
@@ -78,6 +85,7 @@ public final class PrefZ {
      * Get boolean from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static boolean getBoolean(final String key) {
         return getPreferences().getBoolean(key, false);
@@ -88,6 +96,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static long getLong(final String key, final long defValue) {
         return getPreferences().getLong(key, defValue);
@@ -97,6 +106,7 @@ public final class PrefZ {
      * Get long from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static long getLong(final String key) {
         return getPreferences().getLong(key, 0L);
@@ -107,6 +117,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static double getDouble(final String key, final double defValue) {
         return Double.longBitsToDouble(getPreferences().getLong(key, Double.doubleToLongBits(defValue)));
@@ -116,6 +127,7 @@ public final class PrefZ {
      * Get double from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static double getDouble(final String key) {
         return Double.longBitsToDouble(getPreferences().getLong(key, Double.doubleToLongBits(0.0d)));
@@ -126,6 +138,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static float getFloat(final String key, final float defValue) {
         return getPreferences().getFloat(key, defValue);
@@ -135,6 +148,7 @@ public final class PrefZ {
      * Get float from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static float getFloat(final String key) {
         return getPreferences().getFloat(key, 0.0f);
@@ -145,6 +159,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static String getString(final String key, final String defValue) {
         return getPreferences().getString(key, defValue);
@@ -154,6 +169,7 @@ public final class PrefZ {
      * Get string from SharedPreferences
      *
      * @param key the preference key
+     * @return the result
      */
     public static String getString(final String key) {
         return getPreferences().getString(key, "");
@@ -164,6 +180,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static Set<String> getStringSet(final String key, final Set<String> defValue) {
         SharedPreferences prefs = getPreferences();
@@ -175,6 +192,7 @@ public final class PrefZ {
      *
      * @param key      the preference key
      * @param defValue default value
+     * @return the result
      */
     public static Set<String> getStringSetOrdered(String key, final Set<String> defValue) {
         SharedPreferences prefs = getPreferences();
@@ -323,6 +341,7 @@ public final class PrefZ {
      * Check current prefs key
      *
      * @param key preference key
+     * @return the result
      */
     public static boolean contains(final String key) {
         return getPreferences().contains(key);
@@ -330,6 +349,8 @@ public final class PrefZ {
 
     /**
      * Set clear to preference edit
+     *
+     * @return the result
      */
     public static Editor clear() {
         final Editor editor = getPreferences().edit().clear();
@@ -339,6 +360,8 @@ public final class PrefZ {
 
     /**
      * return getPreferences().edit for preference edit
+     *
+     * @return the result
      */
     public static Editor edit() {
         return getPreferences().edit();
@@ -355,6 +378,7 @@ public final class PrefZ {
          * Set name to SharedPreference
          *
          * @param prefsName passing the preference name
+         * @return the result
          */
         public Builder setPrefsName(final String prefsName) {
             mKey = prefsName;
@@ -365,6 +389,7 @@ public final class PrefZ {
          * Set context to SharedPreference
          *
          * @param context passing the application context
+         * @return the result
          */
         public Builder setContext(final Context context) {
             mContext = context;
@@ -375,6 +400,7 @@ public final class PrefZ {
          * Set SharedPreference mode
          *
          * @param mode MODE_PRIVATE, MODE_WORLD_READABLE, MODE_WORLD_WRITEABLE, or MODE_MULTI_PROCESS
+         * @return the result
          */
         @SuppressLint({"WorldReadableFiles", "WorldWriteableFiles"})
         public Builder setMode(final int mode) {
@@ -390,6 +416,7 @@ public final class PrefZ {
          * Set use default SharedPreference
          *
          * @param defaultSharedPreference boolean default preference
+         * @return the result
          */
         public Builder setUseDefaultSharedPreference(boolean defaultSharedPreference) {
             mUseDefault = defaultSharedPreference;

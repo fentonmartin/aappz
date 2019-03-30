@@ -14,6 +14,7 @@ public class DateZ {
 
     /**
      * Get date time string with 'yyyy-MM-dd HH:mm:ss' format
+     * @return the result
      */
     public static String getDatetime() {
         return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date());
@@ -23,6 +24,7 @@ public class DateZ {
      * Get date time string with pattern format
      *
      * @param pattern the target pattern (See: DateConstant)
+     * @return the result
      */
     public static String getDatetime(String pattern) {
         return new SimpleDateFormat(pattern).format(new Date());
@@ -30,6 +32,7 @@ public class DateZ {
 
     /**
      * Get date time string with simple default format
+     * @return the result
      */
     public static String getDatetimeSimple() {
         return new SimpleDateFormat().format(new Date());
@@ -37,6 +40,7 @@ public class DateZ {
 
     /**
      * Get timestamp long from current time
+     * @return the result
      */
     public static long getTimestamp() {
         return new Date().getTime();
@@ -44,6 +48,7 @@ public class DateZ {
 
     /**
      * Get timestamp string from current timestamp
+     * @return the result
      */
     public static String getTimestampString() {
         return String.valueOf(getTimestamp());
@@ -53,6 +58,7 @@ public class DateZ {
      * Get 'yyyy-MM-dd HH:mm:ss' string from inputted time
      *
      * @param timestamp the inputted long timestamp
+     * @return the result
      */
     public static String getTimestampTime(long timestamp) {
         return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date(timestamp));
@@ -62,6 +68,7 @@ public class DateZ {
      * Get 'yyyy-MM-dd HH:mm:ss' string from inputted time
      *
      * @param timestamp the inputted string timestamp
+     * @return the result
      */
     public static String getTimestampTime(String timestamp) {
         return getTimestampTime(Long.parseLong(timestamp));
@@ -72,6 +79,7 @@ public class DateZ {
      *
      * @param pattern   the target pattern (See: DateConstant)
      * @param timestamp the inputted long timestamp
+     * @return the result
      */
     public static String getTimestampTime(String pattern, long timestamp) {
         return new SimpleDateFormat(pattern).format(new Date(timestamp));
@@ -82,6 +90,7 @@ public class DateZ {
      *
      * @param pattern   the target pattern (See: DateConstant)
      * @param timestamp the inputted string timestamp
+     * @return the result
      */
     public static String getTimestampTime(String pattern, String timestamp) {
         return getTimestampTime(pattern, Long.parseLong(timestamp));
@@ -92,6 +101,7 @@ public class DateZ {
      *
      * @param pattern the target pattern (See: DateConstant)
      * @param text    the string timestamp
+     * @return the result
      */
     public static Date getTimestampDateFrom(String pattern, String text) {
         try {
@@ -107,6 +117,7 @@ public class DateZ {
      *
      * @param pattern the target pattern (See: DateConstant)
      * @param text    the string timestamp
+     * @return the result
      */
     public static long getTimestampLongFrom(String pattern, String text) {
         Date parsedDate = getTimestampDateFrom(pattern, text);
@@ -121,6 +132,7 @@ public class DateZ {
      *
      * @param pattern the target pattern (See: DateConstant)
      * @param text    the string timestamp
+     * @return the result
      */
     public static String getTimestampStringFrom(String pattern, String text) {
         return String.valueOf(getTimestampLongFrom(pattern, text));

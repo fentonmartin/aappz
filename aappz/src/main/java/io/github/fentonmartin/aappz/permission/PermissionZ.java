@@ -185,6 +185,7 @@ public class PermissionZ {
      *
      * @param context     Android context.
      * @param permissions The array of one or more permission(s) to request.
+     * @return the result
      */
     public static boolean hasPermission(final Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
