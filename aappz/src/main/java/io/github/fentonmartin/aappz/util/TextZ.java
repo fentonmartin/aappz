@@ -82,15 +82,6 @@ public class TextZ {
     }
 
     /**
-     * Get number only string
-     *
-     * @param number text is being number checked
-     */
-    public static String getNumberClear(String number) {
-        return number.replaceAll("\\D+", "");
-    }
-
-    /**
      * Get decimal formatted string
      *
      * @param number is being number formatted
@@ -139,12 +130,21 @@ public class TextZ {
     }
 
     /**
+     * Get number only string
+     *
+     * @param number text is being number checked
+     */
+    public static String getNumber(String number) {
+        return number.replaceAll("\\D+", "");
+    }
+
+    /**
      * Get number formatted string
      *
      * @param number text is being number checked
      */
     public static String getNumberFormat(String number) {
-        return getNumberFormat(getNumberClear(number), false);
+        return getNumberFormat(getNumber(number), false);
     }
 
     /**
@@ -157,9 +157,9 @@ public class TextZ {
         if (number.isEmpty())
             return "0";
         else if (isUseDotSeparator)
-            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Long.parseLong(getNumberClear(number)));
+            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Long.parseLong(getNumber(number)));
         else
-            return NumberFormat.getNumberInstance(Locale.ENGLISH).format(Long.parseLong(getNumberClear(number)));
+            return NumberFormat.getNumberInstance(Locale.ENGLISH).format(Long.parseLong(getNumber(number)));
     }
 
     /**
@@ -174,8 +174,8 @@ public class TextZ {
      *
      * @param number text is being checked
      */
-    public static String setFormatMoney(String number) {
-        return setFormatMoney("Rp ", number, false);
+    public static String getMoneyFormat(String number) {
+        return getMoneyFormat("Rp ", number, false);
     }
 
     /**
@@ -184,8 +184,8 @@ public class TextZ {
      * @param currency custom pre-currency (before number)
      * @param number   text is being checked
      */
-    public static String setFormatMoney(String currency, String number) {
-        return setFormatMoney(currency, number, false);
+    public static String getMoneyFormat(String currency, String number) {
+        return getMoneyFormat(currency, number, false);
     }
 
     /**
@@ -195,8 +195,8 @@ public class TextZ {
      * @param number       text is being checked
      * @param postCurrency custom post-currency (after number)
      */
-    public static String setFormatMoney(String currency, String number, String postCurrency) {
-        return setFormatMoney(currency, number, postCurrency, false);
+    public static String getMoneyFormat(String currency, String number, String postCurrency) {
+        return getMoneyFormat(currency, number, postCurrency, false);
     }
 
     /**
@@ -205,7 +205,7 @@ public class TextZ {
      * @param number            text is being checked
      * @param isUseDotSeparator set thousand separator default = false (comma)
      */
-    public static String setFormatMoney(String number, boolean isUseDotSeparator) {
+    public static String getMoneyFormat(String number, boolean isUseDotSeparator) {
         return "Rp " + getNumberFormat(number, isUseDotSeparator);
     }
 
@@ -216,7 +216,7 @@ public class TextZ {
      * @param number            text is being checked
      * @param isUseDotSeparator set thousand separator default = false (comma)
      */
-    public static String setFormatMoney(String currency, String number, boolean isUseDotSeparator) {
+    public static String getMoneyFormat(String currency, String number, boolean isUseDotSeparator) {
         return currency + getNumberFormat(number, isUseDotSeparator);
     }
 
@@ -228,7 +228,7 @@ public class TextZ {
      * @param postCurrency      custom post-currency (after number)
      * @param isUseDotSeparator set thousand separator default = false (comma)
      */
-    public static String setFormatMoney(String currency, String number, String postCurrency, boolean isUseDotSeparator) {
+    public static String getMoneyFormat(String currency, String number, String postCurrency, boolean isUseDotSeparator) {
         return currency + getNumberFormat(number, isUseDotSeparator) + postCurrency;
     }
 
@@ -237,8 +237,8 @@ public class TextZ {
      *
      * @param text text is being checked
      */
-    public static String setFormatAll(String text) {
-        return setFormatName(setFormatSpace(setFormatEnter(text)));
+    public static String getFormatAll(String text) {
+        return getFormatName(getFormatSpace(getFormatEnter(text)));
     }
 
     /**
@@ -246,7 +246,7 @@ public class TextZ {
      *
      * @param name text is being checked
      */
-    public static String setFormatName(String name) {
+    public static String getFormatName(String name) {
         String c = (name != null) ? name.trim() : "";
         String[] words = c.replaceAll("\\s{2,}", " ")
                 .split(" ");
@@ -263,7 +263,7 @@ public class TextZ {
      *
      * @param text text is being checked
      */
-    public static String setFormatSpace(String text) {
+    public static String getFormatSpace(String text) {
         return text.replaceAll("\\s{2,}", " ");
     }
 
@@ -272,7 +272,7 @@ public class TextZ {
      *
      * @param text text is being checked
      */
-    public static String setFormatEnter(String text) {
+    public static String getFormatEnter(String text) {
         return text.replaceAll("\\n{2,}", "\n");
     }
 
@@ -281,8 +281,8 @@ public class TextZ {
      *
      * @param text text is being inputted
      */
-    public static String[] convertStringToArrayChar(String text) {
-        return convertStringToArray(text, 1);
+    public static String[] getArrayCharFrom(String text) {
+        return getArrayFrom(text, 1);
     }
 
     /**
@@ -291,7 +291,7 @@ public class TextZ {
      * @param text text is being inputted
      * @param n    number of length
      */
-    public static String[] convertStringToArray(String text, int n) {
+    public static String[] getArrayFrom(String text, int n) {
         int total = text.length() / n;
         int rest = text.length() - (total * n);
         if (rest > 0)
@@ -313,7 +313,7 @@ public class TextZ {
      *
      * @param text text is being inputted
      */
-    public static char[] convertStringToArray(String text) {
+    public static char[] getArrayFrom(String text) {
         return text.toCharArray();
     }
 
@@ -322,8 +322,8 @@ public class TextZ {
      *
      * @param list the List<String>
      */
-    public static String join(List<String> list) {
-        return join(list, ",");
+    public static String getStringFrom(List<String> list) {
+        return getStringFrom(list, ",");
     }
 
     /**
@@ -332,7 +332,7 @@ public class TextZ {
      * @param list      the List<String>
      * @param delimiter the delimiter
      */
-    public static String join(List<String> list, String delimiter) {
+    public static String getStringFrom(List<String> list, String delimiter) {
         return TextUtils.join(delimiter, list);
     }
 
@@ -341,8 +341,8 @@ public class TextZ {
      *
      * @param text the inputted text
      */
-    public static List<String> split(String text) {
-        return split(text, ",");
+    public static List<String> getListFrom(String text) {
+        return getListFrom(text, ",");
     }
 
     /**
@@ -351,7 +351,7 @@ public class TextZ {
      * @param text      the inputted text
      * @param delimiter the delimiter
      */
-    public static List<String> split(String text, String delimiter) {
+    public static List<String> getListFrom(String text, String delimiter) {
         List<String> list = new ArrayList<>();
         if (!text.isEmpty())
             list = Arrays.asList(TextUtils.split(text, delimiter));

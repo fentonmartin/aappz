@@ -13,8 +13,8 @@ public class EncryptZ {
 
     private static Map<String, String> prepare(String input, String output, int inputIndex, int outputIndex) {
         map = new HashMap<>();
-        String[] inputs = TextZ.convertStringToArray(input, inputIndex);
-        String[] outputs = TextZ.convertStringToArray(output, outputIndex);
+        String[] inputs = TextZ.getArrayFrom(input, inputIndex);
+        String[] outputs = TextZ.getArrayFrom(output, outputIndex);
         for (int i = 0; i < EncryptConstant.ALL_92.length(); i++) {
             map.put(inputs[i], outputs[i]);
         }
