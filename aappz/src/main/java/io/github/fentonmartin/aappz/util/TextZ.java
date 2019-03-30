@@ -4,8 +4,10 @@ import android.text.TextUtils;
 import android.util.Patterns;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -174,5 +176,46 @@ public class TextZ {
      */
     public static char[] convertStringToArray(String text) {
         return text.toCharArray();
+    }
+
+    /**
+     * Join string from inputted text list by comma
+     *
+     * @param list the List<String>
+     */
+    public static String join(List<String> list) {
+        return join(list, ",");
+    }
+
+    /**
+     * Join string from inputted text list
+     *
+     * @param list      the List<String>
+     * @param delimiter the delimiter
+     */
+    public static String join(List<String> list, String delimiter) {
+        return TextUtils.join(delimiter, list);
+    }
+
+    /**
+     * Split List<String> from inputted text by comma
+     *
+     * @param text the inputted text
+     */
+    public static List<String> split(String text) {
+        return split(text, ",");
+    }
+
+    /**
+     * Split List<String> from inputted text
+     *
+     * @param text      the inputted text
+     * @param delimiter the delimiter
+     */
+    public static List<String> split(String text, String delimiter) {
+        List<String> list = new ArrayList<>();
+        if (!text.isEmpty())
+            list = Arrays.asList(TextUtils.split(text, delimiter));
+        return list;
     }
 }
