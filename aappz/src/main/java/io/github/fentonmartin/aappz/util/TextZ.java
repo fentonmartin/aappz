@@ -170,15 +170,66 @@ public class TextZ {
     }
 
     /**
-     * Get money formatted string
+     * Get money formatted string (use IDR currency)
      *
      * @param number text is being checked
      */
     public static String setFormatMoney(String number) {
-        if (number.isEmpty())
-            return "Rp 0";
-        else
-            return "Rp " + NumberFormat.getNumberInstance(Locale.GERMAN).format(Integer.parseInt(number));
+        return setFormatMoney("Rp ", number, false);
+    }
+
+    /**
+     * Get money formatted string
+     *
+     * @param currency custom pre-currency (before number)
+     * @param number   text is being checked
+     */
+    public static String setFormatMoney(String currency, String number) {
+        return setFormatMoney(currency, number, false);
+    }
+
+    /**
+     * Get money formatted string
+     *
+     * @param currency     custom pre-currency (before number)
+     * @param number       text is being checked
+     * @param postCurrency custom post-currency (after number)
+     */
+    public static String setFormatMoney(String currency, String number, String postCurrency) {
+        return setFormatMoney(currency, number, postCurrency, false);
+    }
+
+    /**
+     * Get money formatted string (use IDR currency)
+     *
+     * @param number            text is being checked
+     * @param isUseDotSeparator set thousand separator default = false (comma)
+     */
+    public static String setFormatMoney(String number, boolean isUseDotSeparator) {
+        return "Rp " + getNumberFormat(number, isUseDotSeparator);
+    }
+
+    /**
+     * Get money formatted string
+     *
+     * @param currency          custom pre-currency (before number)
+     * @param number            text is being checked
+     * @param isUseDotSeparator set thousand separator default = false (comma)
+     */
+    public static String setFormatMoney(String currency, String number, boolean isUseDotSeparator) {
+        return currency + getNumberFormat(number, isUseDotSeparator);
+    }
+
+    /**
+     * Get money formatted string
+     *
+     * @param currency          custom pre-currency (before number)
+     * @param number            text is being checked
+     * @param postCurrency      custom post-currency (after number)
+     * @param isUseDotSeparator set thousand separator default = false (comma)
+     */
+    public static String setFormatMoney(String currency, String number, String postCurrency, boolean isUseDotSeparator) {
+        return currency + getNumberFormat(number, isUseDotSeparator) + postCurrency;
     }
 
     /**
