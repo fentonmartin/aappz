@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
@@ -10,65 +11,171 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public final class PrefZ {
 
-    private static SharedPreferences mPrefZ;
+    private static SharedPreferences preferences;
+    private static final String LENGTH = "LENGTH";
     private static final String _SUFFIX = "_PrefZ";
-    private static final String LENGTH = "#LENGTH";
 
+    /**
+     * Initiate PrefZ class
+     *
+     * @param context   the application context
+     * @param prefsName the preference name
+     * @param mode      the preference mode
+     */
     private static void init(Context context, String prefsName, int mode) {
-        mPrefZ = context.getSharedPreferences(prefsName, mode);
+        preferences = context.getSharedPreferences(prefsName, mode);
     }
+
+    /**
+     * Get static SharedPreferences
+     */
     public static SharedPreferences getPreferences() {
-        if (mPrefZ != null) {
-            return mPrefZ;
-        }
-        throw new RuntimeException(
-                "PrefZ class not correctly instantiated. Please call Builder.setContext().build() in the Application class onCreate.");
+        if (preferences != null)
+            return preferences;
+        throw new RuntimeException("PrefZ class not correctly instantiated. Please call Builder.setContext().build() in the Application class onCreate.");
     }
+
+    /**
+     * Get all Map<String> SharedPreferences
+     */
     public static Map<String, ?> getAll() {
         return getPreferences().getAll();
     }
+
+    /**
+     * Get integer from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static int getInt(final String key, final int defValue) {
         return getPreferences().getInt(key, defValue);
     }
+
+    /**
+     * Get integer from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static int getInt(final String key) {
         return getPreferences().getInt(key, 0);
     }
+
+    /**
+     * Get boolean from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static boolean getBoolean(final String key, final boolean defValue) {
         return getPreferences().getBoolean(key, defValue);
     }
+
+    /**
+     * Get boolean from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static boolean getBoolean(final String key) {
         return getPreferences().getBoolean(key, false);
     }
+
+    /**
+     * Get long from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static long getLong(final String key, final long defValue) {
         return getPreferences().getLong(key, defValue);
     }
+
+    /**
+     * Get long from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static long getLong(final String key) {
         return getPreferences().getLong(key, 0L);
     }
+
+    /**
+     * Get double from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static double getDouble(final String key, final double defValue) {
         return Double.longBitsToDouble(getPreferences().getLong(key, Double.doubleToLongBits(defValue)));
     }
+
+    /**
+     * Get double from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static double getDouble(final String key) {
         return Double.longBitsToDouble(getPreferences().getLong(key, Double.doubleToLongBits(0.0d)));
     }
+
+    /**
+     * Get float from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static float getFloat(final String key, final float defValue) {
         return getPreferences().getFloat(key, defValue);
     }
+
+    /**
+     * Get float from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static float getFloat(final String key) {
         return getPreferences().getFloat(key, 0.0f);
     }
+
+    /**
+     * Get string from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static String getString(final String key, final String defValue) {
         return getPreferences().getString(key, defValue);
     }
+
+    /**
+     * Get string from SharedPreferences
+     *
+     * @param key the preference key
+     */
     public static String getString(final String key) {
         return getPreferences().getString(key, "");
     }
+
+    /**
+     * Get string set from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static Set<String> getStringSet(final String key, final Set<String> defValue) {
         SharedPreferences prefs = getPreferences();
         return prefs.getStringSet(key, defValue);
     }
+
+    /**
+     * Get string set ordered from SharedPreferences
+     *
+     * @param key      the preference key
+     * @param defValue default value
+     */
     public static Set<String> getStringSetOrdered(String key, final Set<String> defValue) {
         SharedPreferences prefs = getPreferences();
         if (prefs.contains(key + LENGTH)) {
@@ -83,47 +190,102 @@ public final class PrefZ {
         }
         return defValue;
     }
+
+    /**
+     * Set long value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setLong(final String key, final long value) {
         final Editor editor = getPreferences().edit();
         editor.putLong(key, value);
         editor.apply();
     }
+
+    /**
+     * Set integer value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setInt(final String key, final int value) {
         final Editor editor = getPreferences().edit();
         editor.putInt(key, value);
         editor.apply();
     }
+
+    /**
+     * Set double value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setDouble(final String key, final double value) {
         final Editor editor = getPreferences().edit();
         editor.putLong(key, Double.doubleToRawLongBits(value));
         editor.apply();
     }
+
+    /**
+     * Set float value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setFloat(final String key, final float value) {
         final Editor editor = getPreferences().edit();
         editor.putFloat(key, value);
         editor.apply();
     }
+
+    /**
+     * Set boolean value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setBoolean(final String key, final boolean value) {
         final Editor editor = getPreferences().edit();
         editor.putBoolean(key, value);
         editor.apply();
     }
+
+    /**
+     * Set string value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setString(final String key, final String value) {
         final Editor editor = getPreferences().edit();
         editor.putString(key, value);
         editor.apply();
     }
+
+    /**
+     * Set string set value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setStringSet(final String key, final Set<String> value) {
         final Editor editor = getPreferences().edit();
         editor.putStringSet(key, value);
         editor.apply();
     }
+
+    /**
+     * Set string set ordered value to SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
     public static void setStringSetOrdered(String key, Set<String> value) {
         final Editor editor = getPreferences().edit();
         int stringSetLength = 0;
-        if (mPrefZ.contains(key + LENGTH)) {
-            stringSetLength = mPrefZ.getInt(key + LENGTH, -1);
-        }
+        if (preferences.contains(key + LENGTH))
+            stringSetLength = preferences.getInt(key + LENGTH, -1);
         editor.putInt(key + LENGTH, value.size());
         int i = 0;
         for (String aValue : value) {
@@ -135,6 +297,12 @@ public final class PrefZ {
         }
         editor.apply();
     }
+
+    /**
+     * Remove current preference key
+     *
+     * @param key preference key
+     */
     public static void remove(final String key) {
         SharedPreferences prefs = getPreferences();
         final Editor editor = prefs.edit();
@@ -150,17 +318,32 @@ public final class PrefZ {
         editor.remove(key);
         editor.apply();
     }
+
+    /**
+     * Check current prefs key
+     *
+     * @param key preference key
+     */
     public static boolean contains(final String key) {
         return getPreferences().contains(key);
     }
+
+    /**
+     * Set clear to preference edit
+     */
     public static Editor clear() {
         final Editor editor = getPreferences().edit().clear();
         editor.apply();
         return editor;
     }
+
+    /**
+     * return getPreferences().edit for preference edit
+     */
     public static Editor edit() {
         return getPreferences().edit();
     }
+
     public final static class Builder {
 
         private String mKey;
@@ -168,40 +351,63 @@ public final class PrefZ {
         private int mMode = -1;
         private boolean mUseDefault = false;
 
+        /**
+         * Set name to SharedPreference
+         *
+         * @param prefsName passing the preference name
+         */
         public Builder setPrefsName(final String prefsName) {
             mKey = prefsName;
             return this;
         }
+
+        /**
+         * Set context to SharedPreference
+         *
+         * @param context passing the application context
+         */
         public Builder setContext(final Context context) {
             mContext = context;
             return this;
         }
-        public Builder setMode(final int mode) {
-            if (mode == ContextWrapper.MODE_PRIVATE || mode == ContextWrapper.MODE_WORLD_READABLE || mode == ContextWrapper.MODE_WORLD_WRITEABLE || mode == ContextWrapper.MODE_MULTI_PROCESS) {
-                mMode = mode;
-            } else {
-                throw new RuntimeException("The mode in the SharedPreference can only be set too ContextWrapper.MODE_PRIVATE, ContextWrapper.MODE_WORLD_READABLE, ContextWrapper.MODE_WORLD_WRITEABLE or ContextWrapper.MODE_MULTI_PROCESS");
-            }
 
+        /**
+         * Set SharedPreference mode
+         *
+         * @param mode MODE_PRIVATE, MODE_WORLD_READABLE, MODE_WORLD_WRITEABLE, or MODE_MULTI_PROCESS
+         */
+        @SuppressLint({"WorldReadableFiles", "WorldWriteableFiles"})
+        public Builder setMode(final int mode) {
+            if (mode == ContextWrapper.MODE_PRIVATE || mode == ContextWrapper.MODE_WORLD_READABLE ||
+                    mode == ContextWrapper.MODE_WORLD_WRITEABLE || mode == ContextWrapper.MODE_MULTI_PROCESS)
+                mMode = mode;
+            else
+                throw new RuntimeException("The mode in the SharedPreference can only be set too ContextWrapper.MODE_PRIVATE, ContextWrapper.MODE_WORLD_READABLE, ContextWrapper.MODE_WORLD_WRITEABLE or ContextWrapper.MODE_MULTI_PROCESS");
             return this;
         }
+
+        /**
+         * Set use default SharedPreference
+         *
+         * @param defaultSharedPreference boolean default preference
+         */
         public Builder setUseDefaultSharedPreference(boolean defaultSharedPreference) {
             mUseDefault = defaultSharedPreference;
             return this;
         }
+
+        /**
+         * Build the PrefZ class
+         */
         public void build() {
-            if (mContext == null) {
+            if (mContext == null)
                 throw new RuntimeException("Context not set, please set context before building the PrefZ instance.");
-            }
-            if (TextUtils.isEmpty(mKey)) {
+            if (TextUtils.isEmpty(mKey))
                 mKey = mContext.getPackageName();
-            }
-            if (mUseDefault) {
+            if (mUseDefault)
                 mKey += _SUFFIX;
-            }
-            if (mMode == -1) {
+            if (mMode == -1)
                 mMode = ContextWrapper.MODE_PRIVATE;
-            }
             PrefZ.init(mContext, mKey, mMode);
         }
     }
