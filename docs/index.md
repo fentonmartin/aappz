@@ -20,6 +20,8 @@ AappZ library offers convenient tools for android application:
 * ActionBarZ: Some functions for customize ActionBar
 * ActivityZ: Activity class extends AppCompatActivity
 * DateZ: Date class for datetime and timestamp
+* DayZ: Get current day state within 24 hours
+* DeviceZ: Get identify installation/device ids
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
 * FirebaseZ: Firebase tools for your development
@@ -45,9 +47,14 @@ implementation 'io.github.fentonmartin:aappz:[$latest_version]'
 
 Usage
 -----
-If you use AppCompatActivity, just extend AappZ:
+Extend the AappZ from your base activity (recommended):
 ```
 public class MainActivity extends AappZ {...}
+```
+
+Or you could just extend ActivityZ instead:
+```
+public class MainActivity extends ActivityZ{...}
 ```
 
 And that's it, now you can call any function directly:
@@ -62,6 +69,13 @@ android:textSize="@dimen/_16ssp"
 ```
 
 -----
+Just added, pre-configures RecyclerView Helper:
+```
+RecyclerItemClickListener (addOnItemTouchListener)
+RecyclerViewSnapHelper (snapping any child view)
+```
+
+-----
 If want to use FirebaseZ and GoogleAdsZ functions, just configure:
 ```
 Firebase SDK: https://firebase.google.com/docs/android/setup
@@ -69,11 +83,11 @@ Firebase SDK: https://firebase.google.com/docs/android/setup
 
 And copy FirebaseZ and GoogleAdsZ functions to your project:
 ```
-- FirebaseZ
-- GoogleAdsZ
+- FirebaseZ  (manual configuration)
+- GoogleAdsZ (manual configuration)
 ```
 
-If you only want to use basic functions without it, just leave it. :)
+If you only want to use basic functions (without it), just leave it. :)
 
 Functions
 -----
@@ -95,9 +109,27 @@ Functions
 * getTimestampTime(String timestamp)
 * getTimestampTime(String pattern, long timestamp)
 * getTimestampTime(String pattern, String timestamp)
+* getTimestampDateFrom(String pattern, String text) 
+* getTimestampLongFrom(String pattern, String text)
+* getTimestampStringFrom(String pattern, String text)
+
+**DayZ**
+* getCurrentDay()
+* getCurrentDay(Calendar calendar)
+* getCurrentDay(int morning, int afternoon, int evening, int night)
+* getCurrentDay(Calendar calendar, int m, int a, int e, int n)
+
+**DeviceZ**
+* getAndroidID(Context context)
+* getUUID()
+* getIMEI(Context context)
+* getMacAddress(Context context)
+* getPseudoUniqueID()
 
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
+* setDefaultUncaughtException(UncaughtExceptionHandler..)
+* setUncaughtExceptionHandler(Throwable throwable, Class activity) 
 * getRootException(Throwable exception)
 
 **EncryptZ**
@@ -130,6 +162,9 @@ Functions
 * setActivityClear(Class activity)
 * setActivityEmail(String email, String subject)
 * setActivityMarket(int id)
+* setActivityMarket(String id)
+* setActivityShare(String subject, String text)
+* setActivityShare(String subject, String text, String chooser)
 * setActivityWebsite(String website)
 
 **LogZ**
@@ -137,9 +172,17 @@ Functions
 * setLog(Activity activity, String log)
 
 **PermissionZ**
-* request(String... permissions)
+* check(Context context, String permission)
+* check(Context context, String perms, PermissionHandler handler)
+* check(Context context, String perms, String rat, PermissionHandler..)
+* check(Context context, String perms, int ratId, PermissionHandler..)
+* check(final Context c, String[] perms)
+* check(final Context c, String[] perms, PermissionHandler..)
+* check(final Context c, String[] perms, String rat, Options o, PermsH..) {
+* check(final Context c, String[] perms, int ratId, Options o, PermsH..) {
 * hasPermission(String... permissions)
-* onRequestPermissionsResult(String permissions, int grantResults)
+* request(String... permissions) [DEPRECATED]
+* onRequestPermissionsResult(String perms, int grRes) [DEPRECATED]
 
 **PrefZ**
 * getAll()
@@ -164,14 +207,36 @@ Functions
 
 **TextZ**
 * isEmailValid(String email)
-* isPasswordValid(String password, int min)
+* isPhoneValid(String phone)
+* isTextLength(String text, int min)
+* isTextLength(String text, int min, int max)
 * isTextMatch(String text1, String text2)
 * isTextContain(String text, String contain)
-* getNumberClear(String number)
+* getDecimalFormat(int number, int digits)
+* getDecimalFormat(float number, int digits)
+* getDecimalFormat(double number, int digits)
+* getDecimalFormat(long number, int digits)
+* getNumber(String number)
 * getNumberFormat(String number)
+* getNumberFormat(String number, boolean isUseDotSeparator)
 * getNumberRandom()
-* setFormatMoney(String number)
-* setFormatName(String name)
+* getMoneyFormat(String number)
+* getMoneyFormat(String currency, String number)
+* getMoneyFormat(String currency, String number, String postCurrency)
+* getMoneyFormat(String number, boolean isUseDotSeparator)
+* getMoneyFormat(String curr, String num, boolean isUseDotSeparator)
+* getMoneyFormat(String curr, String num, String postCurr, boolean isDot)
+* getFormatAll(String text)
+* getFormatName(String name)
+* getFormatSpace(String text)
+* getFormatEnter(String text)
+* getArrayCharFrom(String text)
+* getArrayFrom(String text, int n)
+* getArrayFrom(String text)
+* getStringFrom(List<String> list)
+* getStringFrom(List<String> list, String delimiter)
+* getListFrom(String text)
+* getListFrom(String text, String delimiter)
 
 **ToastZ**
 * setToast(String message)
