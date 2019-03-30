@@ -121,6 +121,15 @@ public class TextZ {
     }
 
     /**
+     * Get space and enter formatted string (remove doubled spaces)
+     *
+     * @param text text is being checked
+     */
+    public static String setFormatAll(String text) {
+        return setFormatName(setFormatSpace(setFormatEnter(text)));
+    }
+
+    /**
      * Get name formatted string
      *
      * @param name text is being checked
@@ -135,6 +144,24 @@ public class TextZ {
                     .append(" ");
         }
         return result.toString().trim();
+    }
+
+    /**
+     * Get space formatted string (remove doubled spaces)
+     *
+     * @param text text is being checked
+     */
+    public static String setFormatSpace(String text) {
+        return text.replaceAll("\\s{2,}", " ");
+    }
+
+    /**
+     * Get space formatted string (remove doubled spaces)
+     *
+     * @param text text is being checked
+     */
+    public static String setFormatEnter(String text) {
+        return text.replaceAll("\\n{2,}", "\n");
     }
 
     /**
