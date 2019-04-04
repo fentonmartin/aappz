@@ -68,6 +68,12 @@ android:layout_height="@dimen/_120sdp"
 android:textSize="@dimen/_16ssp"
 ```
 
+If want to use PermissionZ, add this to your AndroidManifest.xml:
+```
+<activity android:name="io.github.fentonmartin.aappz.permission.PermissionActivity" />
+Note: Remember to pass context using 'MainActivity.this', DO NOT pass 'getApplicationContext()'
+```
+
 -----
 Just added, pre-configures RecyclerView Helper:
 ```
