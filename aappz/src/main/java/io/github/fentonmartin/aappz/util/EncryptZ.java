@@ -87,7 +87,7 @@ public class EncryptZ {
      * Encryption based on default Map(String, String) key
      *
      * @param text is an unencrypted text/string/sentences
-     * @return ENCRYPTED Map(String, String) from key
+     * @return ENCRYPTED Map(String, String) from default key
      */
     public static String encryptDefault(String text) {
         String key = EncryptConstant.ENCRYPT_276;
@@ -98,7 +98,7 @@ public class EncryptZ {
      * Decryption based on default Map(String, String) key
      *
      * @param text is an encrypted text/string/sentences
-     * @return DECRYPTED Map(String, String) from key
+     * @return DECRYPTED Map(String, String) from default key
      */
     public static String decryptDefault(String text) {
         String key = EncryptConstant.ENCRYPT_276;
