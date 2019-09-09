@@ -90,9 +90,9 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
     /**
      * Implement RecyclerItemClickListener on RecyclerView
      *
-     * @param context        the application context
-     * @param recyclerView   the targeted recycler view
-     * @param listener       the item click listener
+     * @param context      the application context
+     * @param recyclerView the targeted recycler view
+     * @param listener     the item click listener
      */
     public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
         mListener = listener;
