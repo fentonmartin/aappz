@@ -49,13 +49,7 @@ class IntentZ {
     }
 
     Intent intentMarket(String id) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        try {
-            intent.setData(Uri.parse("market://details?id=" + id));
-        } catch (android.content.ActivityNotFoundException e) {
-            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + id));
-        }
-        return intent;
+        return intentWebsite("https://play.google.com/store/apps/details?id=" + id);
     }
 
     Intent intentSend(String subject, String text) {
