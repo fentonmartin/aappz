@@ -25,11 +25,41 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
         void onItemLongClick(View view, int position);
     }
 
+    public interface OnSimpleClickListener {
+        void onItemClick(View view, int position);
+    }
+
     private GestureDetector mGestureDetector;
 
     private OnItemClickListener mListener;
 
+    private OnSimpleClickListener mSimpleListener;
+
     private boolean isTouch;
+
+    /**
+     * Implement RecyclerItemClickListener on RecyclerView
+     *
+     * @param context        the application context
+     * @param recyclerView   the targeted recycler view
+     * @param isTouchEnabled the touch is enabled
+     * @param listener       the simple click listener
+     */
+    public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, boolean isTouchEnabled, OnSimpleClickListener listener) {
+        mSimpleListener = listener;
+        isTouch = isTouchEnabled;
+        mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                return true;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent e) {
+            }
+        });
+    }
+
 
     /**
      * Implement RecyclerItemClickListener on RecyclerView
@@ -87,6 +117,8 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
         View childView = view.findChildViewUnder(e.getX(), e.getY());
         if (childView != null && mListener != null && mGestureDetector.onTouchEvent(e))
             mListener.onItemClick(childView, view.getChildAdapterPosition(childView));
+        if (childView != null && mSimpleListener != null && mGestureDetector.onTouchEvent(e))
+            mSimpleListener.onItemClick(childView, view.getChildAdapterPosition(childView));
         /* return false for enable touch */
         return !isTouch;
     }
