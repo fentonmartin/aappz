@@ -36,7 +36,7 @@ public class EncryptZ {
         String s;
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            s = String.valueOf(text.substring(i, i + 1));
+            s = text.substring(i, i + 1);
             if (map.get(s) == null)
                 return ERROR_NOT_SUPPORTED + s;
             temp.append(map.get(s));
@@ -49,7 +49,7 @@ public class EncryptZ {
         String s;
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < text.length() / index; i++) {
-            s = String.valueOf(text.substring(i * index, (i * index) + index));
+            s = text.substring(i * index, (i * index) + index);
             temp.append(map.get(s));
             if (map.get(s) == null)
                 return ERROR_NOT_SUPPORTED + s;
