@@ -82,4 +82,26 @@ public class EncryptZ {
             return ERROR_NOT_VALID_INDEX;
         return decryptTo(text, key, key.length() / 92);
     }
+
+    /**
+     * Encryption based on default Map(String, String) key
+     *
+     * @param text is an unencrypted text/string/sentences
+     * @return ENCRYPTED Map(String, String) from key
+     */
+    public static String encryptDefault(String text) {
+        String key = EncryptConstant.ENCRYPT_276;
+        return encryptTo(text, key, key.length() / 92);
+    }
+
+    /**
+     * Decryption based on default Map(String, String) key
+     *
+     * @param text is an encrypted text/string/sentences
+     * @return DECRYPTED Map(String, String) from key
+     */
+    public static String decryptDefault(String text) {
+        String key = EncryptConstant.ENCRYPT_276;
+        return decryptTo(text, key, key.length() / 92);
+    }
 }
