@@ -35,48 +35,48 @@ public class ActivityZ extends AppCompatActivity {
         toastZ = new ToastZ();
         viewZ = new ViewZ();
 
-        setLog(this, "onCreate | ACTIVITY");
+        setLog(this, "ActivityZ: onCreate");
     }
 
     @Override
     protected void onStart() {
-        setLog(this, "onStart | ACTIVITY");
+        setLog(this, "ActivityZ: onStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        setLog(this, "onResume | ACTIVITY");
+        setLog(this, "ActivityZ: onResume");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        setLog(this, "onPause | ACTIVITY");
+        setLog(this, "ActivityZ: onPause");
         super.onPause();
     }
 
     @Override
     protected void onStop() {
-        setLog(this, "onStop | ACTIVITY");
+        setLog(this, "ActivityZ: onStop");
         super.onStop();
     }
 
     @Override
     protected void onRestart() {
-        setLog(this, "onRestart | ACTIVITY");
+        setLog(this, "ActivityZ: onRestart");
         super.onRestart();
     }
 
     @Override
     protected void onDestroy() {
-        setLog(this, "onDestroy | ACTIVITY");
+        setLog(this, "ActivityZ: onDestroy");
         super.onDestroy();
     }
 
     @Override
     public void onBackPressed() {
-        setLog(this, "onBackPressed | ACTIVITY");
+        setLog(this, "ActivityZ: onBackPressed");
         super.onBackPressed();
     }
 
@@ -442,6 +442,26 @@ public class ActivityZ extends AppCompatActivity {
      */
     public int getValueInt(EditText editText) {
         return viewZ.getValueInt(editText);
+    }
+
+    /**
+     * Get long value from EditText
+     *
+     * @param editText the current view
+     * @return the result
+     */
+    public long getValueLong(EditText editText) {
+        return viewZ.getValueLong(editText);
+    }
+
+    /**
+     * Get number only value from EditText
+     *
+     * @param editText the current view
+     * @return the result
+     */
+    public String getValueNumber(EditText editText) {
+        return viewZ.getValueNumber(editText);
     }
 
     /**
