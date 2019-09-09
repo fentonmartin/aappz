@@ -142,37 +142,37 @@ public class TextZ {
     /**
      * Get number only string
      *
-     * @param number text is being number checked
+     * @param text text is being number checked
      * @return the result
      */
-    public static String getNumber(String number) {
-        return number.replaceAll("\\D+", "");
+    public static String getNumber(String text) {
+        return text.replaceAll("\\D+", "");
     }
 
     /**
      * Get number formatted string
      *
-     * @param number text is being number checked
+     * @param text text is being number checked
      * @return the result
      */
-    public static String getNumberFormat(String number) {
-        return getNumberFormat(getNumber(number), false);
+    public static String getNumberFormat(String text) {
+        return getNumberFormat(getNumber(text), false);
     }
 
     /**
      * Get number formatted string with thousand delimiter (comma/dot)
      *
-     * @param number            text is being number formatted
+     * @param text            text is being number formatted
      * @param isUseDotSeparator set thousand separator default = false (comma)
      * @return the result
      */
-    public static String getNumberFormat(String number, boolean isUseDotSeparator) {
-        if (number.isEmpty())
+    public static String getNumberFormat(String text, boolean isUseDotSeparator) {
+        if (text.isEmpty())
             return "0";
         else if (isUseDotSeparator)
-            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Long.parseLong(getNumber(number)));
+            return NumberFormat.getNumberInstance(Locale.GERMAN).format(Long.parseLong(getNumber(text)));
         else
-            return NumberFormat.getNumberInstance(Locale.ENGLISH).format(Long.parseLong(getNumber(number)));
+            return NumberFormat.getNumberInstance(Locale.ENGLISH).format(Long.parseLong(getNumber(text)));
     }
 
     /**
