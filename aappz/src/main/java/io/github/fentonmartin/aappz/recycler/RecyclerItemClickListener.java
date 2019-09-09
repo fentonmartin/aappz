@@ -38,7 +38,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
     private boolean isTouch;
 
     /**
-     * Implement RecyclerItemClickListener on RecyclerView
+     * Implement RecyclerItemClickListener on RecyclerView without onItemLongClick
      *
      * @param context        the application context
      * @param recyclerView   the targeted recycler view
@@ -60,6 +60,27 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
         });
     }
 
+    /**
+     * Implement RecyclerItemClickListener on RecyclerView without onItemLongClick
+     *
+     * @param context        the application context
+     * @param recyclerView   the targeted recycler view
+     * @param listener       the simple click listener
+     */
+    public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnSimpleClickListener listener) {
+        mSimpleListener = listener;
+        isTouch = true;
+        mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                return true;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent e) {
+            }
+        });
+    }
 
     /**
      * Implement RecyclerItemClickListener on RecyclerView
