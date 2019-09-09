@@ -45,6 +45,11 @@ public class DateConstant {
     public static final String DATE_DAY_FULL = "EEEE, MMMM d, yyyy";
     public static final String DATE_DAY_FULL_REVERSE = "EEEE, d MMMM yyyy";
 
+    public static final String FORMAT_DAY = "EEEE";
+    public static final String FORMAT_D = "d";
+    public static final String FORMAT_M = "MMMM";
+    public static final String FORMAT_Y = "yyyy";
+
     public static final String CUSTOM_1 = "yyMMddHHmmss";
     public static final String CUSTOM_2 = "yyMMddHHmmssSSS";
     public static final String CUSTOM_3 = "yyyyMMddHHmmss";
@@ -55,4 +60,15 @@ public class DateConstant {
     public static final String CUSTOM_8 = "yy:MM:dd:HH:mm";
     public static final String CUSTOM_9 = "yy:MM:dd:HH:mm:ss";
     public static final String CUSTOM_10 = "yy:MM:dd:HH:mm:ss:SSS";
+
+    public static final String CUSTOM_11 = "yyMMdd";
+    public static final String CUSTOM_12 = "yyMMddHHmm";
+    public static final String CUSTOM_13 = "yyyyMMdd";
+    public static final String CUSTOM_14 = "yyyyMMddHHmm";
+    public static final String CUSTOM_15 = "yyMM";
+    public static final String CUSTOM_16 = "EEE, MMM d, yyyy";
+    public static final String CUSTOM_17 = "EEEE, MMM d, yyyy";
+    public static final String CUSTOM_18 = "MMM d, yyyy";
+    public static final String CUSTOM_19 = "d MMM yyyy";
+    public static final String CUSTOM_20 = "d MMM \'yy";
 }
