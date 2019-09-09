@@ -300,11 +300,6 @@ public class ActivityZ extends AppCompatActivity {
         startActivity(intentZ.intent(getApplicationContext(), activity));
     }
 
-    @Deprecated
-    public void setActivity(Class activity, int flag) {
-        startActivity(intentZ.intent(getApplicationContext(), activity, flag));
-    }
-
     /**
      * Set activity from current activity with extra
      *
