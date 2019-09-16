@@ -255,10 +255,12 @@ Functions
 * setToast(String message)
 * setToast(CharSequence message)
 
-**ViewZ**
+****
 * getValue(EditText editText)
 * getValueBoolean(EditText editText)
 * getValueInt(EditText editText)
+* getValueLong(EditText text)
+* getValueNumber(EditText text)
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
