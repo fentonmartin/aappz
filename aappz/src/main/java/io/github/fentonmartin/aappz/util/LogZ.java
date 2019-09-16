@@ -3,6 +3,7 @@ package io.github.fentonmartin.aappz.util;
 import android.app.Activity;
 import android.util.Log;
 
+@SuppressWarnings("unused")
 class LogZ {
     void setLog(String log) {
         Log.d("LogZ ", log);

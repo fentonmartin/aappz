@@ -2,6 +2,7 @@ package io.github.fentonmartin.aappz.util;
 
 import android.os.Handler;
 
+@SuppressWarnings("unused")
 public class DelayZ {
 
     private static Handler handler = new Handler();

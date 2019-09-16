@@ -5,6 +5,7 @@ import java.util.Map;
 
 import io.github.fentonmartin.aappz.constant.EncryptConstant;
 
+@SuppressWarnings("unused")
 public class EncryptZ {
 
     private static Map<String, String> map;
