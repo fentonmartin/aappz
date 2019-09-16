@@ -15,6 +15,8 @@ import android.view.View;
  * for RecyclerView's own scrolling behavior.
  * <p> How to use:
  * <p> recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(...));
+ * <p> This function should only be called once in onCreate()
+ *
  */
 @SuppressWarnings("unused")
 public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
