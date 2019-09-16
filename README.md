@@ -21,6 +21,7 @@ AappZ library offers convenient tools for android application:
 * ActivityZ: Activity class extends AppCompatActivity
 * DateZ: Date class for datetime and timestamp
 * DayZ: Get current day state with custom 24 hours
+* DelayZ: Create post delayed handler easily
 * DeviceZ: Get identify installation/device ids
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
@@ -42,7 +43,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.1.0'
+implementation 'io.github.fentonmartin:aappz:1.2.0'
 ```
 
 Usage
@@ -124,6 +125,12 @@ Functions
 * getCurrentDay(Calendar calendar)
 * getCurrentDay(int morning, int afternoon, int evening, int night)
 * getCurrentDay(Calendar calendar, int m, int a, int e, int n)
+
+**DelayZ**
+* post(long millis, final Callback callback)
+* post(long millis, Runnable runnable)
+* cancel(Runnable runnable)
+* cancel()
 
 **DeviceZ**
 * getAndroidID(Context context)
