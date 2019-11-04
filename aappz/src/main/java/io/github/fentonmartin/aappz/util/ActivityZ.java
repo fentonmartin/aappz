@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.AndroidRuntimeException;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.fentonmartin.aappz.constant.IntentConstant;
 
@@ -318,6 +319,74 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setActivity(Class activity, String text) {
         startActivity(intentZ.intent(getApplicationContext(), activity, IntentConstant.CONSTANT_INTENT, text));
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     */
+    public void setActivity(Class activity, String text1, String text2) {
+        Bundle bundle = new Bundle();
+        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
+        setActivity(activity, bundle);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3) {
+        Bundle bundle = new Bundle();
+        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
+        setActivity(activity, bundle);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4) {
+        Bundle bundle = new Bundle();
+        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_4, text4);
+        setActivity(activity, bundle);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5) {
+        Bundle bundle = new Bundle();
+        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_4, text4);
+        bundle.putString(IntentConstant.CONSTANT_INTENT_5, text4);
+        setActivity(activity, bundle);
     }
 
     /**
