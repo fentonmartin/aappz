@@ -73,4 +73,24 @@ public class NumberZ {
     public static String toBinary(long number) {
         return Long.toBinaryString(number);
     }
+
+    /**
+     * Get number string
+     *
+     * @param number is inputted hexadecimal to convert
+     * @return number string
+     */
+    public static String fromHex(String number) {
+        return String.valueOf(Long.parseLong(number, 16));
+    }
+
+    /**
+     * Get number string
+     *
+     * @param number is inputted octal to convert
+     * @return number string
+     */
+    public static String fromOctal(String number) {
+        return String.valueOf(Long.parseLong(number, 8));
+    }
 }
