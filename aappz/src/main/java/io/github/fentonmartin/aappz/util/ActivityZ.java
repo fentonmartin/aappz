@@ -625,10 +625,10 @@ public class ActivityZ extends AppCompatActivity {
                 if (fragmentTransaction != null)
                     getSupportFragmentManager().beginTransaction()
                             .remove(dialogLoading).commit();
-                dialogLoading = DialogLoading.create();
+                dialogLoading = LoadingDialog.create();
                 dialogLoading.setCancelable(false);
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(dialogLoading, "DIALOG_LOADING");
+                fragmentTransaction.add(dialogLoading, "LOADING_DIALOG");
                 fragmentTransaction.commitAllowingStateLoss();
             } else {
                 if (fragmentTransaction != null)
