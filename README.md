@@ -23,12 +23,14 @@ AappZ library offers convenient tools for android application:
 * DayZ: Get current day state with custom 24 hours
 * DelayZ: Create post delayed handler easily
 * DeviceZ: Get identify installation/device ids
+* DialogZ: Show dialog loading easily
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
 * FirebaseZ: Firebase tools for your development
 * GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
+* NumberZ: Number converter and formatting tools
 * PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
@@ -43,7 +45,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.2.0'
+implementation 'io.github.fentonmartin:aappz:1.3.0'
 ```
 
 Usage
@@ -63,7 +65,7 @@ And that's it, now you can call any function directly:
 setToast("Hello world!");
 ```
 
-If want to use SDP or SSP libraries, just call it from xml:
+If want to use SDP or SSP, just call it from xml:
 ```
 android:layout_height="@dimen/_120sdp"
 android:textSize="@dimen/_16ssp"
@@ -139,6 +141,9 @@ Functions
 * getMacAddress(Context context)
 * getPseudoUniqueID()
 
+**DialogZ**
+* setViewLoadingDialog(boolean isShow)
+
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
 * setDefaultUncaughtException(UncaughtExceptionHandler..)
@@ -183,6 +188,17 @@ Functions
 **LogZ**
 * setLog(String log)
 * setLog(Activity activity, String log)
+
+**NumberZ**
+* getRandom()
+* toHex(int number)
+* toHex(long number)
+* toOctal(int number)
+* toOctal(long number)
+* toBinary(int number)
+* toBinary(long number)
+* fromHex(String number)
+* fromOctal(String number)
 
 **PermissionZ**
 * check(Context context, String permission)
@@ -255,12 +271,13 @@ Functions
 * setToast(String message)
 * setToast(CharSequence message)
 
-****
+**ViewZ**
 * getValue(EditText editText)
 * getValueBoolean(EditText editText)
 * getValueInt(EditText editText)
 * getValueLong(EditText text)
 * getValueNumber(EditText text)
+* setViewBounce(View view)
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
