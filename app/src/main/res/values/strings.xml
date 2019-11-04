@@ -6,4 +6,5 @@
     <string name="multiple">Multiple</string>
     <string name="customized">Customized</string>
     <string name="app_settings">App Settings</string>
+    <string name="show_bounce">Show Bounce</string>
 </resources>

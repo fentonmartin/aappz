@@ -2,6 +2,7 @@ package io.github.fentonmartin.sample;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -69,5 +70,9 @@ public class MainActivity extends AappZ {
         setToast(decrypted);
         textView.setText(decrypted);
 
+    }
+
+    public void onClickBounce(View view) {
+        setViewBounce(view);
     }
 }
