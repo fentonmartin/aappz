@@ -476,6 +476,61 @@ public class ActivityZ extends AppCompatActivity {
         startActivity(intentZ.intentWebsite(website));
     }
 
+    /**
+     * Get the 1st string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntentFrom(Intent intent) {
+        if (intent != null)
+            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT);
+        else return "";
+    }
+
+    /**
+     * Get the 2nd string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent2From(Intent intent) {
+        if (intent != null)
+            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_2);
+        else return "";
+    }
+
+    /**
+     * Get the 3rd string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent3From(Intent intent) {
+        if (intent != null)
+            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_3);
+        else return "";
+    }
+
+    /**
+     * Get the 4th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent4From(Intent intent) {
+        if (intent != null)
+            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_4);
+        else return "";
+    }
+
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent5From(Intent intent) {
+        if (intent != null)
+            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_5);
+        else return "";
+    }
+
     /* HERE: ViewZ -------------------------------------------------------------------------------*/
 
     /**
