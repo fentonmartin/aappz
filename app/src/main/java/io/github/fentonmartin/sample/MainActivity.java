@@ -76,4 +76,8 @@ public class MainActivity extends AappZ {
         setLog("onBounceClick: onClicked");
         setViewBounce(view);
     }
+
+    public void onLoadingClick(View view) {
+        setLog("onLoadingClick: onClicked");
+    }
 }
