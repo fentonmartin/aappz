@@ -11,11 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import io.github.fentonmartin.aappz.R;
+import io.github.fentonmartin.aappz.anim.BounceAnimation;
 import io.github.fentonmartin.aappz.constant.IntentConstant;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
@@ -591,6 +595,19 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setViewEnabled(View view, boolean isEnabled) {
         viewZ.setViewEnabled(view, isEnabled);
+    }
+
+    /**
+     * Set current view bounced
+     *
+     * @param view the current focused view
+     */
+    public void setViewBounce(View view) {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        BounceAnimation interpolator = new BounceAnimation(0.2, 20);
+        animation.setInterpolator(interpolator);
+        View button = findViewById(view.getId());
+        button.startAnimation(animation);
     }
 
     /**
