@@ -57,7 +57,7 @@ public class LoadingDialog extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (isAbort)
-            return inflater.inflate(R.layout.dialog_loading_button, container);
+            return inflater.inflate(R.layout.dialog_loading_abort, container);
         else
             return inflater.inflate(R.layout.dialog_loading_default, container);
     }
