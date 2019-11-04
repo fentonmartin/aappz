@@ -17,18 +17,23 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fentonmartin.aappz.R;
 import io.github.fentonmartin.aappz.anim.BounceAnimation;
 import io.github.fentonmartin.aappz.constant.IntentConstant;
+import io.github.fentonmartin.aappz.dialog.LoadingDialog;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class ActivityZ extends AppCompatActivity {
 
-    IntentZ intentZ;
-    LogZ logZ;
-    ToastZ toastZ;
-    ViewZ viewZ;
+    private LoadingDialog dialogLoading;
+    private FragmentTransaction fragmentTransaction;
+
+    private IntentZ intentZ;
+    private LogZ logZ;
+    private ToastZ toastZ;
+    private ViewZ viewZ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,11 @@ public class ActivityZ extends AppCompatActivity {
         logZ = new LogZ();
         toastZ = new ToastZ();
         viewZ = new ViewZ();
+
+        /* Initiate Dialogs */
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        dialogLoading = LoadingDialog.create();
+        dialogLoading.setCancelable(false);
 
         setLog(this, "ActivityZ: onCreate");
     }
@@ -607,6 +617,27 @@ public class ActivityZ extends AppCompatActivity {
         BounceAnimation interpolator = new BounceAnimation(0.3, 20);
         animation.setInterpolator(interpolator);
         view.startAnimation(animation);
+    }
+
+    public void setViewLoadingDialog(boolean isShow) {
+        try {
+            if (isShow) {
+                if (fragmentTransaction != null)
+                    getSupportFragmentManager().beginTransaction()
+                            .remove(dialogLoading).commit();
+                dialogLoading = DialogLoading.create();
+                dialogLoading.setCancelable(false);
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.add(dialogLoading, "DIALOG_LOADING");
+                fragmentTransaction.commitAllowingStateLoss();
+            } else {
+                if (fragmentTransaction != null)
+                    getSupportFragmentManager().beginTransaction()
+                            .remove(dialogLoading).commit();
+                dialogLoading.dismiss();
+            }
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
     }
 
     /**
