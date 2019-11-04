@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.fentonmartin.aappz.AappZ;
+import io.github.fentonmartin.aappz.util.DelayZ;
 import io.github.fentonmartin.aappz.util.TextZ;
 
 public class TextActivity extends AappZ {
@@ -87,5 +88,12 @@ public class TextActivity extends AappZ {
 
     public void onLoadingClick(View view) {
         setLog("onLoadingClick: onClicked");
+        setViewLoadingDialog(true);
+        DelayZ.post(3000, new DelayZ.Callback() {
+            @Override
+            public void onDelayed() {
+                setViewLoadingDialog(false);
+            }
+        });
     }
 }
