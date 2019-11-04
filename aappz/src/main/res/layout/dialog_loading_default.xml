@@ -12,8 +12,8 @@
     android:paddingBottom="@dimen/_16sdp">
 
     <ProgressBar
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp" />
+        android:layout_width="@dimen/_72sdp"
+        android:layout_height="@dimen/_72sdp" />
 
     <TextView
         android:id="@+id/dialog_title"
