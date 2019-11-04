@@ -619,6 +619,11 @@ public class ActivityZ extends AppCompatActivity {
         view.startAnimation(animation);
     }
 
+    /**
+     * Set loading dialog
+     *
+     * @param isShow set loading dialog
+     */
     public void setViewLoadingDialog(boolean isShow) {
         try {
             if (isShow) {
