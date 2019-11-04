@@ -2,6 +2,7 @@ package io.github.fentonmartin.sample;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,5 +78,10 @@ public class TextActivity extends AappZ {
         setLog("TextZ Example: getMoneyFormat   = " + TextZ.getMoneyFormat("", String.valueOf(money), " rupiah", false));
         setLog("TextZ Example: getMoneyFormat   = " + TextZ.getMoneyFormat("", String.valueOf(money), " rupiah", true));
 
+    }
+
+    public void onBounceClick(View view) {
+        setLog("onBounceClick: onClicked");
+        setViewBounce(view);
     }
 }

@@ -606,8 +606,7 @@ public class ActivityZ extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
         BounceAnimation interpolator = new BounceAnimation(0.2, 20);
         animation.setInterpolator(interpolator);
-        View button = findViewById(view.getId());
-        button.startAnimation(animation);
+        view.startAnimation(animation);
     }
 
     /**

@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button3"
         android:text="@string/show_bounce"
-        android:onClick="onClickBounce"
+        android:onClick="onBounceClick"
         android:textColor="@android:color/black" />
 
 </RelativeLayout>
