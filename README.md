@@ -121,12 +121,20 @@ Functions
 * getTimestampDateFrom(String pattern, String text) 
 * getTimestampLongFrom(String pattern, String text)
 * getTimestampStringFrom(String pattern, String text)
+* getDateHex()
+* getDateFromHex(String hex)
 
 **DayZ**
 * getCurrentDay()
 * getCurrentDay(Calendar calendar)
 * getCurrentDay(int morning, int afternoon, int evening, int night)
 * getCurrentDay(Calendar calendar, int m, int a, int e, int n)
+* getGreetDay(Calendar cal)
+* getGreetDay(Calendar cal, String gr.., gre.., gr.., gr..)
+* getGreetDay(Calendar cal, String name)
+* getGreetDay(Calendar cal, String name, String gr.., gre.., gr.., gr..)
+* 
+* 
 
 **DelayZ**
 * post(long millis, final Callback callback)
@@ -140,6 +148,7 @@ Functions
 * getIMEI(Context context)
 * getMacAddress(Context context)
 * getPseudoUniqueID()
+* getPhoneModel()
 
 **DialogZ**
 * setViewLoadingDialog(boolean isShow)
