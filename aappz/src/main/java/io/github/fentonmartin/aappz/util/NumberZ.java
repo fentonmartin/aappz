@@ -6,6 +6,15 @@ import java.util.Date;
 public class NumberZ {
 
     /**
+     * Get random integer number
+     *
+     * @return the result
+     */
+    public static int getRandom() {
+        return (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
+    }
+
+    /**
      * Get number string
      *
      * @param number is inputted hexadecimal to convert
@@ -43,15 +52,6 @@ public class NumberZ {
      */
     public static String toBinary(long number) {
         return Long.toBinaryString(number);
-    }
-
-    /**
-     * Get random integer number
-     *
-     * @return the result
-     */
-    public static int getRandom() {
-        return (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
     }
 
     /**
