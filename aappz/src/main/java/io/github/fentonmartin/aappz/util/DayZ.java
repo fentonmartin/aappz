@@ -109,4 +109,27 @@ public class DayZ {
                 return "";
         }
     }
+
+    /**
+     * Get day greet from Calendar
+     * <p>
+     * return static String value of custom greets
+     *
+     * @param calendar the calendar time
+     * @return the result
+     */
+    public static String getGreetDay(Calendar calendar, String greetMorning, String greetAfternoon, String greetEvening, String greetNight) {
+        switch (getCurrentDay(calendar, DEFAULT_START_MORNING, DEFAULT_START_AFTERNOON, DEFAULT_START_EVENING, DEFAULT_START_NIGHT)) {
+            case DAY_MORNING:
+                return greetMorning;
+            case DAY_AFTERNOON:
+                return greetAfternoon;
+            case DAY_EVENING:
+                return greetEvening;
+            case DAY_NIGHT:
+                return greetNight;
+            default:
+                return "";
+        }
+    }
 }
