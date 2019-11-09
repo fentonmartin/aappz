@@ -242,7 +242,7 @@ public class ActivityZ extends AppCompatActivity {
      */
     private class ExceptionZ implements Thread.UncaughtExceptionHandler {
 
-        Class activity;
+        final Class activity;
 
         ExceptionZ(Class activity) {
             this.activity = activity;
