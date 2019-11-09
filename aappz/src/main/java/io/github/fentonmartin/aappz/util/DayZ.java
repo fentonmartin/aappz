@@ -104,7 +104,11 @@ public class DayZ {
      * <p>
      * return static String value of custom greets
      *
-     * @param calendar the calendar time
+     * @param calendar       the calendar time
+     * @param greetMorning   the morning greet
+     * @param greetAfternoon the afternoon greet
+     * @param greetEvening   the evening greet
+     * @param greetNight     the night greet
      * @return the result
      */
     public static String getGreetDay(Calendar calendar, String greetMorning, String greetAfternoon, String greetEvening, String greetNight) {
@@ -117,6 +121,47 @@ public class DayZ {
                 return greetEvening;
             case DAY_NIGHT:
                 return greetNight;
+            default:
+                return "";
+        }
+    }
+
+    /**
+     * Get day greet with name from Calendar
+     * <p>
+     * return static String greet value with name
+     *
+     * @param calendar the calendar time
+     * @param name     the greet name
+     * @return the result
+     */
+    public static String getGreetDay(Calendar calendar, String name) {
+        return getGreetDay(calendar, DAY_GREET_MORNING, DAY_GREET_AFTERNOON, DAY_GREET_EVENING, DAY_GREET_NIGHT) + ", " + name + ".";
+    }
+
+    /**
+     * Get day greet with name from Calendar
+     * <p>
+     * return static String value of custom greets with name
+     *
+     * @param calendar       the calendar time
+     * @param name           the greet name
+     * @param greetMorning   the morning greet
+     * @param greetAfternoon the afternoon greet
+     * @param greetEvening   the evening greet
+     * @param greetNight     the night greet
+     * @return the result
+     */
+    public static String getGreetDay(Calendar calendar, String name, String greetMorning, String greetAfternoon, String greetEvening, String greetNight) {
+        switch (getCurrentDay(calendar, DEFAULT_START_MORNING, DEFAULT_START_AFTERNOON, DEFAULT_START_EVENING, DEFAULT_START_NIGHT)) {
+            case DAY_MORNING:
+                return greetMorning + ", " + name + ".";
+            case DAY_AFTERNOON:
+                return greetAfternoon + ", " + name + ".";
+            case DAY_EVENING:
+                return greetEvening + ", " + name + ".";
+            case DAY_NIGHT:
+                return greetNight + ", " + name + ".";
             default:
                 return "";
         }
