@@ -20,14 +20,17 @@ AappZ library offers convenient tools for android application:
 * ActionBarZ: Some functions for customize ActionBar
 * ActivityZ: Activity class extends AppCompatActivity
 * DateZ: Date class for datetime and timestamp
-* DayZ: Get current day state within 24 hours
+* DayZ: Get current day state with custom 24 hours
+* DelayZ: Create post delayed handler easily
 * DeviceZ: Get identify installation/device ids
+* DialogZ: Show dialog loading easily
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
 * FirebaseZ: Firebase tools for your development
 * GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
+* NumberZ: Number converter and formatting tools
 * PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
@@ -40,14 +43,14 @@ AappZ library offers convenient tools for android application:
 
 Installation
 -----
-I suppose you already have jcenter() in your build.gradle. So, just add a dependency:
+If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:[$latest_version]'
+implementation 'io.github.fentonmartin:aappz:1.3.0'
 ```
 
 Usage
 -----
-Extend the AappZ from your base activity (recommended):
+Extend the AappZ in your base activity (recommended):
 ```
 public class MainActivity extends AappZ {...}
 ```
@@ -62,14 +65,20 @@ And that's it, now you can call any function directly:
 setToast("Hello world!");
 ```
 
-If want to use SDP or SSP libraries, just call it from xml:
+If want to use SDP or SSP, just call it from xml:
 ```
 android:layout_height="@dimen/_120sdp"
 android:textSize="@dimen/_16ssp"
 ```
 
+If want to use PermissionZ, add this to your AndroidManifest.xml:
+```
+<activity android:name="io.github.fentonmartin.aappz.permission.PermissionActivity" />
+Note: Remember to pass context using 'MainActivity.this', DO NOT pass 'getApplicationContext()'
+```
+
 -----
-Just added, pre-configures RecyclerView Helper:
+RecyclerView Click and Snap Helper:
 ```
 RecyclerItemClickListener (addOnItemTouchListener)
 RecyclerViewSnapHelper (snapping any child view)
@@ -112,12 +121,26 @@ Functions
 * getTimestampDateFrom(String pattern, String text) 
 * getTimestampLongFrom(String pattern, String text)
 * getTimestampStringFrom(String pattern, String text)
+* getDateHex()
+* getDateFromHex(String hex)
 
 **DayZ**
 * getCurrentDay()
 * getCurrentDay(Calendar calendar)
 * getCurrentDay(int morning, int afternoon, int evening, int night)
 * getCurrentDay(Calendar calendar, int m, int a, int e, int n)
+* getGreetDay(Calendar cal)
+* getGreetDay(Calendar cal, String gr.., gre.., gr.., gr..)
+* getGreetDay(Calendar cal, String name)
+* getGreetDay(Calendar cal, String name, String gr.., gre.., gr.., gr..)
+* 
+* 
+
+**DelayZ**
+* post(long millis, final Callback callback)
+* post(long millis, Runnable runnable)
+* cancel(Runnable runnable)
+* cancel()
 
 **DeviceZ**
 * getAndroidID(Context context)
@@ -125,6 +148,10 @@ Functions
 * getIMEI(Context context)
 * getMacAddress(Context context)
 * getPseudoUniqueID()
+* getPhoneModel()
+
+**DialogZ**
+* setViewLoadingDialog(boolean isShow)
 
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
@@ -171,6 +198,17 @@ Functions
 * setLog(String log)
 * setLog(Activity activity, String log)
 
+**NumberZ**
+* getRandom()
+* toHex(int number)
+* toHex(long number)
+* toOctal(int number)
+* toOctal(long number)
+* toBinary(int number)
+* toBinary(long number)
+* fromHex(String number)
+* fromOctal(String number)
+
 **PermissionZ**
 * check(Context context, String permission)
 * check(Context context, String perms, PermissionHandler handler)
@@ -181,8 +219,6 @@ Functions
 * check(final Context c, String[] perms, String rat, Options o, PermsH..) {
 * check(final Context c, String[] perms, int ratId, Options o, PermsH..) {
 * hasPermission(String... permissions)
-* request(String... permissions) [DEPRECATED]
-* onRequestPermissionsResult(String perms, int grRes) [DEPRECATED]
 
 **PrefZ**
 * getAll()
@@ -246,6 +282,9 @@ Functions
 * getValue(EditText editText)
 * getValueBoolean(EditText editText)
 * getValueInt(EditText editText)
+* getValueLong(EditText text)
+* getValueNumber(EditText text)
+* setViewBounce(View view)
 * setViewEnabled(View view, boolean isEnabled)
 * hideKeyboard(View view)
 
