@@ -31,13 +31,13 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
         void onItemClick(View view, int position);
     }
 
-    private GestureDetector mGestureDetector;
+    private final GestureDetector mGestureDetector;
 
     private OnItemClickListener mListener;
 
     private OnSimpleClickListener mSimpleListener;
 
-    private boolean isTouch;
+    private final boolean isTouch;
 
     /**
      * Implement RecyclerItemClickListener on RecyclerView without onItemLongClick
