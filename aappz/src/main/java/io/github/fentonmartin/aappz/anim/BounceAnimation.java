@@ -2,8 +2,8 @@ package io.github.fentonmartin.aappz.anim;
 
 public class BounceAnimation implements android.view.animation.Interpolator {
 
-    private double mAmplitude;
-    private double mFrequency;
+    private final double mAmplitude;
+    private final double mFrequency;
 
     public BounceAnimation(double amplitude, double frequency) {
         mAmplitude = amplitude;
