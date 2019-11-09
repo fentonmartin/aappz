@@ -78,7 +78,7 @@ Note: Remember to pass context using 'MainActivity.this', DO NOT pass 'getApplic
 ```
 
 -----
-Just added, pre-configures RecyclerView Helper:
+RecyclerView Click and Snap Helper:
 ```
 RecyclerItemClickListener (addOnItemTouchListener)
 RecyclerViewSnapHelper (snapping any child view)
