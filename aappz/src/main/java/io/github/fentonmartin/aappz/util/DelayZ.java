@@ -5,7 +5,7 @@ import android.os.Handler;
 @SuppressWarnings("unused")
 public class DelayZ {
 
-    private static Handler handler = new Handler();
+    private static final Handler handler = new Handler();
 
     public static void post(long millis, final Callback callback) {
         handler.postDelayed(new Runnable() {
