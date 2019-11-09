@@ -496,7 +496,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntentFrom(Intent intent) {
-        if (intent != null)
+        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT) != null)
             return intent.getStringExtra(IntentConstant.CONSTANT_INTENT);
         else return "";
     }
@@ -507,7 +507,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent2From(Intent intent) {
-        if (intent != null)
+        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_2) != null)
             return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_2);
         else return "";
     }
@@ -518,7 +518,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent3From(Intent intent) {
-        if (intent != null)
+        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_3) != null)
             return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_3);
         else return "";
     }
@@ -529,7 +529,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent4From(Intent intent) {
-        if (intent != null)
+        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_4) != null)
             return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_4);
         else return "";
     }
@@ -540,7 +540,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent5From(Intent intent) {
-        if (intent != null)
+        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_5) != null)
             return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_5);
         else return "";
     }
