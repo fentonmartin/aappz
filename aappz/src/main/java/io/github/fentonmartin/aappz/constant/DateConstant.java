@@ -71,4 +71,26 @@ public class DateConstant {
     public static final String CUSTOM_18 = "MMM d, yyyy";
     public static final String CUSTOM_19 = "d MMM yyyy";
     public static final String CUSTOM_20 = "d MMM \'yy";
+
+    public static final String CUSTOM_21 = "EEEE, MMMM d, yyyy HH:mm:ss";
+    public static final String CUSTOM_22 = "EEE, MMM d, yyyy HH:mm:ss";
+    public static final String CUSTOM_23 = "EEEE, MMMM d, yyyy HH:mm";
+    public static final String CUSTOM_24 = "EEE, MMM d, yyyy HH:mm";
+    public static final String CUSTOM_25 = "yyyy MMMM d HH:mm:ss";
+    public static final String CUSTOM_26 = "yyyy MMM d HH:mm:ss";
+    public static final String CUSTOM_27 = "yyyy MMMM d HH:mm";
+    public static final String CUSTOM_28 = "yyyy MMM d HH:mm";
+    public static final String CUSTOM_29 = "yy/MM/dd HH:mm:ss";
+    public static final String CUSTOM_30 = "yy/MM/dd HH:mm";
+
+    public static final String CUSTOM_31 = "EEEE, d MMMM yyyy HH:mm:ss";
+    public static final String CUSTOM_32 = "EEE, d MMMM yyyy HH:mm:ss";
+    public static final String CUSTOM_33 = "EEEE, d MMM yyyy HH:mm:ss";
+    public static final String CUSTOM_34 = "EEE, d MMM yyyy HH:mm:ss";
+    public static final String CUSTOM_35 = "EEEE, d MMMM yyyy HH:mm";
+    public static final String CUSTOM_36 = "EEE, d MMMM yyyy HH:mm";
+    public static final String CUSTOM_37 = "EEEE, d MMM yyyy HH:mm";
+    public static final String CUSTOM_38 = "EEE, d MMM yyyy HH:mm";
+    public static final String CUSTOM_39 = "EEEE, dd/MM/yyyy HH:mm";
+    public static final String CUSTOM_40 = "EEE, dd/MM/yy HH:mm";
 }
