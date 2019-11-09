@@ -343,10 +343,10 @@ public class ActivityZ extends AppCompatActivity {
      * @param text2    the 2nd string extra
      */
     public void setActivity(Class activity, String text1, String text2) {
-        Bundle bundle = new Bundle();
-        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
-        setActivity(activity, bundle);
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
+        startActivity(intent);
     }
 
     /**
@@ -358,11 +358,11 @@ public class ActivityZ extends AppCompatActivity {
      * @param text3    the 3rd string extra
      */
     public void setActivity(Class activity, String text1, String text2, String text3) {
-        Bundle bundle = new Bundle();
-        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
-        setActivity(activity, bundle);
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
+        startActivity(intent);
     }
 
     /**
@@ -375,12 +375,12 @@ public class ActivityZ extends AppCompatActivity {
      * @param text4    the 4th string extra
      */
     public void setActivity(Class activity, String text1, String text2, String text3, String text4) {
-        Bundle bundle = new Bundle();
-        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_4, text4);
-        setActivity(activity, bundle);
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_4, text4);
+        startActivity(intent);
     }
 
     /**
@@ -394,13 +394,13 @@ public class ActivityZ extends AppCompatActivity {
      * @param text5    the 5th string extra
      */
     public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5) {
-        Bundle bundle = new Bundle();
-        bundle.putString(IntentConstant.CONSTANT_INTENT, text1);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_2, text2);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_3, text3);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_4, text4);
-        bundle.putString(IntentConstant.CONSTANT_INTENT_5, text4);
-        setActivity(activity, bundle);
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_4, text4);
+        intent.putExtra(IntentConstant.CONSTANT_INTENT_5, text5);
+        startActivity(intent);
     }
 
     /**
