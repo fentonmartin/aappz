@@ -17,10 +17,17 @@ public class DayZ {
     private static final int DEFAULT_START_EVENING = 17;
     private static final int DEFAULT_START_NIGHT = 20;
 
+    /* Static greet day state */
+    private static final String DAY_GREET_MORNING = "Good morning";
+    private static final String DAY_GREET_AFTERNOON = "Good afternoon";
+    private static final String DAY_GREET_EVENING = "Good evening";
+    private static final String DAY_GREET_NIGHT = "Good night";
+
     /**
      * Get current day state
      * <p>
      * return static int value (DAY_MORNING, DAY_AFTERNOON, DAY_EVENING, or DAY_NIGHT)
+     *
      * @return the result
      */
     public static int getCurrentDay() {
@@ -80,4 +87,26 @@ public class DayZ {
             return DAY_NIGHT;
     }
 
+    /**
+     * Get day greet from Calendar
+     * <p>
+     * return static String greet value of DAY_GREET_MORNING, DAY_GREET_AFTERNOON, DAY_GREET_EVENING, or DAY_GREET_NIGHT
+     *
+     * @param calendar the calendar time
+     * @return the result
+     */
+    public static String getGreetDay(Calendar calendar) {
+        switch (getCurrentDay(calendar, DEFAULT_START_MORNING, DEFAULT_START_AFTERNOON, DEFAULT_START_EVENING, DEFAULT_START_NIGHT)) {
+            case DAY_MORNING:
+                return DAY_GREET_MORNING;
+            case DAY_AFTERNOON:
+                return DAY_GREET_AFTERNOON;
+            case DAY_EVENING:
+                return DAY_GREET_EVENING;
+            case DAY_NIGHT:
+                return DAY_GREET_NIGHT;
+            default:
+                return "";
+        }
+    }
 }
