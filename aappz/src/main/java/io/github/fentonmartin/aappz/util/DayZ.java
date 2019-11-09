@@ -6,16 +6,16 @@ import java.util.Calendar;
 public class DayZ {
 
     /* Static day state */
-    public static int DAY_MORNING = 1;
-    public static int DAY_AFTERNOON = 2;
-    public static int DAY_EVENING = 3;
-    public static int DAY_NIGHT = 4;
+    public static final int DAY_MORNING = 1;
+    public static final int DAY_AFTERNOON = 2;
+    public static final int DAY_EVENING = 3;
+    public static final int DAY_NIGHT = 4;
 
     /* Static default day state */
-    private static int DEFAULT_START_MORNING = 5;
-    private static int DEFAULT_START_AFTERNOON = 12;
-    private static int DEFAULT_START_EVENING = 17;
-    private static int DEFAULT_START_NIGHT = 20;
+    private static final int DEFAULT_START_MORNING = 5;
+    private static final int DEFAULT_START_AFTERNOON = 12;
+    private static final int DEFAULT_START_EVENING = 17;
+    private static final int DEFAULT_START_NIGHT = 20;
 
     /**
      * Get current day state
