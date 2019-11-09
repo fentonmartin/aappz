@@ -96,18 +96,7 @@ public class DayZ {
      * @return the result
      */
     public static String getGreetDay(Calendar calendar) {
-        switch (getCurrentDay(calendar, DEFAULT_START_MORNING, DEFAULT_START_AFTERNOON, DEFAULT_START_EVENING, DEFAULT_START_NIGHT)) {
-            case DAY_MORNING:
-                return DAY_GREET_MORNING;
-            case DAY_AFTERNOON:
-                return DAY_GREET_AFTERNOON;
-            case DAY_EVENING:
-                return DAY_GREET_EVENING;
-            case DAY_NIGHT:
-                return DAY_GREET_NIGHT;
-            default:
-                return "";
-        }
+        return getGreetDay(calendar, DAY_GREET_MORNING, DAY_GREET_AFTERNOON, DAY_GREET_EVENING, DAY_GREET_NIGHT);
     }
 
     /**
