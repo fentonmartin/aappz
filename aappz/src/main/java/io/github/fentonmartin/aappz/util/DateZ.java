@@ -14,6 +14,7 @@ public class DateZ {
 
     /**
      * Get date time string with 'yyyy-MM-dd HH:mm:ss' format
+     *
      * @return the result
      */
     public static String getDatetime() {
@@ -32,6 +33,7 @@ public class DateZ {
 
     /**
      * Get date time string with simple default format
+     *
      * @return the result
      */
     public static String getDatetimeSimple() {
@@ -40,6 +42,7 @@ public class DateZ {
 
     /**
      * Get timestamp long from current time
+     *
      * @return the result
      */
     public static long getTimestamp() {
@@ -48,6 +51,7 @@ public class DateZ {
 
     /**
      * Get timestamp string from current timestamp
+     *
      * @return the result
      */
     public static String getTimestampString() {
@@ -136,5 +140,24 @@ public class DateZ {
      */
     public static String getTimestampStringFrom(String pattern, String text) {
         return String.valueOf(getTimestampLongFrom(pattern, text));
+    }
+
+    /**
+     * Get date time hex from current timestamp
+     *
+     * @return the result
+     */
+    public static String getDateHex() {
+        return NumberZ.toHex(getTimestamp());
+    }
+
+    /**
+     * Get date time from hex timestamp
+     *
+     * @param hex the hex timestamp
+     * @return the result
+     */
+    public static String getDateFromHex(String hex) {
+        return getTimestampTime(NumberZ.fromHex(hex));
     }
 }
