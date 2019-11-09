@@ -210,8 +210,6 @@ Functions
 * check(final Context c, String[] perms, String rat, Options o, PermsH..) {
 * check(final Context c, String[] perms, int ratId, Options o, PermsH..) {
 * hasPermission(String... permissions)
-* request(String... permissions) [DEPRECATED]
-* onRequestPermissionsResult(String perms, int grRes) [DEPRECATED]
 
 **PrefZ**
 * getAll()
