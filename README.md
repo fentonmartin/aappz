@@ -45,7 +45,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.4.0'
+implementation 'io.github.fentonmartin:aappz:1.5.0'
 ```
 
 Usage
