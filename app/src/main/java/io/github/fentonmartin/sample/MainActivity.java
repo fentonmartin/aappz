@@ -25,20 +25,10 @@ public class MainActivity extends AappZ {
         setViewEnabled(button, false);
 
         TextView textView = findViewById(R.id.text);
-        textView.setText(DateZ.getDatetime() + "\n" +
-                DateZ.getDatetime(DateConstant.DATE_FULL_REVERSE) + "\n" +
-                DateZ.getDatetime(DateConstant.DATE_DAY) + "\n" +
-                DateZ.getDatetime(DateConstant.DATE_DAY_REVERSE) + "\n" +
-                DateZ.getDatetime(DateConstant.DATE_DAY_FULL) + "\n" +
-                DateZ.getDatetime(DateConstant.DATE_DAY_FULL_REVERSE) + "\n" +
-                DateZ.getDatetime(DateConstant.TIME) + "\n" +
-                DateZ.getDatetime(DateConstant.TIME_FULL) + "\n" +
-                DateZ.getDatetime(DateConstant.TIME_12) + "\n" +
-                DateZ.getDatetime(DateConstant.TIME_12_FULL) + "\n" +
+        textView.setText(
                 DateZ.getTimestampString() + "\n" +
                 DateZ.getTimestampTime(910198934000L) + "\n" +
-                DateZ.getTimestampTime("910198934000") + "\n" +
-                DateZ.getDatetimeSimple());
+                DateZ.getTimestampTime("910198934000"));
 
         setDefaultUncaughtException(new Thread.UncaughtExceptionHandler() {
             @Override

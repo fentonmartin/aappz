@@ -51,25 +51,25 @@ public class DateActivity extends AappZ {
         binding.label19.setText("CUSTOM_49");
         binding.label20.setText("CUSTOM_50");
 
-        binding.text1.setText(DateZ.getDatetime(DateConstant.CUSTOM_31));
-        binding.text2.setText(DateZ.getDatetime(DateConstant.CUSTOM_32));
-        binding.text3.setText(DateZ.getDatetime(DateConstant.CUSTOM_33));
-        binding.text4.setText(DateZ.getDatetime(DateConstant.CUSTOM_34));
-        binding.text5.setText(DateZ.getDatetime(DateConstant.CUSTOM_35));
-        binding.text6.setText(DateZ.getDatetime(DateConstant.CUSTOM_36));
-        binding.text7.setText(DateZ.getDatetime(DateConstant.CUSTOM_37));
-        binding.text8.setText(DateZ.getDatetime(DateConstant.CUSTOM_38));
-        binding.text9.setText(DateZ.getDatetime(DateConstant.CUSTOM_39));
-        binding.text10.setText(DateZ.getDatetime(DateConstant.CUSTOM_40));
-        binding.text11.setText(DateZ.getDatetime(DateConstant.CUSTOM_41));
-        binding.text12.setText(DateZ.getDatetime(DateConstant.CUSTOM_42));
-        binding.text13.setText(DateZ.getDatetime(DateConstant.CUSTOM_43));
-        binding.text14.setText(DateZ.getDatetime(DateConstant.CUSTOM_44));
-        binding.text15.setText(DateZ.getDatetime(DateConstant.CUSTOM_45));
-        binding.text16.setText(DateZ.getDatetime(DateConstant.CUSTOM_46));
-        binding.text17.setText(DateZ.getDatetime(DateConstant.CUSTOM_47));
-        binding.text18.setText(DateZ.getDatetime(DateConstant.CUSTOM_48));
-        binding.text19.setText(DateZ.getDatetime(DateConstant.CUSTOM_49));
-        binding.text20.setText(DateZ.getDatetime(DateConstant.CUSTOM_50));
+        binding.text1.setText(DateZ.getDateTime());
+        binding.text2.setText(DateZ.getDateTimeSimple());
+        binding.text3.setText(DateZ.getDateTimeFull());
+        binding.text4.setText(DateZ.getDateTime(DateConstant.CUSTOM_34));
+        binding.text5.setText(DateZ.getDateTime(DateConstant.CUSTOM_35));
+        binding.text6.setText(DateZ.getDateTime(DateConstant.CUSTOM_36));
+        binding.text7.setText(DateZ.getDateTime(DateConstant.CUSTOM_37));
+        binding.text8.setText(DateZ.getDateTime(DateConstant.CUSTOM_38));
+        binding.text9.setText(DateZ.getDateTime(DateConstant.CUSTOM_39));
+        binding.text10.setText(DateZ.getDateTime(DateConstant.CUSTOM_40));
+        binding.text11.setText(DateZ.getDateTime(DateConstant.CUSTOM_41));
+        binding.text12.setText(DateZ.getDateTime(DateConstant.CUSTOM_42));
+        binding.text13.setText(DateZ.getDateTime(DateConstant.CUSTOM_43));
+        binding.text14.setText(DateZ.getDateTime(DateConstant.CUSTOM_44));
+        binding.text15.setText(DateZ.getDateTime(DateConstant.CUSTOM_45));
+        binding.text16.setText(DateZ.getDateTime(DateConstant.CUSTOM_46));
+        binding.text17.setText(DateZ.getDateTime(DateConstant.CUSTOM_47));
+        binding.text18.setText(DateZ.getDateTime(DateConstant.CUSTOM_48));
+        binding.text19.setText(DateZ.getDateTime(DateConstant.CUSTOM_49));
+        binding.text20.setText(DateZ.getDateTime(DateConstant.CUSTOM_50));
     }
 }

@@ -6,8 +6,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import io.github.fentonmartin.aappz.constant.DateConstant;
-
 @SuppressLint("SimpleDateFormat")
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class DateZ {
@@ -17,18 +15,27 @@ public class DateZ {
      *
      * @return the result
      */
-    public static String getDatetime() {
-        return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date());
+    public static String getDateTime() {
+        return new SimpleDateFormat(DateZ.DATE_FULL).format(new Date());
     }
 
     /**
      * Get date time string with pattern format
      *
-     * @param pattern the target pattern (See: DateConstant)
+     * @param pattern the target pattern (See: DateZ)
      * @return the result
      */
-    public static String getDatetime(String pattern) {
+    public static String getDateTime(String pattern) {
         return new SimpleDateFormat(pattern).format(new Date());
+    }
+
+    /**
+     * Get date time string with 'EEE, MMM d, yyyy HH:mm' format
+     *
+     * @return the result
+     */
+    public static String getDateTimeFull() {
+        return new SimpleDateFormat(DateZ.CUSTOM_24).format(new Date());
     }
 
     /**
@@ -36,8 +43,27 @@ public class DateZ {
      *
      * @return the result
      */
-    public static String getDatetimeSimple() {
+    public static String getDateTimeSimple() {
         return new SimpleDateFormat().format(new Date());
+    }
+
+    /**
+     * Get date time hex from current timestamp
+     *
+     * @return the result
+     */
+    public static String getDateHex() {
+        return NumberZ.toHex(getTimestamp());
+    }
+
+    /**
+     * Get date time from hex timestamp
+     *
+     * @param hex the hex timestamp
+     * @return the result
+     */
+    public static String getDateFromHex(String hex) {
+        return getTimestampTime(NumberZ.fromHex(hex));
     }
 
     /**
@@ -65,7 +91,7 @@ public class DateZ {
      * @return the result
      */
     public static String getTimestampTime(long timestamp) {
-        return new SimpleDateFormat(DateConstant.DATE_FULL).format(new Date(timestamp));
+        return new SimpleDateFormat(DateZ.DATE_FULL).format(new Date(timestamp));
     }
 
     /**
@@ -81,7 +107,7 @@ public class DateZ {
     /**
      * Get pattern time string from inputted time
      *
-     * @param pattern   the target pattern (See: DateConstant)
+     * @param pattern   the target pattern (See: DateZ)
      * @param timestamp the inputted long timestamp
      * @return the result
      */
@@ -92,7 +118,7 @@ public class DateZ {
     /**
      * Get pattern time string from inputted time
      *
-     * @param pattern   the target pattern (See: DateConstant)
+     * @param pattern   the target pattern (See: DateZ)
      * @param timestamp the inputted string timestamp
      * @return the result
      */
@@ -103,7 +129,7 @@ public class DateZ {
     /**
      * Get timestamp date from inputted string
      *
-     * @param pattern the target pattern (See: DateConstant)
+     * @param pattern the target pattern (See: DateZ)
      * @param text    the string timestamp
      * @return the result
      */
@@ -119,7 +145,7 @@ public class DateZ {
     /**
      * Get timestamp long from inputted string
      *
-     * @param pattern the target pattern (See: DateConstant)
+     * @param pattern the target pattern (See: DateZ)
      * @param text    the string timestamp
      * @return the result
      */
@@ -134,31 +160,12 @@ public class DateZ {
     /**
      * Get timestamp string from inputted string
      *
-     * @param pattern the target pattern (See: DateConstant)
+     * @param pattern the target pattern (See: DateZ)
      * @param text    the string timestamp
      * @return the result
      */
     public static String getTimestampStringFrom(String pattern, String text) {
         return String.valueOf(getTimestampLongFrom(pattern, text));
-    }
-
-    /**
-     * Get date time hex from current timestamp
-     *
-     * @return the result
-     */
-    public static String getDateHex() {
-        return NumberZ.toHex(getTimestamp());
-    }
-
-    /**
-     * Get date time from hex timestamp
-     *
-     * @param hex the hex timestamp
-     * @return the result
-     */
-    public static String getDateFromHex(String hex) {
-        return getTimestampTime(NumberZ.fromHex(hex));
     }
 
     /*----------------------------------------------------------------------
