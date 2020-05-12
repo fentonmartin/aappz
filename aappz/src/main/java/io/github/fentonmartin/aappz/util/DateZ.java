@@ -278,8 +278,8 @@ public class DateZ {
     }
 
     public static String getTimeRangeType(long timestamp, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
-        int time = Integer.parseInt(String.valueOf(timestamp));
-        int years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
+        long time = timestamp;
+        long years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
 
         if (year)
             years = time / YEARS;
@@ -344,7 +344,13 @@ public class DateZ {
         else if (second)
             seconds = time / SECONDS;
 
-        return getResult(years, months, weeks, days, hours, minutes, seconds);
+        return getResult(Integer.parseInt(String.valueOf(years)),
+                Integer.parseInt(String.valueOf(months)),
+                Integer.parseInt(String.valueOf(weeks)),
+                Integer.parseInt(String.valueOf(days)),
+                Integer.parseInt(String.valueOf(hours)),
+                Integer.parseInt(String.valueOf(minutes)),
+                Integer.parseInt(String.valueOf(seconds)));
     }
 
     private static String getResult(int years, int months, int weeks, int days, int hours, int minutes, int seconds) {
