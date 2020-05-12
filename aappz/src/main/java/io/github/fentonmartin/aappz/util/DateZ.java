@@ -277,8 +277,7 @@ public class DateZ {
         return result;
     }
 
-    public static String getTimeRangeType(long timestamp, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
-        long time = timestamp;
+    public static String getTimeRangeType(long time, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
         long years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
 
         if (year)
