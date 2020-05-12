@@ -57,10 +57,10 @@ public class DateActivity extends AappZ {
         binding.text4.setText(DateZ.getTimeRangeString(910198934000L));
         binding.text5.setText(DateZ.getTimeRangeText("1589299199000"));
         binding.text6.setText(DateZ.getTimeRangeFrom(1900631000L));
-        binding.text7.setText(DateZ.getDateTime(DateConstant.CUSTOM_37));
-        binding.text8.setText(DateZ.getDateTime(DateConstant.CUSTOM_38));
-        binding.text9.setText(DateZ.getDateTime(DateConstant.CUSTOM_39));
-        binding.text10.setText(DateZ.getDateTime(DateConstant.CUSTOM_40));
+        binding.text7.setText(DateZ.getTimeRangeFrom(1900631000L, DateZ.RANGE_10));
+        binding.text8.setText(DateZ.getTimeRangeFrom(1900631000L, DateZ.RANGE_11));
+        binding.text9.setText(DateZ.getTimeRangeFrom(1900631000L, DateZ.RANGE_12));
+        binding.text10.setText(DateZ.getTimeRangeFrom(1900631000L, DateZ.RANGE_13));
         binding.text11.setText(DateZ.getDateTime(DateConstant.CUSTOM_41));
         binding.text12.setText(DateZ.getDateTime(DateConstant.CUSTOM_42));
         binding.text13.setText(DateZ.getDateTime(DateConstant.CUSTOM_43));

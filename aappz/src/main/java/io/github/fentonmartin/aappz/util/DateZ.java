@@ -225,10 +225,10 @@ public class DateZ {
     static int YEARS = 365 * DAYS;
 
     public static String getTimeRangeFrom(long timestamp) {
-        return getTimeRangeType(timestamp, RANGE_1);
+        return getTimeRangeFrom(timestamp, RANGE_1);
     }
 
-    public static String getTimeRangeType(long timestamp, String type) {
+    public static String getTimeRangeFrom(long timestamp, String type) {
         String result = "";
         switch (type) {
             case RANGE_1:
