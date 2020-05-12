@@ -10,7 +10,23 @@ import java.util.Date;
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class DateZ {
 
-    /* DateTime functions ------------------------------------------------------------------------*/
+    /* DateTime ----------------------------------------------------------------------------------*/
+
+    /**
+     * Get date class from inputted string
+     *
+     * @param pattern the target pattern (See: DateZ)
+     * @param text    the string timestamp
+     * @return the result
+     */
+    public static Date getDateFrom(String pattern, String text) {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat(pattern);
+            return format.parse(text);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
 
     /**
      * Get date time string with 'yyyy-MM-dd HH:mm:ss' format
@@ -49,7 +65,7 @@ public class DateZ {
         return new SimpleDateFormat().format(new Date());
     }
 
-    /* DateHex functions -------------------------------------------------------------------------*/
+    /* DateHex -----------------------------------------------------------------------------------*/
 
     /**
      * Get date time hex from current timestamp
@@ -70,7 +86,7 @@ public class DateZ {
         return getTimestampTime(NumberZ.fromHex(hex));
     }
 
-    /* Timestamp functions -----------------------------------------------------------------------*/
+    /* Timestamp ---------------------------------------------------------------------------------*/
 
     /**
      * Get timestamp long from current time
@@ -133,22 +149,6 @@ public class DateZ {
     }
 
     /**
-     * Get timestamp date from inputted string
-     *
-     * @param pattern the target pattern (See: DateZ)
-     * @param text    the string timestamp
-     * @return the result
-     */
-    public static Date getTimestampDateFrom(String pattern, String text) {
-        try {
-            SimpleDateFormat format = new SimpleDateFormat(pattern);
-            return format.parse(text);
-        } catch (ParseException e) {
-            return null;
-        }
-    }
-
-    /**
      * Get timestamp long from inputted string
      *
      * @param pattern the target pattern (See: DateZ)
@@ -156,7 +156,7 @@ public class DateZ {
      * @return the result
      */
     public static long getTimestampLongFrom(String pattern, String text) {
-        Date parsedDate = getTimestampDateFrom(pattern, text);
+        Date parsedDate = getDateFrom(pattern, text);
         if (parsedDate != null)
             return parsedDate.getTime();
         else
@@ -172,6 +172,28 @@ public class DateZ {
      */
     public static String getTimestampStringFrom(String pattern, String text) {
         return String.valueOf(getTimestampLongFrom(pattern, text));
+    }
+
+    /* TimeRange ---------------------------------------------------------------------------------*/
+
+    /**
+     * Get time range long from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static long getTimeRange(long timestamp) {
+        return getTimestamp() - timestamp;
+    }
+
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static String getTimeRangeString(long timestamp) {
+        return String.valueOf(getTimeRange(timestamp));
     }
 
     /* Date Constants ------------------------------------------------------------------------------
