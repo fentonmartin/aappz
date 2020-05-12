@@ -28,7 +28,29 @@ public class DateActivity extends AappZ {
         onCheck();
     }
 
+    @SuppressLint("SetTextI18n")
     private void onCheck() {
+        binding.label1.setText("CUSTOM_31");
+        binding.label2.setText("CUSTOM_32");
+        binding.label3.setText("CUSTOM_33");
+        binding.label4.setText("CUSTOM_34");
+        binding.label5.setText("CUSTOM_35");
+        binding.label6.setText("CUSTOM_36");
+        binding.label7.setText("CUSTOM_37");
+        binding.label8.setText("CUSTOM_38");
+        binding.label9.setText("CUSTOM_39");
+        binding.label10.setText("CUSTOM_40");
+        binding.label11.setText("CUSTOM_41");
+        binding.label12.setText("CUSTOM_42");
+        binding.label13.setText("CUSTOM_43");
+        binding.label14.setText("CUSTOM_44");
+        binding.label15.setText("CUSTOM_45");
+        binding.label16.setText("CUSTOM_46");
+        binding.label17.setText("CUSTOM_47");
+        binding.label18.setText("CUSTOM_48");
+        binding.label19.setText("CUSTOM_49");
+        binding.label20.setText("CUSTOM_50");
+
         binding.text1.setText(DateZ.getDatetime(DateConstant.CUSTOM_31));
         binding.text2.setText(DateZ.getDatetime(DateConstant.CUSTOM_32));
         binding.text3.setText(DateZ.getDatetime(DateConstant.CUSTOM_33));
