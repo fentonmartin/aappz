@@ -234,6 +234,10 @@ public class DateZ {
         int minutes = (time % HOURS) / MINUTES;
         int seconds = (time % MINUTES) / SECONDS;
 
+        return getResult(years, months, weeks, days, hours, minutes, seconds);
+    }
+
+    private static String getResult(int years, int months, int weeks, int days, int hours, int minutes, int seconds) {
         String result = "";
         if (years > 0)
             result = years + " years";
