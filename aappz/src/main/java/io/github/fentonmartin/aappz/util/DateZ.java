@@ -216,6 +216,102 @@ public class DateZ {
         return String.valueOf(getTimeRange(timestamp));
     }
 
+    static int SECONDS = 1000;
+    static int MINUTES = 60 * SECONDS;
+    static int HOURS = 60 * MINUTES;
+    static int DAYS = 24 * HOURS;
+    static int WEEKS = 7 * DAYS;
+    static int MONTHS = 30 * DAYS;
+    static int YEARS = 365 * DAYS;
+
+    public static String getTimeRangeFrom(long timestamp) {
+        int time = Integer.parseInt(String.valueOf(timestamp));
+        int years = time / YEARS;
+        int months = (time % YEARS) / MONTHS;
+        int weeks = (time % MONTHS) / WEEKS;
+        int days = (time % WEEKS) / DAYS;
+        int hours = (time % DAYS) / HOURS;
+        int minutes = (time % HOURS) / MINUTES;
+        int seconds = (time % MINUTES) / SECONDS;
+
+        String result = "";
+        if (years > 0)
+            result = years + " years";
+
+        if (months > 1)
+            if (!result.isEmpty())
+                result = result + ", " + months + " months";
+            else result = result + months + " months";
+        else if (months > 0)
+            if (!result.isEmpty())
+                result = result + ", " + months + " month";
+            else result = result + months + " month";
+
+        if (weeks > 1)
+            if (!result.isEmpty())
+                result = result + ", " + weeks + " weeks";
+            else result = result + weeks + " weeks";
+        else if (weeks > 0)
+            if (!result.isEmpty())
+                result = result + ", " + weeks + " week";
+            else result = result + weeks + " week";
+
+        if (days > 1)
+            if (!result.isEmpty())
+                result = result + ", " + days + " days";
+            else result = result + days + " days";
+        else if (days > 0)
+            if (!result.isEmpty())
+                result = result + ", " + days + " day";
+            else result = result + days + " day";
+
+        if (hours > 1)
+            if (!result.isEmpty())
+                result = result + ", " + hours + " hours";
+            else result = result + hours + " hours";
+        else if (hours > 0)
+            if (!result.isEmpty())
+                result = result + ", " + hours + " hour";
+            else result = result + hours + " hour";
+
+        if (minutes > 1)
+            if (!result.isEmpty())
+                result = result + ", " + minutes + " minutes";
+            else result = result + minutes + " minutes";
+        else if (minutes > 0)
+            if (!result.isEmpty())
+                result = result + ", " + minutes + " minute";
+            else result = result + minutes + " minute";
+
+        if (seconds > 1)
+            if (!result.isEmpty())
+                result = result + ", " + seconds + " seconds";
+            else result = result + seconds + " seconds";
+        else if (seconds > 0)
+            if (!result.isEmpty())
+                result = result + ", " + seconds + " second";
+            else result = result + seconds + " second";
+
+        return result;
+    }
+
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static String getTimeRangeText(String timestamp) {
+        long range = getTimeRange(timestamp) / 1000;
+        int ranges = Integer.parseInt(String.valueOf(range));
+
+        int days = ranges % DAYS;
+        int hours = ranges % DAYS;
+        int minutes = ranges % DAYS;
+        int seconds = ranges % DAYS;
+        return String.format("%s days, %s hours, %s minutes and %s seconds", days, hours, minutes, seconds);
+    }
+
     /* Date Constants ------------------------------------------------------------------------------
     ------------------------------------------------------------------------------------------------
     |   Component	            Type	Examples	        API Levels

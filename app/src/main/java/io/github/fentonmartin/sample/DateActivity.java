@@ -51,12 +51,12 @@ public class DateActivity extends AappZ {
         binding.label19.setText("CUSTOM_49");
         binding.label20.setText("CUSTOM_50");
 
-        binding.text1.setText(DateZ.getDateTime());
-        binding.text2.setText(DateZ.getDateTimeSimple());
-        binding.text3.setText(DateZ.getDateTimeFull());
-        binding.text4.setText(DateZ.getDateTime(DateConstant.CUSTOM_34));
-        binding.text5.setText(DateZ.getDateTime(DateConstant.CUSTOM_35));
-        binding.text6.setText(DateZ.getDateTime(DateConstant.CUSTOM_36));
+        binding.text1.setText(DateZ.getTimestampString());
+        binding.text2.setText(DateZ.getTimeRangeString(0));
+        binding.text3.setText(DateZ.getTimeRangeString(1589299199000L));
+        binding.text4.setText(DateZ.getTimeRangeString(910198934000L));
+        binding.text5.setText(DateZ.getTimeRangeText("1589299199000"));
+        binding.text6.setText(DateZ.getTimeRangeFrom(1900631000L));
         binding.text7.setText(DateZ.getDateTime(DateConstant.CUSTOM_37));
         binding.text8.setText(DateZ.getDateTime(DateConstant.CUSTOM_38));
         binding.text9.setText(DateZ.getDateTime(DateConstant.CUSTOM_39));
