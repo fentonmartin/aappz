@@ -51,7 +51,7 @@ public class DateActivity extends AappZ {
         binding.label19.setText("CUSTOM_49");
         binding.label20.setText("CUSTOM_50");
         
-        long time = 3893465000L;
+        long time = 37803465000L;
 
         binding.text1.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_1));
         binding.text2.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_2));
