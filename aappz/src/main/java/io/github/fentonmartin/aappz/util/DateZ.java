@@ -217,91 +217,135 @@ public class DateZ {
     }
 
     /**
-     * Get time range string from inputted time to current time
+     * Get time range string from inputted time
      *
-     * @param timestamp the inputted long timestamp
+     * @param time the inputted long time
      * @return the result
      */
-    public static String getTimeRangeFrom(long timestamp) {
-        return getTimeRangeFrom(timestamp, RANGE_1);
+    public static String getTimeRangeFrom(long time) {
+        return getTimeRangeFrom(time, RANGE_1);
     }
 
     /**
-     * Get time range string from inputted time to current time
+     * Get time range string from inputted time
      *
-     * @param timestamp the inputted string timestamp
+     * @param time the inputted string time
      * @return the result
      */
-    public static String getTimeRangeFrom(String timestamp) {
-        return getTimeRangeFrom(Long.parseLong(timestamp), RANGE_1);
+    public static String getTimeRangeFrom(String time) {
+        return getTimeRangeFrom(Long.parseLong(time), RANGE_1);
     }
 
     /**
-     * Get time range string from inputted time to current time
+     * Get time range string from inputted time and type
      *
-     * @param timestamp the inputted long timestamp
+     * @param time the inputted long time
      * @param type the range type (year, month, day, second)
      * @return the result
      */
-    public static String getTimeRangeFrom(long timestamp, String type) {
+    public static String getTimeRangeFrom(long time, String type) {
         String result = "";
         switch (type) {
             case RANGE_1:
-                result = getTimeRangeType(timestamp, true, true, true, true, true, true, true);
+                result = getTimeRangeType(time, true, true, true, true, true, true, true);
                 break;
             case RANGE_2:
-                result = getTimeRangeType(timestamp, true, true, false, true, true, true, true);
+                result = getTimeRangeType(time, true, true, false, true, true, true, true);
                 break;
             case RANGE_3:
-                result = getTimeRangeType(timestamp, true, true, true, true, true, true, false);
+                result = getTimeRangeType(time, true, true, true, true, true, true, false);
                 break;
             case RANGE_4:
-                result = getTimeRangeType(timestamp, true, true, false, true, true, true, false);
+                result = getTimeRangeType(time, true, true, false, true, true, true, false);
                 break;
             case RANGE_5:
-                result = getTimeRangeType(timestamp, false, true, true, true, true, true, true);
+                result = getTimeRangeType(time, false, true, true, true, true, true, true);
                 break;
             case RANGE_6:
-                result = getTimeRangeType(timestamp, false, true, false, true, true, true, true);
+                result = getTimeRangeType(time, false, true, false, true, true, true, true);
                 break;
             case RANGE_7:
-                result = getTimeRangeType(timestamp, false, true, true, true, true, true, false);
+                result = getTimeRangeType(time, false, true, true, true, true, true, false);
                 break;
             case RANGE_8:
-                result = getTimeRangeType(timestamp, false, true, false, true, true, true, false);
+                result = getTimeRangeType(time, false, true, false, true, true, true, false);
                 break;
             case RANGE_9:
-                result = getTimeRangeType(timestamp, false, false, true, true, true, true, true);
+                result = getTimeRangeType(time, false, false, true, true, true, true, true);
                 break;
             case RANGE_10:
-                result = getTimeRangeType(timestamp, false, false, true, true, true, true, false);
+                result = getTimeRangeType(time, false, false, true, true, true, true, false);
                 break;
             case RANGE_11:
-                result = getTimeRangeType(timestamp, false, false, false, true, true, true, true);
+                result = getTimeRangeType(time, false, false, false, true, true, true, true);
                 break;
             case RANGE_12:
-                result = getTimeRangeType(timestamp, false, false, false, true, true, true, false);
+                result = getTimeRangeType(time, false, false, false, true, true, true, false);
                 break;
             case RANGE_13:
-                result = getTimeRangeType(timestamp, false, false, false, false, true, true, true);
+                result = getTimeRangeType(time, false, false, false, false, true, true, true);
                 break;
             case RANGE_14:
-                result = getTimeRangeType(timestamp, false, false, false, false, true, true, false);
+                result = getTimeRangeType(time, false, false, false, false, true, true, false);
                 break;
         }
         return result;
     }
 
     /**
-     * Get time range string from inputted time to current time
+     * Get time range string from inputted time and type
+     *
+     * @param time the inputted string time
+     * @param type the range type (year, month, day, second)
+     * @return the result
+     */
+    public static String getTimeRangeFrom(String time, String type) {
+        return getTimeRangeFrom(Long.parseLong(time), type);
+    }
+
+    /**
+     * Get time range string from inputted timestamp
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static String getTimeRangeNowFrom(long timestamp) {
+        return getTimeRangeFrom(getTimeRange(timestamp), RANGE_1);
+    }
+
+    /**
+     * Get time range string from inputted timestamp
      *
      * @param timestamp the inputted string timestamp
      * @return the result
      */
-    public static String getTimeRangeFrom(String timestamp, String type) {
-        return getTimeRangeFrom(Long.parseLong(timestamp), type);
+    public static String getTimeRangeNowFrom(String timestamp) {
+        return getTimeRangeNowFrom(Long.parseLong(timestamp));
     }
 
+    /**
+     * Get time range string from inputted timestamp
+     *
+     * @param timestamp the inputted long timestamp
+     * @param type the range type (year, month, day, second)
+     * @return the result
+     */
+    public static String getTimeRangeNowFrom(long timestamp, String type) {
+        return getTimeRangeFrom(getTimeRange(timestamp), type);
+    }
+
+    /**
+     * Get time range string from inputted timestamp
+     *
+     * @param timestamp the inputted string timestamp
+     * @param type the range type (year, month, day, second)
+     * @return the result
+     */
+    public static String getTimeRangeNowFrom(String timestamp, String type) {
+        return getTimeRangeNowFrom(Long.parseLong(timestamp), type);
+    }
+
+    @SuppressWarnings("SameParameterValue")
     private static String getTimeRangeType(long time, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
         long years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
 
