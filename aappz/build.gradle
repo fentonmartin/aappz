@@ -20,7 +20,7 @@ ext {
     libraryName = 'AappZ'
     artifact = 'aappz'
 
-    libraryDescription = 'AappZ is an all in one library for android application.'
+    libraryDescription = 'AappZ is an all in one A-Z library for android application.'
 
     siteUrl = 'https://github.com/fentonmartin/aappz'
     gitUrl = 'git@github.com:fentonmartin/aappz.git'
