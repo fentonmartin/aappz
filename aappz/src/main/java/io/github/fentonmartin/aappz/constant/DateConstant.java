@@ -35,6 +35,10 @@ public class DateConstant {
     public static final String TIME_12 = "hh:mm aa";
     public static final String TIME_12_FULL = "hh:mm:ss aa";
 
+    public static final String TIMEZONE = "zzz";
+    public static final String TIMEZONE_TEXT = "zzzz";
+    public static final String TIMEZONE_NUMBER = "XXX";
+
     public static final String DATE_FULL = "yyyy-MM-dd HH:mm:ss";
     public static final String DATE_FULL_REVERSE = "dd-MM-yyyy HH:mm:ss";
     public static final String DATE_DETAIL_FULL = "yyyy-MM-dd HH:mm:ss.SSS";
@@ -100,8 +104,8 @@ public class DateConstant {
     public static final String CUSTOM_44 = "EEE, HH:mm";
     public static final String CUSTOM_45 = "MMMM d, HH:mm";
     public static final String CUSTOM_46 = "MMM d, HH:mm";
-    public static final String CUSTOM_47 = "zzzz";
-    public static final String CUSTOM_48 = "zzz";
-    public static final String CUSTOM_49 = "z";
-    public static final String CUSTOM_50 = "X";
+    public static final String CUSTOM_47 = "MMMM d, hh:mm aa";
+    public static final String CUSTOM_48 = "MMM d, hh:mm aa";
+    public static final String CUSTOM_49 = "HH:mm, zzzz";
+    public static final String CUSTOM_50 = "hh:mm aa, zzzz";
 }
