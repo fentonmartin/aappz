@@ -216,13 +216,13 @@ public class DateZ {
         return String.valueOf(getTimeRange(timestamp));
     }
 
-    static int SECONDS = 1000;
-    static int MINUTES = 60 * SECONDS;
-    static int HOURS = 60 * MINUTES;
-    static int DAYS = 24 * HOURS;
-    static int WEEKS = 7 * DAYS;
-    static int MONTHS = 30 * DAYS;
-    static int YEARS = 365 * DAYS;
+    static long SECONDS = 1000;
+    static long MINUTES = 60 * SECONDS;
+    static long HOURS = 60 * MINUTES;
+    static long DAYS = 24 * HOURS;
+    static long WEEKS = 7 * DAYS;
+    static long MONTHS = 30 * DAYS;
+    static long YEARS = 365 * DAYS;
 
     public static String getTimeRangeFrom(long timestamp) {
         return getTimeRangeFrom(timestamp, RANGE_1);
@@ -415,23 +415,23 @@ public class DateZ {
 
         return result;
     }
-
-    /**
-     * Get time range string from inputted time to current time
-     *
-     * @param timestamp the inputted long timestamp
-     * @return the result
-     */
-    public static String getTimeRangeText(String timestamp) {
-        long range = getTimeRange(timestamp) / 1000;
-        int ranges = Integer.parseInt(String.valueOf(range));
-
-        int days = ranges % DAYS;
-        int hours = ranges % DAYS;
-        int minutes = ranges % DAYS;
-        int seconds = ranges % DAYS;
-        return String.format("%s days, %s hours, %s minutes and %s seconds", days, hours, minutes, seconds);
-    }
+//
+//    /**
+//     * Get time range string from inputted time to current time
+//     *
+//     * @param timestamp the inputted long timestamp
+//     * @return the result
+//     */
+//    public static String getTimeRangeText(String timestamp) {
+//        long range = getTimeRange(timestamp) / 1000;
+//        int ranges = Integer.parseInt(String.valueOf(range));
+//
+////        int days = ranges % DAYS;
+////        int hours = ranges % DAYS;
+////        int minutes = ranges % DAYS;
+////        int seconds = ranges % DAYS;
+//        return String.format("%s days, %s hours, %s minutes and %s seconds", days, hours, minutes, seconds);
+//    }
 
     /* Date Constants ------------------------------------------------------------------------------
     ------------------------------------------------------------------------------------------------
