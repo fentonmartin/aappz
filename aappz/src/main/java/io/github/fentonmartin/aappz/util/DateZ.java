@@ -187,12 +187,32 @@ public class DateZ {
     }
 
     /**
+     * Get time range long from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static long getTimeRange(String timestamp) {
+        return getTimeRange(Long.parseLong(timestamp));
+    }
+
+    /**
      * Get time range string from inputted time to current time
      *
      * @param timestamp the inputted long timestamp
      * @return the result
      */
     public static String getTimeRangeString(long timestamp) {
+        return String.valueOf(getTimeRange(timestamp));
+    }
+
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
+    public static String getTimeRangeString(String timestamp) {
         return String.valueOf(getTimeRange(timestamp));
     }
 
