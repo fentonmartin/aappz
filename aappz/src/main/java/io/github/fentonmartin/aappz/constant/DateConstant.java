@@ -93,4 +93,15 @@ public class DateConstant {
     public static final String CUSTOM_38 = "EEE, d MMM yyyy HH:mm";
     public static final String CUSTOM_39 = "EEEE, dd/MM/yyyy HH:mm";
     public static final String CUSTOM_40 = "EEE, dd/MM/yy HH:mm";
+
+    public static final String CUSTOM_41 = "EEEE, HH:mm:ss";
+    public static final String CUSTOM_42 = "EEEE, HH:mm";
+    public static final String CUSTOM_43 = "EEE, HH:mm:ss";
+    public static final String CUSTOM_44 = "EEE, HH:mm";
+    public static final String CUSTOM_45 = "MMMM d, HH:mm";
+    public static final String CUSTOM_46 = "MMM d, HH:mm";
+    public static final String CUSTOM_47 = "zzzz";
+    public static final String CUSTOM_48 = "zzz";
+    public static final String CUSTOM_49 = "z";
+    public static final String CUSTOM_50 = "X";
 }
