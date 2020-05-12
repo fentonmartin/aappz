@@ -283,18 +283,66 @@ public class DateZ {
 
         if (year)
             years = time / YEARS;
-        if (month)
+
+        if (month && year)
             months = (time % YEARS) / MONTHS;
-        if (week)
+        else if (month)
+            months = time / MONTHS;
+
+        if (week && month)
             weeks = (time % MONTHS) / WEEKS;
-        if (day)
+        else if (week && year)
+            weeks = (time % YEARS) / WEEKS;
+        else if (week)
+            weeks = time / WEEKS;
+
+        if (day && week)
             days = (time % WEEKS) / DAYS;
-        if (hour)
+        else if (day && month)
+            days = (time % MONTHS) / DAYS;
+        else if (day && year)
+            days = (time % YEARS) / DAYS;
+        else if (day)
+            days = time / DAYS;
+
+        if (hour && day)
             hours = (time % DAYS) / HOURS;
-        if (minute)
+        else if (hour && week)
+            hours = (time % WEEKS) / HOURS;
+        else if (hour && month)
+            hours = (time % MONTHS) / HOURS;
+        else if (hour && year)
+            hours = (time % YEARS) / HOURS;
+        else if (hour)
+            hours = time / HOURS;
+
+        if (minute && hour)
             minutes = (time % HOURS) / MINUTES;
-        if (second)
+        else if (minute && day)
+            minutes = (time % DAYS) / MINUTES;
+        else if (minute && week)
+            minutes = (time % WEEKS) / MINUTES;
+        else if (minute && month)
+            minutes = (time % MONTHS) / MINUTES;
+        else if (minute && year)
+            minutes = (time % YEARS) / MINUTES;
+        else if (minute)
+            minutes = time / MINUTES;
+
+        if (second && minute)
             seconds = (time % MINUTES) / SECONDS;
+        else if (second && hour)
+            seconds = (time % HOURS) / SECONDS;
+        else if (second && day)
+            seconds = (time % DAYS) / SECONDS;
+        else if (second && week)
+            seconds = (time % WEEKS) / SECONDS;
+        else if (second && month)
+            seconds = (time % MONTHS) / SECONDS;
+        else if (second && year)
+            seconds = (time % YEARS) / SECONDS;
+        else if (second)
+            seconds = time / SECONDS;
 
         return getResult(years, months, weeks, days, hours, minutes, seconds);
     }
