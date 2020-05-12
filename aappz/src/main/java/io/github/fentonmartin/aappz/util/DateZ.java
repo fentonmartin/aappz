@@ -209,25 +209,40 @@ public class DateZ {
     /**
      * Get time range string from inputted time to current time
      *
-     * @param timestamp the inputted long timestamp
+     * @param timestamp the inputted string timestamp
      * @return the result
      */
     public static String getTimeRangeString(String timestamp) {
         return String.valueOf(getTimeRange(timestamp));
     }
 
-    static long SECONDS = 1000;
-    static long MINUTES = 60 * SECONDS;
-    static long HOURS = 60 * MINUTES;
-    static long DAYS = 24 * HOURS;
-    static long WEEKS = 7 * DAYS;
-    static long MONTHS = 30 * DAYS;
-    static long YEARS = 365 * DAYS;
-
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @return the result
+     */
     public static String getTimeRangeFrom(long timestamp) {
         return getTimeRangeFrom(timestamp, RANGE_1);
     }
 
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted string timestamp
+     * @return the result
+     */
+    public static String getTimeRangeFrom(String timestamp) {
+        return getTimeRangeFrom(Long.parseLong(timestamp), RANGE_1);
+    }
+
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @param type the range type (year, month, day, second)
+     * @return the result
+     */
     public static String getTimeRangeFrom(long timestamp, String type) {
         String result = "";
         switch (type) {
@@ -277,7 +292,17 @@ public class DateZ {
         return result;
     }
 
-    public static String getTimeRangeType(long time, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
+    /**
+     * Get time range string from inputted time to current time
+     *
+     * @param timestamp the inputted string timestamp
+     * @return the result
+     */
+    public static String getTimeRangeFrom(String timestamp, String type) {
+        return getTimeRangeFrom(Long.parseLong(timestamp), type);
+    }
+
+    private static String getTimeRangeType(long time, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
         long years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
 
         if (year)
@@ -415,23 +440,6 @@ public class DateZ {
 
         return result;
     }
-//
-//    /**
-//     * Get time range string from inputted time to current time
-//     *
-//     * @param timestamp the inputted long timestamp
-//     * @return the result
-//     */
-//    public static String getTimeRangeText(String timestamp) {
-//        long range = getTimeRange(timestamp) / 1000;
-//        int ranges = Integer.parseInt(String.valueOf(range));
-//
-////        int days = ranges % DAYS;
-////        int hours = ranges % DAYS;
-////        int minutes = ranges % DAYS;
-////        int seconds = ranges % DAYS;
-//        return String.format("%s days, %s hours, %s minutes and %s seconds", days, hours, minutes, seconds);
-//    }
 
     /* Date Constants ------------------------------------------------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -556,4 +564,12 @@ public class DateZ {
     public static final String RANGE_12 = "days, hours, minutes";
     public static final String RANGE_13 = "hours, minutes, seconds";
     public static final String RANGE_14 = "hours, minutes";
+
+    private static long SECONDS = 1000;
+    private static long MINUTES = 60 * SECONDS;
+    private static long HOURS = 60 * MINUTES;
+    private static long DAYS = 24 * HOURS;
+    private static long WEEKS = 7 * DAYS;
+    private static long MONTHS = 30 * DAYS;
+    private static long YEARS = 365 * DAYS;
 }
