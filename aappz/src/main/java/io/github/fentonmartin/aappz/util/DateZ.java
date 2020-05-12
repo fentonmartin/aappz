@@ -225,14 +225,76 @@ public class DateZ {
     static int YEARS = 365 * DAYS;
 
     public static String getTimeRangeFrom(long timestamp) {
+        return getTimeRangeType(timestamp, RANGE_1);
+    }
+
+    public static String getTimeRangeType(long timestamp, String type) {
+        String result = "";
+        switch (type) {
+            case RANGE_1:
+                result = getTimeRangeType(timestamp, true, true, true, true, true, true, true);
+                break;
+            case RANGE_2:
+                result = getTimeRangeType(timestamp, true, true, false, true, true, true, true);
+                break;
+            case RANGE_3:
+                result = getTimeRangeType(timestamp, true, true, true, true, true, true, false);
+                break;
+            case RANGE_4:
+                result = getTimeRangeType(timestamp, true, true, false, true, true, true, false);
+                break;
+            case RANGE_5:
+                result = getTimeRangeType(timestamp, false, true, true, true, true, true, true);
+                break;
+            case RANGE_6:
+                result = getTimeRangeType(timestamp, false, true, false, true, true, true, true);
+                break;
+            case RANGE_7:
+                result = getTimeRangeType(timestamp, false, true, true, true, true, true, false);
+                break;
+            case RANGE_8:
+                result = getTimeRangeType(timestamp, false, true, false, true, true, true, false);
+                break;
+            case RANGE_9:
+                result = getTimeRangeType(timestamp, false, false, true, true, true, true, true);
+                break;
+            case RANGE_10:
+                result = getTimeRangeType(timestamp, false, false, true, true, true, true, false);
+                break;
+            case RANGE_11:
+                result = getTimeRangeType(timestamp, false, false, false, true, true, true, true);
+                break;
+            case RANGE_12:
+                result = getTimeRangeType(timestamp, false, false, false, true, true, true, false);
+                break;
+            case RANGE_13:
+                result = getTimeRangeType(timestamp, false, false, false, false, true, true, true);
+                break;
+            case RANGE_14:
+                result = getTimeRangeType(timestamp, false, false, false, false, true, true, false);
+                break;
+        }
+        return result;
+    }
+
+    public static String getTimeRangeType(long timestamp, boolean year, boolean month, boolean week, boolean day, boolean hour, boolean minute, boolean second) {
         int time = Integer.parseInt(String.valueOf(timestamp));
-        int years = time / YEARS;
-        int months = (time % YEARS) / MONTHS;
-        int weeks = (time % MONTHS) / WEEKS;
-        int days = (time % WEEKS) / DAYS;
-        int hours = (time % DAYS) / HOURS;
-        int minutes = (time % HOURS) / MINUTES;
-        int seconds = (time % MINUTES) / SECONDS;
+        int years = 0, months = 0, weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
+
+        if (year)
+            years = time / YEARS;
+        if (month)
+            months = (time % YEARS) / MONTHS;
+        if (week)
+            weeks = (time % MONTHS) / WEEKS;
+        if (day)
+            days = (time % WEEKS) / DAYS;
+        if (hour)
+            hours = (time % DAYS) / HOURS;
+        if (minute)
+            minutes = (time % HOURS) / MINUTES;
+        if (second)
+            seconds = (time % MINUTES) / SECONDS;
 
         return getResult(years, months, weeks, days, hours, minutes, seconds);
     }
@@ -424,4 +486,19 @@ public class DateZ {
     public static final String CUSTOM_48 = "MMM d, hh:mm aa";
     public static final String CUSTOM_49 = "HH:mm, zzzz";
     public static final String CUSTOM_50 = "hh:mm aa, zzzz";
+
+    public static final String RANGE_1 = "years, months, weeks, days, hours, minutes, seconds";
+    public static final String RANGE_2 = "years, months, days, hours, minutes, seconds";
+    public static final String RANGE_3 = "years, months, weeks, days, hours, minutes";
+    public static final String RANGE_4 = "years, months, days, hours, minutes";
+    public static final String RANGE_5 = "months, weeks, days, hours, minutes, seconds";
+    public static final String RANGE_6 = "months, days, hours, minutes, seconds";
+    public static final String RANGE_7 = "months, weeks, days, hours, minutes";
+    public static final String RANGE_8 = "months, days, hours, minutes";
+    public static final String RANGE_9 = "weeks, days, hours, minutes, seconds";
+    public static final String RANGE_10 = "weeks, days, hours, minutes";
+    public static final String RANGE_11 = "days, hours, minutes, seconds";
+    public static final String RANGE_12 = "days, hours, minutes";
+    public static final String RANGE_13 = "hours, minutes, seconds";
+    public static final String RANGE_14 = "hours, minutes";
 }
