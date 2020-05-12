@@ -301,8 +301,10 @@ public class DateZ {
 
     private static String getResult(int years, int months, int weeks, int days, int hours, int minutes, int seconds) {
         String result = "";
-        if (years > 0)
+        if (years > 1)
             result = years + " years";
+        else if (years > 0)
+            result = years + " year";
 
         if (months > 1)
             if (!result.isEmpty())
