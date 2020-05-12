@@ -36,7 +36,6 @@ public class DateConstant {
     public static final String TIME_12_FULL = "hh:mm:ss aa";
 
     public static final String TIMEZONE = "zzz";
-    public static final String TIMEZONE_CODE = "z";
     public static final String TIMEZONE_TEXT = "zzzz";
     public static final String TIMEZONE_NUMBER = "Z";
 
