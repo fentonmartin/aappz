@@ -284,62 +284,62 @@ public class DateZ {
         if (year)
             years = time / YEARS;
 
-        if (month && year)
+        if (month && years > 0)
             months = (time % YEARS) / MONTHS;
         else if (month)
             months = time / MONTHS;
 
-        if (week && month)
+        if (week && months > 0)
             weeks = (time % MONTHS) / WEEKS;
-        else if (week && year)
+        else if (week && years > 0)
             weeks = (time % YEARS) / WEEKS;
         else if (week)
             weeks = time / WEEKS;
 
-        if (day && week)
+        if (day && weeks > 0)
             days = (time % WEEKS) / DAYS;
-        else if (day && month)
+        else if (day && months > 0)
             days = (time % MONTHS) / DAYS;
-        else if (day && year)
+        else if (day && years > 0)
             days = (time % YEARS) / DAYS;
         else if (day)
             days = time / DAYS;
 
-        if (hour && day)
+        if (hour && days > 0)
             hours = (time % DAYS) / HOURS;
-        else if (hour && week)
+        else if (hour && weeks > 0)
             hours = (time % WEEKS) / HOURS;
-        else if (hour && month)
+        else if (hour && months > 0)
             hours = (time % MONTHS) / HOURS;
-        else if (hour && year)
+        else if (hour && years > 0)
             hours = (time % YEARS) / HOURS;
         else if (hour)
             hours = time / HOURS;
 
-        if (minute && hour)
+        if (minute && hours > 0)
             minutes = (time % HOURS) / MINUTES;
-        else if (minute && day)
+        else if (minute && days > 0)
             minutes = (time % DAYS) / MINUTES;
-        else if (minute && week)
+        else if (minute && weeks > 0)
             minutes = (time % WEEKS) / MINUTES;
-        else if (minute && month)
+        else if (minute && months > 0)
             minutes = (time % MONTHS) / MINUTES;
-        else if (minute && year)
+        else if (minute && years > 0)
             minutes = (time % YEARS) / MINUTES;
         else if (minute)
             minutes = time / MINUTES;
 
-        if (second && minute)
+        if (second && minutes > 0)
             seconds = (time % MINUTES) / SECONDS;
-        else if (second && hour)
+        else if (second && hours > 0)
             seconds = (time % HOURS) / SECONDS;
-        else if (second && day)
+        else if (second && days > 0)
             seconds = (time % DAYS) / SECONDS;
-        else if (second && week)
+        else if (second && weeks > 0)
             seconds = (time % WEEKS) / SECONDS;
-        else if (second && month)
+        else if (second && months > 0)
             seconds = (time % MONTHS) / SECONDS;
-        else if (second && year)
+        else if (second && years > 0)
             seconds = (time % YEARS) / SECONDS;
         else if (second)
             seconds = time / SECONDS;

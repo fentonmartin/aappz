@@ -50,21 +50,23 @@ public class DateActivity extends AappZ {
         binding.label18.setText("CUSTOM_48");
         binding.label19.setText("CUSTOM_49");
         binding.label20.setText("CUSTOM_50");
+        
+        long time = 3893465000L;
 
-        binding.text1.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_1));
-        binding.text2.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_2));
-        binding.text3.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_3));
-        binding.text4.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_4));
-        binding.text5.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_5));
-        binding.text6.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_6));
-        binding.text7.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_7));
-        binding.text8.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_8));
-        binding.text9.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_9));
-        binding.text10.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_10));
-        binding.text11.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_11));
-        binding.text12.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_12));
-        binding.text13.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_13));
-        binding.text14.setText(DateZ.getTimeRangeFrom(3760463000L, DateZ.RANGE_14));
+//        binding.text1.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_1));
+        binding.text2.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_2));
+//        binding.text3.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_3));
+        binding.text4.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_4));
+//        binding.text5.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_5));
+        binding.text6.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_6));
+//        binding.text7.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_7));
+        binding.text8.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_8));
+//        binding.text9.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_9));
+        binding.text10.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_10));
+//        binding.text11.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_11));
+        binding.text12.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_12));
+//        binding.text13.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_13));
+        binding.text14.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_14));
         binding.text15.setText(DateZ.getDateTime(DateConstant.CUSTOM_45));
         binding.text16.setText(DateZ.getDateTime(DateConstant.CUSTOM_46));
         binding.text17.setText(DateZ.getDateTime(DateConstant.CUSTOM_47));
