@@ -10,6 +10,8 @@ import java.util.Date;
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class DateZ {
 
+    /* DateTime functions ------------------------------------------------------------------------*/
+
     /**
      * Get date time string with 'yyyy-MM-dd HH:mm:ss' format
      *
@@ -20,7 +22,7 @@ public class DateZ {
     }
 
     /**
-     * Get date time string with pattern format
+     * Get date time string with Locale.getDefault format
      *
      * @param pattern the target pattern (See: DateZ)
      * @return the result
@@ -47,6 +49,8 @@ public class DateZ {
         return new SimpleDateFormat().format(new Date());
     }
 
+    /* DateHex functions -------------------------------------------------------------------------*/
+
     /**
      * Get date time hex from current timestamp
      *
@@ -65,6 +69,8 @@ public class DateZ {
     public static String getDateFromHex(String hex) {
         return getTimestampTime(NumberZ.fromHex(hex));
     }
+
+    /* Timestamp functions -----------------------------------------------------------------------*/
 
     /**
      * Get timestamp long from current time
@@ -168,9 +174,10 @@ public class DateZ {
         return String.valueOf(getTimestampLongFrom(pattern, text));
     }
 
-    /*----------------------------------------------------------------------
-        Component	            Type	Examples	        API Levels
-    ------------------------------------------------------------------------
+    /* Date Constants ------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------
+    |   Component	            Type	Examples	        API Levels
+    ------------------------------------------------------------------------------------------------
     G	Era designator	        Text	AD	                    1+
     y	Year	                Year	1996; 96	            1+
     Y	Week year	            Year	2009; 09	            24+
@@ -193,8 +200,9 @@ public class DateZ {
     z	General time zone	    Pacific Standard Time; PST; GMT-08:00
     Z	RFC 822 time zone	    -0800
     X	ISO 8601 time zone	    -08; -0800; -08:00
-    ------------------------------------------------------------------------
-    More: https://developer.android.com/reference/java/text/SimpleDateFormat */
+    ------------------------------------------------------------------------------------------------
+    More: https://developer.android.com/reference/java/text/SimpleDateFormat -----------------------
+    ----------------------------------------------------------------------------------------------*/
 
     public static final String TIME = "HH:mm";
     public static final String TIME_FULL = "HH:mm:ss";
