@@ -1,6 +1,7 @@
 package io.github.fentonmartin.aappz.constant;
 
 @SuppressWarnings("unused")
+@Deprecated
 public class DateConstant {
     /*----------------------------------------------------------------------
         Component	            Type	Examples	        API Levels
