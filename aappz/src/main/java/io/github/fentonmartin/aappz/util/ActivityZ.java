@@ -174,10 +174,28 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param title being set to be title
      */
+    public void setTitle(int title) {
+        setTitle(getString(title));
+    }
+
+    /**
+     * Set title on action bar
+     *
+     * @param title being set to be title
+     */
     public void setTitle(String title) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
         }
+    }
+
+    /**
+     * Set subtitle on action bar
+     *
+     * @param subtitle being set to be title
+     */
+    public void setSubtitle(int subtitle) {
+        setSubtitle(getString(subtitle));
     }
 
     /**
@@ -467,6 +485,16 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set email activity from current activity
      *
+     * @param email   the email destination resource
+     * @param subject the email subject resource
+     */
+    public void setActivityEmail(int email, int subject) {
+        setActivityEmail(getString(email), getString(subject));
+    }
+
+    /**
+     * Set email activity from current activity
+     *
      * @param email   the email destination
      * @param subject the email subject
      */
@@ -477,19 +505,29 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set store activity from current activity
      *
-     * @param id the id string resource
+     * @param id the app id string resource
      */
     public void setActivityMarket(int id) {
-        startActivity(intentZ.intentMarket(getString(id)));
+        setActivityMarket(getString(id));
     }
 
     /**
      * Set store activity from current activity
      *
-     * @param id the string store id
+     * @param id the string app store id
      */
     public void setActivityMarket(String id) {
         startActivity(intentZ.intentMarket(id));
+    }
+
+    /**
+     * Set share intent from current activity
+     *
+     * @param subject the subject of chooser resource
+     * @param text    the text of chooser resource
+     */
+    public void setActivityShare(int subject, int text) {
+        setActivityShare(getString(subject), getString(text), getString(subject));
     }
 
     /**
@@ -499,7 +537,18 @@ public class ActivityZ extends AppCompatActivity {
      * @param text    the text of chooser
      */
     public void setActivityShare(String subject, String text) {
-        startActivity(Intent.createChooser(intentZ.intentSend(subject, text), subject));
+        setActivityShare(subject, text, subject);
+    }
+
+    /**
+     * Set share intent from current activity
+     *
+     * @param subject the subject of chooser resource
+     * @param text    the text of chooser resource
+     * @param chooser the chooser text string resource
+     */
+    public void setActivityShare(int subject, int text, int chooser) {
+        setActivityShare(getString(subject), getString(text), getString(chooser));
     }
 
     /**
@@ -519,7 +568,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param website the url string
      */
     public void setActivityWebsite(int website) {
-        startActivity(intentZ.intentWebsite(getString(website)));
+        setActivityWebsite(getString(website));
     }
 
     /**

@@ -53,7 +53,7 @@ Usage
 -----
 Extend the AappZ in your base activity (recommended):
 ```
-public class MainActivity extends AappZ {...}
+public class MainActivity extends AappZ...}
 ```
 
 Or you could just extend ActivityZ instead:
@@ -106,24 +106,41 @@ Functions
 * setActionBar(boolean isMain)
 * setActionBarHide()
 * setActionBarFull()
+* setTitle(int title)
 * setTitle(String title)
+* setSubtitle(int subtitle)
 * setSubtitle(String subtitle)
 
 **DateZ**
-* getDatetime()
-* getDatetime(String pattern)
-* getDatetimeSimple()
+* getDateFrom(String pattern, String text)
+* getDateTime()
+* getDateTime(String pattern)
+* getDateTimeFull()
+* getDateTimeSimple()
+* getDateHex()
+* getDateHexFrom(String hex)
 * getTimestamp()
 * getTimestampString()
-* getTimestampTime(long timestamp)
-* getTimestampTime(String timestamp)
-* getTimestampTime(String pattern, long timestamp)
-* getTimestampTime(String pattern, String timestamp)
-* getTimestampDateFrom(String pattern, String text) 
+* getTimestamp(long timestamp)
+* getTimestamp(String timestamp)
+* getTimestamp(String pattern, long timestamp)
+* getTimestamp(String pattern, String timestamp)
 * getTimestampLongFrom(String pattern, String text)
 * getTimestampStringFrom(String pattern, String text)
-* getDateHex()
-* getDateFromHex(String hex)
+* getTimeRange(long timestamp)
+* getTimeRange(String timestamp)
+* getTimeRangeCheck(long timestamp, long limit)
+* getTimeRangeCheck(String timestamp, long limit)
+* getTimeRangeString(long timestamp)
+* getTimeRangeString(String timestamp)
+* getTimeRangeFrom(long time)
+* getTimeRangeFrom(String time)
+* getTimeRangeFrom(long time, String type)
+* getTimeRangeFrom(String time, String type)
+* getTimeRangeNowFrom(long timestamp)
+* getTimeRangeNowFrom(String timestamp)
+* getTimeRangeNowFrom(long timestamp, String type)
+* getTimeRangeNowFrom(String timestamp, String type)
 
 **DayZ**
 * getCurrentDay()
@@ -152,7 +169,21 @@ Functions
 * getPhoneModel()
 
 **DialogZ**
+* setViewDialogDismiss()
 * setViewLoadingDialog(boolean isShow)
+* setViewLoadingDialog(boolean isShow, String title)
+* setViewNormalDialog(String message)
+* setViewNormalDialog(String message, Callback callback)
+* setViewNormalDialog(String title, String message)
+* setViewNormalDialog(String title, String m, Callback callback)
+* setViewNormalDialog(String title, String m, String b)
+* setViewNormalDialog(String t, String m, b, Callback callback)
+* setViewNormalDialog(String t, String m, b1, b2, CallbackTwo callback)
+* setViewNormalDialog(String t, String m, b1, b2, b3, CallbackThree callback)
+* setViewInputDialog(String message, Callback callback)
+* setViewInputDialog(String t, String m, Callback callback)
+* setViewInputDialog(String t, String m, String b, Callback callback)
+* hideKeyboard(View view)
 
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
@@ -188,15 +219,21 @@ Functions
 * setActivity(Class activity, String text)
 * setActivity(Class activity, Bundle bundle)
 * setActivityClear(Class activity)
+* setActivityEmail(int email, int subject)
 * setActivityEmail(String email, String subject)
 * setActivityMarket(int id)
 * setActivityMarket(String id)
+* setActivityShare(int subject, int text)
 * setActivityShare(String subject, String text)
+* setActivityShare(int subject, int text, int chooser)
 * setActivityShare(String subject, String text, String chooser)
+* setActivityWebsite(int website)
 * setActivityWebsite(String website)
 
 **LogZ**
+* setLog(boolean isDebug)
 * setLog(String log)
+* setLog(String log, boolean isDebug) {
 * setLog(Activity activity, String log)
 
 **NumberZ**
@@ -217,8 +254,8 @@ Functions
 * check(Context context, String perms, int ratId, PermissionHandler..)
 * check(final Context c, String[] perms)
 * check(final Context c, String[] perms, PermissionHandler..)
-* check(final Context c, String[] perms, String rat, Options o, PermsH..) {
-* check(final Context c, String[] perms, int ratId, Options o, PermsH..) {
+* check(final Context c, String[] perms, String rat, Options o, PermsH..)
+* check(final Context c, String[] perms, int ratId, Options o, PermsH..)
 * hasPermission(String... permissions)
 
 **PrefZ**
