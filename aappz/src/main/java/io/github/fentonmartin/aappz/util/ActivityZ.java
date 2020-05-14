@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fentonmartin.aappz.R;
 import io.github.fentonmartin.aappz.anim.BounceAnimation;
+import io.github.fentonmartin.aappz.dialog.InputDialog;
 import io.github.fentonmartin.aappz.dialog.LoadingDialog;
 import io.github.fentonmartin.aappz.dialog.NormalDialog;
 
@@ -28,6 +29,7 @@ import io.github.fentonmartin.aappz.dialog.NormalDialog;
 public class ActivityZ extends AppCompatActivity {
 
     private FragmentTransaction fragmentTransaction;
+    private InputDialog dialogInput;
     private LoadingDialog dialogLoading;
     private NormalDialog dialogNormal;
 
@@ -48,6 +50,9 @@ public class ActivityZ extends AppCompatActivity {
 
         /* Initiate Fragment Transaction */
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        /* Initiate Loading Dialog */
+        dialogInput = InputDialog.create();
+        dialogInput.setCancelable(false);
         /* Initiate Loading Dialog */
         dialogLoading = LoadingDialog.create();
         dialogLoading.setCancelable(false);
@@ -688,7 +693,7 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param title   set dialog title
      * @param message set dialog message
-     * @param button set dialog button
+     * @param button  set dialog button
      */
     public void setViewNormalDialog(String title, String message, String button) {
         try {
@@ -699,6 +704,46 @@ public class ActivityZ extends AppCompatActivity {
             dialogNormal.setCancelable(false);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");
+            fragmentTransaction.commitAllowingStateLoss();
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param message set dialog message
+     */
+    public void setViewInputDialog(String message) {
+        setViewInputDialog(null, message);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     */
+    public void setViewInputDialog(String title, String message) {
+        setViewInputDialog(title, message, null);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param button  set dialog button
+     */
+    public void setViewInputDialog(String title, String message, String button) {
+        try {
+            if (fragmentTransaction != null)
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogInput).commit();
+            dialogInput = InputDialog.create(title, message, button);
+            dialogInput.setCancelable(false);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(dialogInput, "DIALOG_INPUT");
             fragmentTransaction.commitAllowingStateLoss();
         } catch (NullPointerException | IllegalStateException ignored) {
         }

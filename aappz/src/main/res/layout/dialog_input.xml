@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:overScrollMode="never"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_16ssp"
+            tools:text="Title" />
+
+        <View
+            android:id="@+id/dialog_message_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:alpha="0.5"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Message.." />
+
+        <EditText
+            android:id="@+id/dialog_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:lines="7"
+            android:minLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_16ssp"
+            tools:ignore="LabelFor"
+            tools:text="Some text here.." />
+
+        <Button
+            android:id="@+id/dialog_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Submit" />
+
+    </LinearLayout>
+
+</ScrollView>
