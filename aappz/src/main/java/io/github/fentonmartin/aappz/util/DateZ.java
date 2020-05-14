@@ -189,11 +189,33 @@ public class DateZ {
     /**
      * Get time range long from inputted time to current time
      *
-     * @param timestamp the inputted long timestamp
+     * @param timestamp the inputted string timestamp
      * @return the result
      */
     public static long getTimeRange(String timestamp) {
         return getTimeRange(Long.parseLong(timestamp));
+    }
+
+    /**
+     * Get boolean from inputted time to current time
+     *
+     * @param timestamp the inputted long timestamp
+     * @param limit     the inputted long time limit
+     * @return the result
+     */
+    public static boolean getTimeRangeCheck(long timestamp, long limit) {
+        return (getTimestamp() - timestamp) <= limit;
+    }
+
+    /**
+     * Get boolean from inputted time to current time
+     *
+     * @param timestamp the inputted string timestamp
+     * @param limit     the inputted long time limit
+     * @return the result
+     */
+    public static boolean getTimeRangeCheck(String timestamp, long limit) {
+        return getTimeRangeCheck(Long.parseLong(timestamp), limit);
     }
 
     /**
@@ -327,7 +349,7 @@ public class DateZ {
      * Get time range string from inputted timestamp
      *
      * @param timestamp the inputted long timestamp
-     * @param type the range type (year, month, day, second)
+     * @param type      the range type (year, month, day, second)
      * @return the result
      */
     public static String getTimeRangeNowFrom(long timestamp, String type) {
@@ -338,7 +360,7 @@ public class DateZ {
      * Get time range string from inputted timestamp
      *
      * @param timestamp the inputted string timestamp
-     * @param type the range type (year, month, day, second)
+     * @param type      the range type (year, month, day, second)
      * @return the result
      */
     public static String getTimeRangeNowFrom(String timestamp, String type) {
@@ -609,11 +631,11 @@ public class DateZ {
     public static final String RANGE_13 = "hours, minutes, seconds";
     public static final String RANGE_14 = "hours, minutes";
 
-    private static long SECONDS = 1000;
-    private static long MINUTES = 60 * SECONDS;
-    private static long HOURS = 60 * MINUTES;
-    private static long DAYS = 24 * HOURS;
-    private static long WEEKS = 7 * DAYS;
-    private static long MONTHS = 30 * DAYS;
-    private static long YEARS = 365 * DAYS;
+    public static long SECONDS = 1000;
+    public static long MINUTES = 60 * SECONDS;
+    public static long HOURS = 60 * MINUTES;
+    public static long DAYS = 24 * HOURS;
+    public static long WEEKS = 7 * DAYS;
+    public static long MONTHS = 30 * DAYS;
+    public static long YEARS = 365 * DAYS;
 }
