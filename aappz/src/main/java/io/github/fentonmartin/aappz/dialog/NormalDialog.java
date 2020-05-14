@@ -31,16 +31,6 @@ public class NormalDialog extends DialogFragment {
         return new NormalDialog();
     }
 
-    public static NormalDialog create(String title, String message, String button) {
-        NormalDialog frag = new NormalDialog();
-        Bundle args = new Bundle();
-        args.putString("title", title);
-        args.putString("message", message);
-        args.putString("button", button);
-        frag.setArguments(args);
-        return frag;
-    }
-
     public static NormalDialog create(String title, String message, String button1, String button2, String button3) {
         NormalDialog frag = new NormalDialog();
         Bundle args = new Bundle();

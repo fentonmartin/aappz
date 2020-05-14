@@ -751,7 +751,7 @@ public class ActivityZ extends AppCompatActivity {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogNormal).commit();
-            dialogNormal = NormalDialog.create(title, message, button);
+            dialogNormal = NormalDialog.create(title, message, button, null, null);
             dialogNormal.setCancelable(false);
             dialogNormal.setDialogCallback(callback);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
