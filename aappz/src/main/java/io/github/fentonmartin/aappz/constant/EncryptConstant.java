@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.constant;
 
+@Deprecated
 public class EncryptConstant {
 
     /* List of all symbols and alphanumerics */
