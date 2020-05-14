@@ -22,12 +22,14 @@ import androidx.fragment.app.FragmentTransaction;
 import io.github.fentonmartin.aappz.R;
 import io.github.fentonmartin.aappz.anim.BounceAnimation;
 import io.github.fentonmartin.aappz.dialog.LoadingDialog;
+import io.github.fentonmartin.aappz.dialog.NormalDialog;
 
 @SuppressWarnings({"unused"})
 public class ActivityZ extends AppCompatActivity {
 
-    private LoadingDialog dialogLoading;
     private FragmentTransaction fragmentTransaction;
+    private LoadingDialog dialogLoading;
+    private NormalDialog dialogNormal;
 
     private IntentZ intentZ;
     private LogZ logZ;
@@ -44,10 +46,14 @@ public class ActivityZ extends AppCompatActivity {
         toastZ = new ToastZ();
         viewZ = new ViewZ();
 
-        /* Initiate Dialogs */
+        /* Initiate Fragment Transaction */
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        /* Initiate Loading Dialog */
         dialogLoading = LoadingDialog.create();
         dialogLoading.setCancelable(false);
+        /* Initiate Normal Dialog */
+        dialogNormal = NormalDialog.create();
+        dialogNormal.setCancelable(false);
 
         setLog(this, "ActivityZ: onCreate");
     }
@@ -632,7 +638,7 @@ public class ActivityZ extends AppCompatActivity {
      * Set loading dialog
      *
      * @param isShow set loading dialog
-     * @param title set title dialog
+     * @param title  set title dialog
      */
     public void setViewLoadingDialog(boolean isShow, String title) {
         try {
@@ -646,7 +652,7 @@ public class ActivityZ extends AppCompatActivity {
                     dialogLoading = LoadingDialog.create(title);
                 dialogLoading.setCancelable(false);
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(dialogLoading, "LOADING_DIALOG");
+                fragmentTransaction.add(dialogLoading, "DIALOG_LOADING");
                 fragmentTransaction.commitAllowingStateLoss();
             } else {
                 if (fragmentTransaction != null)
@@ -656,6 +662,32 @@ public class ActivityZ extends AppCompatActivity {
             }
         } catch (NullPointerException | IllegalStateException ignored) {
         }
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title set title dialog
+     */
+    public void setViewNormalDialog(String title) {
+        try {
+            if (fragmentTransaction != null)
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogNormal).commit();
+            dialogNormal = NormalDialog.create(title);
+            dialogNormal.setCancelable(false);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");
+            fragmentTransaction.commitAllowingStateLoss();
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
+    }
+
+    public void setViewNormalDialogDismiss() {
+        if (fragmentTransaction != null)
+            getSupportFragmentManager().beginTransaction()
+                    .remove(dialogNormal).commit();
+        dialogNormal.dismiss();
     }
 
     /**
