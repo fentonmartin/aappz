@@ -6,10 +6,6 @@
 [![Size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)](https://github.com/fentonmartin/aappz/)
 [![Download](https://api.bintray.com/packages/fentonmartin/maven/AappZ/images/download.svg)](https://bintray.com/fentonmartin/maven/AappZ/_latestVersion)
 
-<a href="https://play.google.com/store/apps/dev?id=8168817666842927690">
-  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-</a>
-
 Description
 -----
 AappZ library is an all in one A-Z library for android application.
