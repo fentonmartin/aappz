@@ -6,7 +6,9 @@
     android:background="@drawable/dialog_background"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/_16sdp">
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_16sdp">
 
     <TextView
         android:id="@+id/dialog_title"
@@ -18,29 +20,58 @@
         android:textSize="@dimen/_16ssp"
         tools:text="Title" />
 
-    <LinearLayout
+    <View
         android:id="@+id/dialog_message_layout"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:alpha="0.5"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14ssp"
+        tools:text="Message.." />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
-            android:alpha="0.5"
-            android:background="@android:color/darker_gray" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/dialog_message"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/dialog_button_1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
             android:textColor="@android:color/black"
             android:textSize="@dimen/_14ssp"
-            tools:text="Message.." />
+            tools:text="Back" />
+
+        <Button
+            android:id="@+id/dialog_button_2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            tools:text="Cancel" />
 
     </LinearLayout>
 

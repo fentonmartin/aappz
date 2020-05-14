@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -69,12 +70,27 @@ public class NormalDialog extends DialogFragment {
 
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
         TextView dialogMessage = view.findViewById(R.id.dialog_message);
+        Button dialogButton1 = view.findViewById(R.id.dialog_button_1);
+
         if (getArguments() != null) {
             dialogTitle.setText(getArguments().getString("title", ""));
             dialogMessage.setText(getArguments().getString("message", ""));
-            if (getArguments().getString("message", "").isEmpty())
-                view.findViewById(R.id.dialog_message_layout).setVisibility(View.GONE);
+            dialogButton1.setText(getArguments().getString("button", "Back"));
+
+            /* Set layout visibility */
+            if (getArguments().getString("title", "").isEmpty()) {
+                view.findViewById(R.id.dialog_title).setVisibility(View.GONE);
+                view.findViewById(R.id.dialog_message_layout).setVisibility(View.INVISIBLE);
+            }
         }
+        dialogButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialogCallback != null)
+                    dialogCallback.onButtonPressed();
+                dismiss();
+            }
+        });
     }
 
     public void setDialogCallback(Callback callback) {
