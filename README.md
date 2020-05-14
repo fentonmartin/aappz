@@ -12,7 +12,7 @@
 
 Description
 -----
-AappZ library is an A-Z all in one library for android application.
+AappZ library is an all in one A-Z library for android application.
 
 Content
 -----
@@ -34,11 +34,12 @@ AappZ library offers convenient tools for android application:
 * PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
+* ThreadZ: Thread validation and limit tools
 * ToastZ: Just toast for create any messages
 * ViewZ: Some functions for view and layout
 
 **Bonus library:**
-* SDP: Library of a scalable size unit (for non text views)
+* SDP: Library of a scalable size unit (for non-text views)
 * SSP: Library of a scalable size unit (for text views)
 
 Installation
