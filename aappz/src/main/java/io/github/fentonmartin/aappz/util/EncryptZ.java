@@ -14,18 +14,18 @@ public class EncryptZ {
         map = new HashMap<>();
         String[] inputs = TextZ.getArrayFrom(input, inputIndex);
         String[] outputs = TextZ.getArrayFrom(output, outputIndex);
-        for (int i = 0; i < EncryptZ.ALL_92.length(); i++) {
+        for (int i = 0; i < ALL_92.length(); i++) {
             map.put(inputs[i], outputs[i]);
         }
         return map;
     }
 
     private static Map<String, String> prepareEncrypt(String key, int index) {
-        return prepare(EncryptZ.ALL_92, key, 1, index);
+        return prepare(ALL_92, key, 1, index);
     }
 
     private static Map<String, String> prepareDecrypt(String key, int index) {
-        return prepare(key, EncryptZ.ALL_92, index, 1);
+        return prepare(key, ALL_92, index, 1);
     }
 
     private static String encryptTo(String text, String key, int index) {
@@ -89,7 +89,7 @@ public class EncryptZ {
      * @return ENCRYPTED Map(String, String) from default key
      */
     public static String encryptDefault(String text) {
-        String key = EncryptZ.ENCRYPT_276;
+        String key = ENCRYPT_276;
         return encryptTo(text, key, key.length() / 92);
     }
 
@@ -100,7 +100,7 @@ public class EncryptZ {
      * @return DECRYPTED Map(String, String) from default key
      */
     public static String decryptDefault(String text) {
-        String key = EncryptZ.ENCRYPT_276;
+        String key = ENCRYPT_276;
         return decryptTo(text, key, key.length() / 92);
     }
 
