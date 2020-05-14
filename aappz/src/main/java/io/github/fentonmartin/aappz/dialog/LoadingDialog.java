@@ -1,5 +1,7 @@
 package io.github.fentonmartin.aappz.dialog;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,9 +51,11 @@ public class LoadingDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         if (getDialog() != null)
-            if (getDialog().getWindow() != null)
+            if (getDialog().getWindow() != null) {
                 getDialog().getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT,
                         WindowManager.LayoutParams.WRAP_CONTENT);
+                getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            }
     }
 
     @Override

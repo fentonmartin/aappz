@@ -8,6 +8,7 @@ import android.widget.TextView;
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
 import io.github.fentonmartin.aappz.util.DateZ;
+import io.github.fentonmartin.aappz.util.DelayZ;
 import io.github.fentonmartin.sample.databinding.ActivityDateBinding;
 
 public class DateActivity extends AappZ {
@@ -25,6 +26,13 @@ public class DateActivity extends AappZ {
     }
 
     public void onCheck(View view) {
+        setViewLoadingDialog(true);
+        DelayZ.post(5000, new DelayZ.Callback() {
+            @Override
+            public void onDelayed() {
+                setViewLoadingDialog(false);
+            }
+        });
         onCheck();
     }
 
