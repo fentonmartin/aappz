@@ -3,9 +3,7 @@ package io.github.fentonmartin.aappz.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.github.fentonmartin.aappz.constant.EncryptConstant;
-
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class EncryptZ {
 
     private static Map<String, String> map;
@@ -106,22 +104,24 @@ public class EncryptZ {
         return decryptTo(text, key, key.length() / 92);
     }
 
-    /* List of all symbols and alphanumerics */
+    /* Encrypt Constants -------------------------------------------------------------------------*/
+
+    /* All alphanumerics and symbols */
     public static final String ALL_92 = " _.,~-:;+=|/!@()<>?{}[]#$%&*^`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     public static final String ALPHANUMERIC = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     public static final String SYMBOLS = " _.,~-:;+=|/!@()<>?{}[]#$%&*^`";
 
-    /* List of all numeric */
+    /* All numeric */
     private static final String NUMERIC_ASC = "0123456789";
     private static final String NUMERIC_DSC = "9876543210";
 
-    /* List of all alphabet */
+    /* All alphabet */
     private static final String ALPHABET_LOWER_ASC = "abcdefghijklmnopqrstuvwxyz";
     private static final String ALPHABET_LOWER_DSC = "zyxwvutsrqponmlkjihgfedcba";
     private static final String ALPHABET_UPPER_ASC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String ALPHABET_UPPER_DSC = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
 
-    /* List of default encryption key */
+    /* Default key */
     public static final String ENCRYPT_62 = "qZnrT8X5Lgh63lA910tGdJ2OeKNPBUxbSHyIQRuYVFwWsacCDp47ijMfmEkzvo";
     public static final String ENCRYPT_92 = "*[?} ~!&^>/%:{-]`<($+)@.;=,#|_qZnrT8X5Lgh63lA910tGdJ2OeKNPBUxbSHyIQRuYVFwWsacCDp47ijMfmEkzvo";
     public static final String ENCRYPT_184 = "CW7qgzOf2XfynJFMXuVavj4kcorXJkFfbBwmDtI5FJDV9DIyO9b2oxaYbybI4YpLzAvsUpnvbhYmIGn2Sv5fR1aKj5JivKSWEaVdInGTWOGB236Gd24QvtYP6DizZvQae3OAIm1MJ9DIbo0mEtgGkTotcvsaujIDRuWeGtknEYl4f6FkX8qReb9a";
