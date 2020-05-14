@@ -34,4 +34,9 @@ class ViewZ {
             view.setEnabled(false);
         }
     }
+
+    void setViewEnabled(View view, float alpha, boolean isEnabled) {
+        view.setAlpha(alpha);
+        view.setEnabled(isEnabled);
+    }
 }
