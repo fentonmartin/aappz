@@ -287,6 +287,7 @@ Functions
 * getValueNumber(EditText text)
 * setViewBounce(View view)
 * setViewEnabled(View view, boolean isEnabled)
+* setViewEnabled(View v, float alpha, boolean isEnabled)
 * hideKeyboard(View view)
 
 [More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)

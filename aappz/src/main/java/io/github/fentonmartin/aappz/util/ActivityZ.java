@@ -640,6 +640,17 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
+     * Set current view enabled
+     *
+     * @param view      the current focused view
+     * @param alpha      the alpha of view
+     * @param isEnabled the status of enabled view
+     */
+    public void setViewEnabled(View view, float alpha, boolean isEnabled) {
+        viewZ.setViewEnabled(view, isEnabled);
+    }
+
+    /**
      * Set current view bounced
      *
      * @param view the current focused view
