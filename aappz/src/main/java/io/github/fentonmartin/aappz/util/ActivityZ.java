@@ -701,7 +701,7 @@ public class ActivityZ extends AppCompatActivity {
      * Set current view enabled
      *
      * @param view      the current focused view
-     * @param alpha      the alpha of view
+     * @param alpha     the alpha of view
      * @param isEnabled the status of enabled view
      */
     public void setViewEnabled(View view, float alpha, boolean isEnabled) {
@@ -950,6 +950,19 @@ public class ActivityZ extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * Show keyboard to UI
+     *
+     * @param view the target focused view
+     */
+    public void showKeyboard(View view) {
+        view.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if (imm != null && getCurrentFocus() != null) {
+            imm.toggleSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.SHOW_FORCED, 0);
         }
     }
 

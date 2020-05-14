@@ -151,8 +151,6 @@ Functions
 * getGreetDay(Calendar cal, String gr.., gre.., gr.., gr..)
 * getGreetDay(Calendar cal, String name)
 * getGreetDay(Calendar cal, String name, String gr.., gre.., gr.., gr..)
-* 
-* 
 
 **DelayZ**
 * post(long millis, final Callback callback)
@@ -312,6 +310,10 @@ Functions
 * getListFrom(String text)
 * getListFrom(String text, String delimiter)
 
+**ThreadZ**
+* valid(long timestamp, Callback callback)
+* valid(long timestamp, long limit, Callback callback)
+
 **ToastZ**
 * setToast(String message)
 * setToast(CharSequence message)
@@ -326,6 +328,7 @@ Functions
 * setViewEnabled(View view, boolean isEnabled)
 * setViewEnabled(View v, float alpha, boolean isEnabled)
 * hideKeyboard(View view)
+* showKeyboard(View view)
 
 [More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
