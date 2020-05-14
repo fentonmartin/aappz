@@ -270,17 +270,38 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set logger from activity
      *
-     * @param log the message is being logged.
+     * @param isDebug the debug is enabled
+     */
+    public void setLog(boolean isDebug) {
+        PrefZ.setBoolean("LogZ", isDebug);
+    }
+
+    /**
+     * Set logger from activity
+     *
+     * @param log the message is being logged
      */
     public void setLog(String log) {
-        logZ.setLog(log);
+        if (PrefZ.getBoolean("LogZ", true))
+            logZ.setLog(log);
+    }
+
+    /**
+     * Set logger from activity
+     *
+     * @param log     the message is being logged
+     * @param isDebug the debug is enabled
+     */
+    public void setLog(String log, boolean isDebug) {
+        if (isDebug)
+            logZ.setLog(log);
     }
 
     /**
      * Set logger from selected activity
      *
      * @param activity the activity logger from
-     * @param log      the message is being logged.
+     * @param log      the message is being logged
      */
     public void setLog(Activity activity, String log) {
         logZ.setLog(activity, log);
@@ -766,8 +787,8 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param title    set dialog title
      * @param message  set dialog message
-     * @param button1   set 1st dialog button
-     * @param button2   set 2nd dialog button
+     * @param button1  set 1st dialog button
+     * @param button2  set 2nd dialog button
      * @param callback set dialog callback
      */
     public void setViewNormalDialog(String title, String message, String button1, String button2, NormalDialog.CallbackTwo callback) {
@@ -790,9 +811,9 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param title    set dialog title
      * @param message  set dialog message
-     * @param button1   set 1st dialog button
-     * @param button2   set 2nd dialog button
-     * @param button3   set 3rd dialog button
+     * @param button1  set 1st dialog button
+     * @param button2  set 2nd dialog button
+     * @param button3  set 3rd dialog button
      * @param callback set dialog callback
      */
     public void setViewNormalDialog(String title, String message, String button1, String button2, String button3, NormalDialog.CallbackThree callback) {
