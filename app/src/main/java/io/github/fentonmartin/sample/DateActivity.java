@@ -59,6 +59,7 @@ public class DateActivity extends AappZ {
         binding.label20.setText("CUSTOM_50");
 
         long time = 37803465000L;
+        long limit = 1589474530764L;
 
         binding.text1.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_1));
         binding.text2.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_2));
@@ -74,10 +75,10 @@ public class DateActivity extends AappZ {
         binding.text12.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_12));
         binding.text13.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_13));
         binding.text14.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_14));
-        binding.text15.setText("Check = :" + DateZ.getTimeRangeCheck(time, time));
-        binding.text16.setText("Check > :" + DateZ.getTimeRangeCheck(time, time - 1));
-        binding.text17.setText("Check < :" + DateZ.getTimeRangeCheck(time, time + 1));
-        binding.text18.setText(DateZ.getDateTime(DateConstant.CUSTOM_48));
+        binding.text15.setText("Check 1:" + DateZ.getTimeRangeCheck(limit, 3 * DateZ.DAYS));
+        binding.text16.setText("Check 2:" + DateZ.getTimeRangeCheck(limit - 3 * DateZ.DAYS, DateZ.WEEKS));
+        binding.text17.setText("Check 3:" + DateZ.getTimeRangeCheck(limit, 3 * DateZ.SECONDS));
+        binding.text18.setText(DateZ.getTimestampString());
         binding.text19.setText(DateZ.getDateTime(DateConstant.CUSTOM_49));
         binding.text20.setText(DateZ.getDateTime(DateConstant.CUSTOM_50));
     }
