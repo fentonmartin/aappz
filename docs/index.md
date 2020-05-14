@@ -12,7 +12,7 @@
 
 Description
 -----
-AappZ library is an A-Z all in one library for android application.
+AappZ library is an all in one A-Z library for android application.
 
 Content
 -----
@@ -34,25 +34,26 @@ AappZ library offers convenient tools for android application:
 * PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
 * TextZ: Text validation and formatting tools
+* ThreadZ: Thread validation and limit tools
 * ToastZ: Just toast for create any messages
 * ViewZ: Some functions for view and layout
 
 **Bonus library:**
-* SDP: Library of a scalable size unit (for non text views)
+* SDP: Library of a scalable size unit (for non-text views)
 * SSP: Library of a scalable size unit (for text views)
 
 Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.4.0'
+implementation 'io.github.fentonmartin:aappz:1.5.0'
 ```
 
 Usage
 -----
 Extend the AappZ in your base activity (recommended):
 ```
-public class MainActivity extends AappZ {...}
+public class MainActivity extends AappZ...}
 ```
 
 Or you could just extend ActivityZ instead:
@@ -105,24 +106,41 @@ Functions
 * setActionBar(boolean isMain)
 * setActionBarHide()
 * setActionBarFull()
+* setTitle(int title)
 * setTitle(String title)
+* setSubtitle(int subtitle)
 * setSubtitle(String subtitle)
 
 **DateZ**
-* getDatetime()
-* getDatetime(String pattern)
-* getDatetimeSimple()
+* getDateFrom(String pattern, String text)
+* getDateTime()
+* getDateTime(String pattern)
+* getDateTimeFull()
+* getDateTimeSimple()
+* getDateHex()
+* getDateHexFrom(String hex)
 * getTimestamp()
 * getTimestampString()
-* getTimestampTime(long timestamp)
-* getTimestampTime(String timestamp)
-* getTimestampTime(String pattern, long timestamp)
-* getTimestampTime(String pattern, String timestamp)
-* getTimestampDateFrom(String pattern, String text) 
+* getTimestamp(long timestamp)
+* getTimestamp(String timestamp)
+* getTimestamp(String pattern, long timestamp)
+* getTimestamp(String pattern, String timestamp)
 * getTimestampLongFrom(String pattern, String text)
 * getTimestampStringFrom(String pattern, String text)
-* getDateHex()
-* getDateFromHex(String hex)
+* getTimeRange(long timestamp)
+* getTimeRange(String timestamp)
+* getTimeRangeCheck(long timestamp, long limit)
+* getTimeRangeCheck(String timestamp, long limit)
+* getTimeRangeString(long timestamp)
+* getTimeRangeString(String timestamp)
+* getTimeRangeFrom(long time)
+* getTimeRangeFrom(String time)
+* getTimeRangeFrom(long time, String type)
+* getTimeRangeFrom(String time, String type)
+* getTimeRangeNowFrom(long timestamp)
+* getTimeRangeNowFrom(String timestamp)
+* getTimeRangeNowFrom(long timestamp, String type)
+* getTimeRangeNowFrom(String timestamp, String type)
 
 **DayZ**
 * getCurrentDay()
@@ -133,8 +151,6 @@ Functions
 * getGreetDay(Calendar cal, String gr.., gre.., gr.., gr..)
 * getGreetDay(Calendar cal, String name)
 * getGreetDay(Calendar cal, String name, String gr.., gre.., gr.., gr..)
-* 
-* 
 
 **DelayZ**
 * post(long millis, final Callback callback)
@@ -151,12 +167,26 @@ Functions
 * getPhoneModel()
 
 **DialogZ**
+* setViewDialogDismiss()
 * setViewLoadingDialog(boolean isShow)
+* setViewLoadingDialog(boolean isShow, String title)
+* setViewNormalDialog(String message)
+* setViewNormalDialog(String message, Callback callback)
+* setViewNormalDialog(String title, String message)
+* setViewNormalDialog(String title, String m, Callback callback)
+* setViewNormalDialog(String title, String m, String b)
+* setViewNormalDialog(String t, String m, b, Callback callback)
+* setViewNormalDialog(String t, String m, b1, b2, Callback callback)
+* setViewNormalDialog(String t, String m, b1, b2, b3, Callback callback)
+* setViewInputDialog(String message, Callback callback)
+* setViewInputDialog(String t, String m, Callback callback)
+* setViewInputDialog(String t, String m, String b, Callback callback)
+* hideKeyboard(View view)
 
 **ExceptionZ**
 * setDefaultUncaughtException(Class activity)
 * setDefaultUncaughtException(UncaughtExceptionHandler..)
-* setUncaughtExceptionHandler(Throwable throwable, Class activity) 
+* setUncaughtExceptionHandler(Throwable throwable, Class activity)
 * getRootException(Throwable exception)
 
 **EncryptZ**
@@ -187,15 +217,21 @@ Functions
 * setActivity(Class activity, String text)
 * setActivity(Class activity, Bundle bundle)
 * setActivityClear(Class activity)
+* setActivityEmail(int email, int subject)
 * setActivityEmail(String email, String subject)
 * setActivityMarket(int id)
 * setActivityMarket(String id)
+* setActivityShare(int subject, int text)
 * setActivityShare(String subject, String text)
+* setActivityShare(int subject, int text, int chooser)
 * setActivityShare(String subject, String text, String chooser)
+* setActivityWebsite(int website)
 * setActivityWebsite(String website)
 
 **LogZ**
+* setLog(boolean isDebug)
 * setLog(String log)
+* setLog(String log, boolean isDebug) {
 * setLog(Activity activity, String log)
 
 **NumberZ**
@@ -216,8 +252,8 @@ Functions
 * check(Context context, String perms, int ratId, PermissionHandler..)
 * check(final Context c, String[] perms)
 * check(final Context c, String[] perms, PermissionHandler..)
-* check(final Context c, String[] perms, String rat, Options o, PermsH..) {
-* check(final Context c, String[] perms, int ratId, Options o, PermsH..) {
+* check(final Context c, String[] perms, String rat, Options o, PermsH..)
+* check(final Context c, String[] perms, int ratId, Options o, PermsH..)
 * hasPermission(String... permissions)
 
 **PrefZ**
@@ -274,6 +310,10 @@ Functions
 * getListFrom(String text)
 * getListFrom(String text, String delimiter)
 
+**ThreadZ**
+* valid(long timestamp, Callback callback)
+* valid(long timestamp, long limit, Callback callback)
+
 **ToastZ**
 * setToast(String message)
 * setToast(CharSequence message)
@@ -286,7 +326,10 @@ Functions
 * getValueNumber(EditText text)
 * setViewBounce(View view)
 * setViewEnabled(View view, boolean isEnabled)
+* setViewEnabled(View v, float alpha, boolean isEnabled)
 * hideKeyboard(View view)
+* showKeyboard(int id)
+* showKeyboard(View view)
 
 [More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 

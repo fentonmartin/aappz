@@ -176,8 +176,8 @@ Functions
 * setViewNormalDialog(String title, String m, Callback callback)
 * setViewNormalDialog(String title, String m, String b)
 * setViewNormalDialog(String t, String m, b, Callback callback)
-* setViewNormalDialog(String t, String m, b1, b2, CallbackTwo callback)
-* setViewNormalDialog(String t, String m, b1, b2, b3, CallbackThree callback)
+* setViewNormalDialog(String t, String m, b1, b2, Callback callback)
+* setViewNormalDialog(String t, String m, b1, b2, b3, Callback callback)
 * setViewInputDialog(String message, Callback callback)
 * setViewInputDialog(String t, String m, Callback callback)
 * setViewInputDialog(String t, String m, String b, Callback callback)
@@ -328,6 +328,7 @@ Functions
 * setViewEnabled(View view, boolean isEnabled)
 * setViewEnabled(View v, float alpha, boolean isEnabled)
 * hideKeyboard(View view)
+* showKeyboard(int id)
 * showKeyboard(View view)
 
 [More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
