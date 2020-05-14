@@ -956,6 +956,15 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Show keyboard to UI
      *
+     * @param id the target focused view resource
+     */
+    public void showKeyboard(int id) {
+        showKeyboard(findViewById(id));
+    }
+
+    /**
+     * Show keyboard to UI
+     *
      * @param view the target focused view
      */
     public void showKeyboard(View view) {
