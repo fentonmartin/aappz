@@ -8,6 +8,7 @@ import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
 import io.github.fentonmartin.aappz.util.DateZ;
 import io.github.fentonmartin.aappz.util.DelayZ;
+import io.github.fentonmartin.aappz.util.ThreadZ;
 import io.github.fentonmartin.sample.databinding.ActivityDateBinding;
 
 public class DateActivity extends AappZ {
@@ -21,6 +22,12 @@ public class DateActivity extends AappZ {
         binding = ActivityDateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        ThreadZ.valid(1589474530764L, new ThreadZ.Callback() {
+            @Override
+            public void onValid() {
+
+            }
+        });
         onCheck();
     }
 
