@@ -762,6 +762,55 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
+     * Set normal dialog
+     *
+     * @param title    set dialog title
+     * @param message  set dialog message
+     * @param button1   set 1st dialog button
+     * @param button2   set 2nd dialog button
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(String title, String message, String button1, String button2, NormalDialog.CallbackTwo callback) {
+        try {
+            if (fragmentTransaction != null)
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogNormal).commit();
+            dialogNormal = NormalDialog.create(title, message, button1, button2, null);
+            dialogNormal.setCancelable(false);
+            dialogNormal.setDialogTwoCallback(callback);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");
+            fragmentTransaction.commitAllowingStateLoss();
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title    set dialog title
+     * @param message  set dialog message
+     * @param button1   set 1st dialog button
+     * @param button2   set 2nd dialog button
+     * @param button3   set 3rd dialog button
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(String title, String message, String button1, String button2, String button3, NormalDialog.CallbackThree callback) {
+        try {
+            if (fragmentTransaction != null)
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogNormal).commit();
+            dialogNormal = NormalDialog.create(title, message, button1, button2, button3);
+            dialogNormal.setCancelable(false);
+            dialogNormal.setDialogThreeCallback(callback);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");
+            fragmentTransaction.commitAllowingStateLoss();
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
+    }
+
+    /**
      * Set input dialog
      *
      * @param message set dialog message
