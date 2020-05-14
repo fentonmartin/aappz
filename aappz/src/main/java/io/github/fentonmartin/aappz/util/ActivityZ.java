@@ -631,6 +631,27 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
+     * Dismiss all dialog types
+     *
+     */
+    public void setViewDialogDismiss() {
+        try {
+            if (fragmentTransaction != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogInput).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogNormal).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogLoading).commit();
+            }
+            dialogInput.dismiss();
+            dialogNormal.dismiss();
+            dialogLoading.dismiss();
+        } catch (IllegalStateException ignored) {
+        }
+    }
+
+    /**
      * Set loading dialog
      *
      * @param isShow set loading dialog
@@ -748,13 +769,6 @@ public class ActivityZ extends AppCompatActivity {
             fragmentTransaction.commitAllowingStateLoss();
         } catch (NullPointerException | IllegalStateException ignored) {
         }
-    }
-
-    public void setViewNormalDialogDismiss() {
-        if (fragmentTransaction != null)
-            getSupportFragmentManager().beginTransaction()
-                    .remove(dialogNormal).commit();
-        dialogNormal.dismiss();
     }
 
     /**
