@@ -26,7 +26,7 @@ public class DateActivity extends AappZ {
     }
 
     public void onCheck(View view) {
-        setViewNormalDialog("Halo FEN!!!!!!!!!!!!!!!!!!!");
+        setViewNormalDialog("Kenapa Sih", "Kenapa kamu harus menjadi seperti itu sih, aku salah apa sama kamu?");
         DelayZ.post(5000, new DelayZ.Callback() {
             @Override
             public void onDelayed() {

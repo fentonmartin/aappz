@@ -670,11 +670,23 @@ public class ActivityZ extends AppCompatActivity {
      * @param title set title dialog
      */
     public void setViewNormalDialog(String title) {
+        setViewNormalDialog(title, "");
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title set title dialog
+     */
+    public void setViewNormalDialog(String title, String message) {
         try {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogNormal).commit();
-            dialogNormal = NormalDialog.create(title);
+            if (message.isEmpty())
+                dialogNormal = NormalDialog.create(title);
+            else
+                dialogNormal = NormalDialog.create(title, message);
             dialogNormal.setCancelable(false);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");

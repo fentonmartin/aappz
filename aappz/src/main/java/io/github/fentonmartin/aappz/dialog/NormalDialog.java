@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +36,15 @@ public class NormalDialog extends DialogFragment {
         return frag;
     }
 
+    public static NormalDialog create(String title, String message) {
+        NormalDialog frag = new NormalDialog();
+        Bundle args = new Bundle();
+        args.putString("title", title);
+        args.putString("message", message);
+        frag.setArguments(args);
+        return frag;
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -60,9 +68,13 @@ public class NormalDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
+        TextView dialogMessage = view.findViewById(R.id.dialog_message);
         if (getArguments() != null) {
-            dialogTitle.setText(getArguments().getString("title", "TITLE"));
-        } else dialogTitle.setText("TITLE");
+            dialogTitle.setText(getArguments().getString("title", ""));
+            dialogMessage.setText(getArguments().getString("message", ""));
+            if (getArguments().getString("message", "").isEmpty())
+                view.findViewById(R.id.dialog_message_layout).setVisibility(View.GONE);
+        }
     }
 
     public void setDialogCallback(Callback callback) {
