@@ -667,23 +667,35 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
-     * @param message set title dialog
+     * @param message set dialog message
      */
     public void setViewNormalDialog(String message) {
-        setViewNormalDialog("", message);
+        setViewNormalDialog(null, message);
     }
 
     /**
      * Set normal dialog
      *
-     * @param title set title dialog
+     * @param title   set dialog title
+     * @param message set dialog message
      */
     public void setViewNormalDialog(String title, String message) {
+        setViewNormalDialog(title, message, null);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param button set dialog button
+     */
+    public void setViewNormalDialog(String title, String message, String button) {
         try {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogNormal).commit();
-            dialogNormal = NormalDialog.create(title, message);
+            dialogNormal = NormalDialog.create(title, message, button);
             dialogNormal.setCancelable(false);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");

@@ -46,6 +46,16 @@ public class NormalDialog extends DialogFragment {
         return frag;
     }
 
+    public static NormalDialog create(String title, String message, String button) {
+        NormalDialog frag = new NormalDialog();
+        Bundle args = new Bundle();
+        args.putString("title", title);
+        args.putString("message", message);
+        args.putString("button", button);
+        frag.setArguments(args);
+        return frag;
+    }
+
     @Override
     public void onStart() {
         super.onStart();
