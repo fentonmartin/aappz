@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import io.github.fentonmartin.aappz.AappZ;
-import io.github.fentonmartin.aappz.constant.DateConstant;
-import io.github.fentonmartin.aappz.constant.EncryptConstant;
 import io.github.fentonmartin.aappz.util.DateZ;
 import io.github.fentonmartin.aappz.util.EncryptZ;
 import io.github.fentonmartin.aappz.util.PrefZ;
@@ -27,8 +25,8 @@ public class MainActivity extends AappZ {
         TextView textView = findViewById(R.id.text);
         textView.setText(
                 DateZ.getTimestampString() + "\n" +
-                DateZ.getTimestampTime(910198934000L) + "\n" +
-                DateZ.getTimestampTime("910198934000"));
+                        DateZ.getTimestampTime(910198934000L) + "\n" +
+                        DateZ.getTimestampTime("910198934000"));
 
         setDefaultUncaughtException(new Thread.UncaughtExceptionHandler() {
             @Override
@@ -45,16 +43,16 @@ public class MainActivity extends AappZ {
         String c = "fxbUuMuMp5bPqxivp5C2uMRtqxz9vSH6";
         String encrypted, decrypted;
 
-        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_92);
+        encrypted = EncryptZ.encryptTo(a, EncryptZ.ENCRYPT_92);
         setLog("EncryptZ 92 EncryptTo " + encrypted);
 
-        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_92);
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptZ.ENCRYPT_92);
         setLog("EncryptZ 92 DecryptTo " + decrypted);
 
-        encrypted = EncryptZ.encryptTo(a, EncryptConstant.ENCRYPT_184);
+        encrypted = EncryptZ.encryptTo(a, EncryptZ.ENCRYPT_184);
         setLog("EncryptZ 184 EncryptTo " + encrypted);
 
-        decrypted = EncryptZ.decryptTo(encrypted, EncryptConstant.ENCRYPT_184);
+        decrypted = EncryptZ.decryptTo(encrypted, EncryptZ.ENCRYPT_184);
         setLog("EncryptZ 184 DecryptTo " + decrypted);
 
         setToast(decrypted);
