@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.constant;
 
+@SuppressWarnings("DeprecatedIsStillUsed")
 @Deprecated
 public class EncryptConstant {
 
