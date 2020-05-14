@@ -632,7 +632,6 @@ public class ActivityZ extends AppCompatActivity {
 
     /**
      * Dismiss all dialog types
-     *
      */
     public void setViewDialogDismiss() {
         try {
@@ -702,11 +701,30 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
+     * @param message set dialog message
+     */
+    public void setViewNormalDialog(String message, NormalDialog.Callback callback) {
+        setViewNormalDialog(null, message, callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
      * @param title   set dialog title
      * @param message set dialog message
      */
     public void setViewNormalDialog(String title, String message) {
-        setViewNormalDialog(title, message, null);
+        setViewNormalDialog(title, message, null, null);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     */
+    public void setViewNormalDialog(String title, String message, NormalDialog.Callback callback) {
+        setViewNormalDialog(title, message, null, callback);
     }
 
     /**
@@ -717,12 +735,25 @@ public class ActivityZ extends AppCompatActivity {
      * @param button  set dialog button
      */
     public void setViewNormalDialog(String title, String message, String button) {
+        setViewNormalDialog(title, message, button, null);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title    set dialog title
+     * @param message  set dialog message
+     * @param button   set dialog button
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(String title, String message, String button, NormalDialog.Callback callback) {
         try {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogNormal).commit();
             dialogNormal = NormalDialog.create(title, message, button);
             dialogNormal.setCancelable(false);
+            dialogNormal.setDialogCallback(callback);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogNormal, "DIALOG_NORMAL");
             fragmentTransaction.commitAllowingStateLoss();
