@@ -200,7 +200,7 @@ public class DateZ {
      * Get boolean from inputted time to current time
      *
      * @param timestamp the inputted long timestamp
-     * @param limit     the inputted long time limit
+     * @param limit     the inputted long limit (less than limit)
      * @return the result
      */
     public static boolean getTimeRangeCheck(long timestamp, long limit) {
@@ -211,7 +211,7 @@ public class DateZ {
      * Get boolean from inputted time to current time
      *
      * @param timestamp the inputted string timestamp
-     * @param limit     the inputted long time limit
+     * @param limit     the inputted long limit (less than limit)
      * @return the result
      */
     public static boolean getTimeRangeCheck(String timestamp, long limit) {
