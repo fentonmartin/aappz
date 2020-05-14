@@ -82,8 +82,8 @@ public class DateZ {
      * @param hex the hex timestamp
      * @return the result
      */
-    public static String getDateFromHex(String hex) {
-        return getTimestampTime(NumberZ.fromHex(hex));
+    public static String getDateHexFrom(String hex) {
+        return getTimestamp(NumberZ.fromHex(hex));
     }
 
     /* Timestamp ---------------------------------------------------------------------------------*/
@@ -112,7 +112,7 @@ public class DateZ {
      * @param timestamp the inputted long timestamp
      * @return the result
      */
-    public static String getTimestampTime(long timestamp) {
+    public static String getTimestamp(long timestamp) {
         return new SimpleDateFormat(DateZ.DATE_FULL).format(new Date(timestamp));
     }
 
@@ -122,8 +122,8 @@ public class DateZ {
      * @param timestamp the inputted string timestamp
      * @return the result
      */
-    public static String getTimestampTime(String timestamp) {
-        return getTimestampTime(Long.parseLong(timestamp));
+    public static String getTimestamp(String timestamp) {
+        return getTimestamp(Long.parseLong(timestamp));
     }
 
     /**
@@ -133,7 +133,7 @@ public class DateZ {
      * @param timestamp the inputted long timestamp
      * @return the result
      */
-    public static String getTimestampTime(String pattern, long timestamp) {
+    public static String getTimestamp(String pattern, long timestamp) {
         return new SimpleDateFormat(pattern).format(new Date(timestamp));
     }
 
@@ -144,8 +144,8 @@ public class DateZ {
      * @param timestamp the inputted string timestamp
      * @return the result
      */
-    public static String getTimestampTime(String pattern, String timestamp) {
-        return getTimestampTime(pattern, Long.parseLong(timestamp));
+    public static String getTimestamp(String pattern, String timestamp) {
+        return getTimestamp(pattern, Long.parseLong(timestamp));
     }
 
     /**

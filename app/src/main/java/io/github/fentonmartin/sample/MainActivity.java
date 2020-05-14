@@ -25,8 +25,8 @@ public class MainActivity extends AappZ {
         TextView textView = findViewById(R.id.text);
         textView.setText(
                 DateZ.getTimestampString() + "\n" +
-                        DateZ.getTimestampTime(910198934000L) + "\n" +
-                        DateZ.getTimestampTime("910198934000"));
+                        DateZ.getTimestamp(910198934000L) + "\n" +
+                        DateZ.getTimestamp("910198934000"));
 
         setDefaultUncaughtException(new Thread.UncaughtExceptionHandler() {
             @Override
