@@ -625,12 +625,25 @@ public class ActivityZ extends AppCompatActivity {
      * @param isShow set loading dialog
      */
     public void setViewLoadingDialog(boolean isShow) {
+        setViewLoadingDialog(isShow, "");
+    }
+
+    /**
+     * Set loading dialog
+     *
+     * @param isShow set loading dialog
+     * @param title set title dialog
+     */
+    public void setViewLoadingDialog(boolean isShow, String title) {
         try {
             if (isShow) {
                 if (fragmentTransaction != null)
                     getSupportFragmentManager().beginTransaction()
                             .remove(dialogLoading).commit();
-                dialogLoading = LoadingDialog.create();
+                if (title.isEmpty())
+                    dialogLoading = LoadingDialog.create();
+                else
+                    dialogLoading = LoadingDialog.create(title);
                 dialogLoading.setCancelable(false);
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.add(dialogLoading, "LOADING_DIALOG");
