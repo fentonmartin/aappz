@@ -1,5 +1,6 @@
 package io.github.fentonmartin.aappz.constant;
 
+@Deprecated
 public class IntentConstant {
     public static final String CONSTANT_INTENT = "CONSTANT_INTENT";
     public static final String CONSTANT_INTENT_2 = "CONSTANT_INTENT_2";
