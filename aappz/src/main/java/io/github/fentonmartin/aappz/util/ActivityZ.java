@@ -21,10 +21,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fentonmartin.aappz.R;
 import io.github.fentonmartin.aappz.anim.BounceAnimation;
-import io.github.fentonmartin.aappz.constant.IntentConstant;
 import io.github.fentonmartin.aappz.dialog.LoadingDialog;
 
-@SuppressWarnings({"WeakerAccess", "unused"})
+@SuppressWarnings({"unused"})
 public class ActivityZ extends AppCompatActivity {
 
     private LoadingDialog dialogLoading;
@@ -212,14 +211,15 @@ public class ActivityZ extends AppCompatActivity {
         throwable.printStackTrace();
 
         Intent intent = new Intent(this, activity);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_CRASH, true);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_CRASH_LOG, getRootException(throwable).getMessage());
+        intent.putExtra(CONSTANT_INTENT_CRASH, true);
+        intent.putExtra(CONSTANT_INTENT_CRASH_LOG, getRootException(throwable).getMessage());
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
         AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
-
+        if (alarmManager != null) {
+            alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
+        }
         finish();
         System.exit(2);
     }
@@ -322,7 +322,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param bool     the boolean extra
      */
     public void setActivity(Class activity, boolean bool) {
-        startActivity(intentZ.intent(getApplicationContext(), activity, IntentConstant.CONSTANT_INTENT, bool));
+        startActivity(intentZ.intent(getApplicationContext(), activity, CONSTANT_INTENT, bool));
     }
 
     /**
@@ -332,7 +332,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param text     the string extra
      */
     public void setActivity(Class activity, String text) {
-        startActivity(intentZ.intent(getApplicationContext(), activity, IntentConstant.CONSTANT_INTENT, text));
+        startActivity(intentZ.intent(getApplicationContext(), activity, CONSTANT_INTENT, text));
     }
 
     /**
@@ -344,8 +344,8 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setActivity(Class activity, String text1, String text2) {
         Intent intent = new Intent(getApplicationContext(), activity);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
         startActivity(intent);
     }
 
@@ -359,9 +359,9 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setActivity(Class activity, String text1, String text2, String text3) {
         Intent intent = new Intent(getApplicationContext(), activity);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
         startActivity(intent);
     }
 
@@ -376,10 +376,10 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setActivity(Class activity, String text1, String text2, String text3, String text4) {
         Intent intent = new Intent(getApplicationContext(), activity);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
         startActivity(intent);
     }
 
@@ -395,11 +395,11 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5) {
         Intent intent = new Intent(getApplicationContext(), activity);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT, text1);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_2, text2);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_3, text3);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_4, text4);
-        intent.putExtra(IntentConstant.CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
         startActivity(intent);
     }
 
@@ -410,7 +410,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param bundle   the bundle extra
      */
     public void setActivity(Class activity, Bundle bundle) {
-        startActivity(intentZ.intent(getApplicationContext(), activity, IntentConstant.CONSTANT_INTENT, bundle));
+        startActivity(intentZ.intent(getApplicationContext(), activity, CONSTANT_INTENT, bundle));
     }
 
     /**
@@ -496,8 +496,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntentFrom(Intent intent) {
-        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT) != null)
-            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT);
+        if (intent.getStringExtra(CONSTANT_INTENT) != null)
+            return intent.getStringExtra(CONSTANT_INTENT);
         else return "";
     }
 
@@ -507,8 +507,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent2From(Intent intent) {
-        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_2) != null)
-            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_2);
+        if (intent.getStringExtra(CONSTANT_INTENT_2) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_2);
         else return "";
     }
 
@@ -518,8 +518,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent3From(Intent intent) {
-        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_3) != null)
-            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_3);
+        if (intent.getStringExtra(CONSTANT_INTENT_3) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_3);
         else return "";
     }
 
@@ -529,8 +529,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent4From(Intent intent) {
-        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_4) != null)
-            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_4);
+        if (intent.getStringExtra(CONSTANT_INTENT_4) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_4);
         else return "";
     }
 
@@ -540,8 +540,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param intent the intent with setActivity
      */
     public String getIntent5From(Intent intent) {
-        if (intent.getStringExtra(IntentConstant.CONSTANT_INTENT_5) != null)
-            return intent.getStringExtra(IntentConstant.CONSTANT_INTENT_5);
+        if (intent.getStringExtra(CONSTANT_INTENT_5) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_5);
         else return "";
     }
 
@@ -656,4 +656,14 @@ public class ActivityZ extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+    /* Intent Constants --------------------------------------------------------------------------*/
+
+    public static final String CONSTANT_INTENT = "CONSTANT_INTENT";
+    public static final String CONSTANT_INTENT_2 = "CONSTANT_INTENT_2";
+    public static final String CONSTANT_INTENT_3 = "CONSTANT_INTENT_3";
+    public static final String CONSTANT_INTENT_4 = "CONSTANT_INTENT_4";
+    public static final String CONSTANT_INTENT_5 = "CONSTANT_INTENT_5";
+    public static final String CONSTANT_INTENT_CRASH = "CONSTANT_INTENT_CRASH";
+    public static final String CONSTANT_INTENT_CRASH_LOG = "CONSTANT_INTENT_CRASH_LOG";
 }
