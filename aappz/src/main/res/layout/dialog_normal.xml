@@ -39,40 +39,55 @@
         android:textSize="@dimen/_14ssp"
         tools:text="Message.." />
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_2sdp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:scrollbars="none">
 
-        <Button
-            android:id="@+id/dialog_button_1"
-            style="@style/Widget.AppCompat.Button.Borderless"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_14ssp"
-            tools:text="Back" />
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/dialog_button_2"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_14ssp"
-            android:visibility="gone"
-            tools:text="Cancel" />
+            <Button
+                android:id="@+id/dialog_button_1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14ssp"
+                tools:text="Back" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/dialog_button_2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                tools:text="Back" />
+
+            <Button
+                android:id="@+id/dialog_button_3"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                tools:text="Back" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </LinearLayout>
