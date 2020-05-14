@@ -1,11 +1,12 @@
 package io.github.fentonmartin.aappz.recycler;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * RecyclerItemClickListener
@@ -16,7 +17,10 @@ import android.view.View;
  * <p> How to use:
  * <p> recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(...));
  * <p> This function should only be called once in onCreate()
- *
+ * <p>
+ * <p> Accessing Particular View Component in the RecyclerView Item
+ * <p> In order to access particular view component inside RecyclerView, for example, In order to perform some operation only on clicking the profile image in the RecyclerView row item, then here is the small hack for you.
+ * <p> We can define the component by findViewById via it’s respective View. Here is the code for you. ImageView picture = (ImageView) view.findViewById(R.id.picture); picture.setOnClickListener(new View.OnClickListener() {...});
  */
 @SuppressWarnings("unused")
 public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
@@ -65,9 +69,9 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
     /**
      * Implement RecyclerItemClickListener on RecyclerView without onItemLongClick
      *
-     * @param context        the application context
-     * @param recyclerView   the targeted recycler view
-     * @param listener       the simple click listener
+     * @param context      the application context
+     * @param recyclerView the targeted recycler view
+     * @param listener     the simple click listener
      */
     public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnSimpleClickListener listener) {
         mSimpleListener = listener;
