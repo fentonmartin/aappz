@@ -3,7 +3,6 @@ package io.github.fentonmartin.sample;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
@@ -30,7 +29,7 @@ public class DateActivity extends AappZ {
         DelayZ.post(5000, new DelayZ.Callback() {
             @Override
             public void onDelayed() {
-                setViewNormalDialogDismiss();
+                setViewDialogDismiss();
             }
         });
         onCheck();
@@ -58,7 +57,7 @@ public class DateActivity extends AappZ {
         binding.label18.setText("CUSTOM_48");
         binding.label19.setText("CUSTOM_49");
         binding.label20.setText("CUSTOM_50");
-        
+
         long time = 37803465000L;
 
         binding.text1.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_1));
@@ -75,9 +74,9 @@ public class DateActivity extends AappZ {
         binding.text12.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_12));
         binding.text13.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_13));
         binding.text14.setText(DateZ.getTimeRangeFrom(time, DateZ.RANGE_14));
-        binding.text15.setText(DateZ.getDateTime(DateConstant.CUSTOM_45));
-        binding.text16.setText(DateZ.getDateTime(DateConstant.CUSTOM_46));
-        binding.text17.setText(DateZ.getDateTime(DateConstant.CUSTOM_47));
+        binding.text15.setText("Check = :" + DateZ.getTimeRangeCheck(time, time));
+        binding.text16.setText("Check > :" + DateZ.getTimeRangeCheck(time, time - 1));
+        binding.text17.setText("Check < :" + DateZ.getTimeRangeCheck(time, time + 1));
         binding.text18.setText(DateZ.getDateTime(DateConstant.CUSTOM_48));
         binding.text19.setText(DateZ.getDateTime(DateConstant.CUSTOM_49));
         binding.text20.setText(DateZ.getDateTime(DateConstant.CUSTOM_50));
