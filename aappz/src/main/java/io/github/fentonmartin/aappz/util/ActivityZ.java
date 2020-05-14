@@ -518,6 +518,15 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param website the url string
      */
+    public void setActivityWebsite(int website) {
+        startActivity(intentZ.intentWebsite(getString(website)));
+    }
+
+    /**
+     * Set url intent from current activity
+     *
+     * @param website the url string
+     */
     public void setActivityWebsite(String website) {
         startActivity(intentZ.intentWebsite(website));
     }
