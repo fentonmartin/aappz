@@ -65,7 +65,7 @@ public class InputDialog extends DialogFragment {
 
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
         TextView dialogMessage = view.findViewById(R.id.dialog_message);
-        EditText dialogEdit = view.findViewById(R.id.dialog_edit);
+        final EditText dialogEdit = view.findViewById(R.id.dialog_edit);
         Button dialogButton = view.findViewById(R.id.dialog_button);
 
         if (getArguments() != null) {
@@ -84,7 +84,7 @@ public class InputDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 if (dialogCallback != null)
-                    dialogCallback.onButtonPressed();
+                    dialogCallback.onButtonPressed(dialogEdit.getText().toString());
                 dismiss();
             }
         });
@@ -95,6 +95,6 @@ public class InputDialog extends DialogFragment {
     }
 
     public interface Callback {
-        void onButtonPressed();
+        void onButtonPressed(String text);
     }
 }

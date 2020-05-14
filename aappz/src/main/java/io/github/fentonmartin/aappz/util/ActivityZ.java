@@ -714,8 +714,8 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param message set dialog message
      */
-    public void setViewInputDialog(String message) {
-        setViewInputDialog(null, message);
+    public void setViewInputDialog(String message, InputDialog.Callback callback) {
+        setViewInputDialog(null, message, callback);
     }
 
     /**
@@ -724,8 +724,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param title   set dialog title
      * @param message set dialog message
      */
-    public void setViewInputDialog(String title, String message) {
-        setViewInputDialog(title, message, null);
+    public void setViewInputDialog(String title, String message, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, null, callback);
     }
 
     /**
@@ -735,13 +735,14 @@ public class ActivityZ extends AppCompatActivity {
      * @param message set dialog message
      * @param button  set dialog button
      */
-    public void setViewInputDialog(String title, String message, String button) {
+    public void setViewInputDialog(String title, String message, String button, InputDialog.Callback callback) {
         try {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogInput).commit();
             dialogInput = InputDialog.create(title, message, button);
             dialogInput.setCancelable(false);
+            dialogInput.setDialogCallback(callback);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogInput, "DIALOG_INPUT");
             fragmentTransaction.commitAllowingStateLoss();
