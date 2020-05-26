@@ -74,19 +74,6 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/dialog_button_2"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/_14ssp"
-                    android:visibility="gone"
-                    tools:text="Cancel"
-                    tools:visibility="visible" />
-
-                <Button
                     android:id="@+id/dialog_button_1"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
@@ -95,7 +82,20 @@
                     android:gravity="center"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_14ssp"
-                    tools:text="Submit" />
+                    tools:text="Cancel" />
+
+                <Button
+                    android:id="@+id/dialog_button_2"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="visible"
+                    tools:text="Submit"
+                    tools:visibility="visible" />
 
             </LinearLayout>
 

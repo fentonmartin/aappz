@@ -23,6 +23,7 @@ import io.github.fentonmartin.aappz.R;
 public class InputDialog extends DialogFragment {
 
     private Callback dialogCallback;
+    private CallbackTwo dialogCallbackTwo;
 
     public InputDialog() {
     }
@@ -31,12 +32,14 @@ public class InputDialog extends DialogFragment {
         return new InputDialog();
     }
 
-    public static InputDialog create(String title, String message, String button) {
+    public static InputDialog create(String title, String message, String text, String button1, String button2) {
         InputDialog frag = new InputDialog();
         Bundle args = new Bundle();
         args.putString("title", title);
         args.putString("message", message);
-        args.putString("button1", button);
+        args.putString("text", text);
+        args.putString("button1", button1);
+        args.putString("button2", button2);
         frag.setArguments(args);
         return frag;
     }
@@ -72,8 +75,9 @@ public class InputDialog extends DialogFragment {
         if (getArguments() != null) {
             dialogTitle.setText(getArguments().getString("title", ""));
             dialogMessage.setText(getArguments().getString("message", ""));
-            dialogButton1.setText(getArguments().getString("button1", "Submit"));
-            dialogButton2.setText(getArguments().getString("button2", "Cancel"));
+            dialogEdit.setText(getArguments().getString("text", ""));
+            dialogButton1.setText(getArguments().getString("button1", "Cancel"));
+            dialogButton2.setText(getArguments().getString("button2", "Submit"));
             dialogEdit.setRawInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 
             /* Set layout visibility */
@@ -85,8 +89,18 @@ public class InputDialog extends DialogFragment {
         dialogButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (dialogCallbackTwo != null)
+                    dialogCallbackTwo.onButton1Pressed();
+                dismiss();
+            }
+        });
+        dialogButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 if (dialogCallback != null)
                     dialogCallback.onButtonPressed(dialogEdit.getText().toString());
+                if (dialogCallbackTwo != null)
+                    dialogCallbackTwo.onButton2Pressed(dialogEdit.getText().toString());
                 dismiss();
             }
         });
@@ -98,5 +112,11 @@ public class InputDialog extends DialogFragment {
 
     public interface Callback {
         void onButtonPressed(String text);
+    }
+
+    public interface CallbackTwo {
+        void onButton1Pressed();
+
+        void onButton2Pressed(String text);
     }
 }
