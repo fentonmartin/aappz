@@ -906,7 +906,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param message set dialog message
      */
     public void setViewInputDialog(String message, InputDialog.Callback callback) {
-        setViewInputDialog(null, message, callback);
+        setViewInputDialog(null, message, null, null, null, callback);
     }
 
     /**
@@ -925,7 +925,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param message set dialog message
      */
     public void setViewInputDialog(String title, String message, InputDialog.Callback callback) {
-        setViewInputDialog(title, message, null, callback);
+        setViewInputDialog(title, message, null, null, null, callback);
     }
 
     /**
@@ -1018,6 +1018,65 @@ public class ActivityZ extends AppCompatActivity {
             fragmentTransaction.commitAllowingStateLoss();
         } catch (NullPointerException | IllegalStateException ignored) {
         }
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     */
+    public void setViewInputHintDialog(String message, String text, InputDialog.Callback callback) {
+        setViewInputDialog(null, message, text, null, null, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     */
+    public void setViewInputHintDialog(String title, String message, String text, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, text, null, null, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button  set dialog button
+     */
+    public void setViewInputHintDialog(String title, String message, String text, String button, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, text, null, button, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputHintDialog(String title, String message, String text, String button1, String button2, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, text, button1, button2, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputHintDialog(String title, String message, String text, String button1, String button2, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(title, message, text, button1, button2, callback);
     }
 
     /**
