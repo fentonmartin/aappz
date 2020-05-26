@@ -36,7 +36,7 @@ public class InputDialog extends DialogFragment {
         Bundle args = new Bundle();
         args.putString("title", title);
         args.putString("message", message);
-        args.putString("button", button);
+        args.putString("button1", button);
         frag.setArguments(args);
         return frag;
     }
@@ -66,12 +66,14 @@ public class InputDialog extends DialogFragment {
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
         TextView dialogMessage = view.findViewById(R.id.dialog_message);
         final EditText dialogEdit = view.findViewById(R.id.dialog_edit);
-        Button dialogButton = view.findViewById(R.id.dialog_button);
+        Button dialogButton1 = view.findViewById(R.id.dialog_button_1);
+        Button dialogButton2 = view.findViewById(R.id.dialog_button_2);
 
         if (getArguments() != null) {
             dialogTitle.setText(getArguments().getString("title", ""));
             dialogMessage.setText(getArguments().getString("message", ""));
-            dialogButton.setText(getArguments().getString("button", "Submit"));
+            dialogButton1.setText(getArguments().getString("button1", "Submit"));
+            dialogButton2.setText(getArguments().getString("button2", "Cancel"));
             dialogEdit.setRawInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 
             /* Set layout visibility */
@@ -80,7 +82,7 @@ public class InputDialog extends DialogFragment {
                 view.findViewById(R.id.dialog_message_layout).setVisibility(View.INVISIBLE);
             }
         }
-        dialogButton.setOnClickListener(new View.OnClickListener() {
+        dialogButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (dialogCallback != null)
