@@ -782,6 +782,15 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
+     * @param message set dialog message resource
+     */
+    public void setViewNormalDialog(int message) {
+        setViewNormalDialog(null, getString(message));
+    }
+
+    /**
+     * Set normal dialog
+     *
      * @param message set dialog message
      */
     public void setViewNormalDialog(String message) {
@@ -791,10 +800,29 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
+     * @param message set dialog message resource
+     */
+    public void setViewNormalDialog(int message, NormalDialog.Callback callback) {
+        setViewNormalDialog(null, getString(message), callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
      * @param message set dialog message
      */
     public void setViewNormalDialog(String message, NormalDialog.Callback callback) {
         setViewNormalDialog(null, message, callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     */
+    public void setViewNormalDialog(int title, int message) {
+        setViewNormalDialog(getString(title), getString(message), null, null);
     }
 
     /**
@@ -810,11 +838,32 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     */
+    public void setViewNormalDialog(int title, int message, NormalDialog.Callback callback) {
+        setViewNormalDialog(getString(title), getString(message), null, callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
      * @param title   set dialog title
      * @param message set dialog message
      */
     public void setViewNormalDialog(String title, String message, NormalDialog.Callback callback) {
         setViewNormalDialog(title, message, null, callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param button  set dialog button resource
+     */
+    public void setViewNormalDialog(int title, int message, int button) {
+        setViewNormalDialog(getString(title), getString(message), getString(button), null);
     }
 
     /**
@@ -826,6 +875,18 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setViewNormalDialog(String title, String message, String button) {
         setViewNormalDialog(title, message, button, null);
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title    set dialog title resource
+     * @param message  set dialog message resource
+     * @param button   set dialog button resource
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(int title, int message, int button, NormalDialog.Callback callback) {
+        setViewNormalDialog(getString(title), getString(message), getString(button), callback);
     }
 
     /**
@@ -854,6 +915,19 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set normal dialog
      *
+     * @param title    set dialog title resource
+     * @param message  set dialog message resource
+     * @param button1  set 1st dialog button resource
+     * @param button2  set 2nd dialog button resource
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(int title, int message, int button1, int button2, NormalDialog.CallbackTwo callback) {
+        setViewNormalDialog(getString(title), getString(message), getString(button1), getString(button2), callback);
+    }
+
+    /**
+     * Set normal dialog
+     *
      * @param title    set dialog title
      * @param message  set dialog message
      * @param button1  set 1st dialog button
@@ -873,6 +947,20 @@ public class ActivityZ extends AppCompatActivity {
             fragmentTransaction.commitAllowingStateLoss();
         } catch (NullPointerException | IllegalStateException ignored) {
         }
+    }
+
+    /**
+     * Set normal dialog
+     *
+     * @param title    set dialog title resource
+     * @param message  set dialog message resource
+     * @param button1  set 1st dialog button resource
+     * @param button2  set 2nd dialog button resource
+     * @param button3  set 3rd dialog button resource
+     * @param callback set dialog callback
+     */
+    public void setViewNormalDialog(int title, int message, int button1, int button2, int button3, NormalDialog.CallbackThree callback) {
+        setViewNormalDialog(getString(title), getString(message), getString(button1), getString(button2), getString(button3), callback);
     }
 
     /**
@@ -903,6 +991,15 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog
      *
+     * @param message set dialog message resource
+     */
+    public void setViewInputDialog(int message, InputDialog.Callback callback) {
+        setViewInputDialog(null, getString(message), null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
      * @param message set dialog message
      */
     public void setViewInputDialog(String message, InputDialog.Callback callback) {
@@ -912,10 +1009,29 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog
      *
+     * @param message set dialog message resource
+     */
+    public void setViewInputDialog(int message, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(null, getString(message), null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
      * @param message set dialog message
      */
     public void setViewInputDialog(String message, InputDialog.CallbackTwo callback) {
         setViewInputDialog(null, message, null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     */
+    public void setViewInputDialog(int title, int message, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), null, null, null, callback);
     }
 
     /**
@@ -934,8 +1050,29 @@ public class ActivityZ extends AppCompatActivity {
      * @param title   set dialog title
      * @param message set dialog message
      */
+    public void setViewInputDialog(int title, int message, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(getString(title), getString(message), null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     */
     public void setViewInputDialog(String title, String message, InputDialog.CallbackTwo callback) {
         setViewInputDialog(title, message, null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param button  set dialog button resource
+     */
+    public void setViewInputDialog(int title, int message, int button, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), null, null, getString(button), callback);
     }
 
     /**
@@ -952,12 +1089,35 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog
      *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param button  set dialog button resource
+     */
+    public void setViewInputDialog(int title, int message, int button, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(getString(title), getString(message), null, null, getString(button), callback);
+    }
+
+    /**
+     * Set input dialog
+     *
      * @param title   set dialog title
      * @param message set dialog message
      * @param button  set dialog button
      */
     public void setViewInputDialog(String title, String message, String button, InputDialog.CallbackTwo callback) {
         setViewInputDialog(title, message, null, null, button, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param button1 set dialog 1st button resource
+     * @param button2 set dialog 2nd button resource
+     */
+    public void setViewInputDialog(int title, int message, int button1, int button2, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), null, getString(button1), getString(button2), callback);
     }
 
     /**
@@ -970,6 +1130,19 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setViewInputDialog(String title, String message, String button1, String button2, InputDialog.Callback callback) {
         setViewInputDialog(title, message, null, button1, button2, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param text    set dialog edit text resource
+     * @param button1 set dialog 1st button resource
+     * @param button2 set dialog 2nd button resource
+     */
+    public void setViewInputDialog(int title, int message, int text, int button1, int button2, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), getString(button1), getString(button2), callback);
     }
 
     /**
@@ -999,6 +1172,19 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog
      *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param text    set dialog edit text resource
+     * @param button1 set dialog 1st button resource
+     * @param button2 set dialog 2nd button resource
+     */
+    public void setViewInputDialog(int title, int message, int text, int button1, int button2, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), getString(button1), getString(button2), callback);
+    }
+
+    /**
+     * Set input dialog
+     *
      * @param title   set dialog title
      * @param message set dialog message
      * @param text    set dialog edit text
@@ -1023,11 +1209,32 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog with hint
      *
+     * @param message set dialog message resource
+     * @param text    set dialog edit text resource
+     */
+    public void setViewInputHintDialog(int message, int text, InputDialog.Callback callback) {
+        setViewInputDialog(null, getString(message), getString(text), null, null, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
      * @param message set dialog message
      * @param text    set dialog edit text
      */
     public void setViewInputHintDialog(String message, String text, InputDialog.Callback callback) {
         setViewInputDialog(null, message, text, null, null, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title resource
+     * @param message set dialog message resource
+     * @param text    set dialog edit text resource
+     */
+    public void setViewInputHintDialog(int title, int message, int text, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), null, null, callback);
     }
 
     /**
@@ -1039,6 +1246,18 @@ public class ActivityZ extends AppCompatActivity {
      */
     public void setViewInputHintDialog(String title, String message, String text, InputDialog.Callback callback) {
         setViewInputDialog(title, message, text, null, null, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button  set dialog button
+     */
+    public void setViewInputHintDialog(int title, int message, int text, int button, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), null, getString(button), callback);
     }
 
     /**
@@ -1062,8 +1281,34 @@ public class ActivityZ extends AppCompatActivity {
      * @param button1 set dialog 1st button
      * @param button2 set dialog 2nd button
      */
+    public void setViewInputHintDialog(int title, int message, int text, int button1, int button2, InputDialog.Callback callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), getString(button1), getString(button2), callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
     public void setViewInputHintDialog(String title, String message, String text, String button1, String button2, InputDialog.Callback callback) {
         setViewInputDialog(title, message, text, button1, button2, callback);
+    }
+
+    /**
+     * Set input dialog with hint
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputHintDialog(int title, int message, int text, int button1, int button2, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(getString(title), getString(message), getString(text), getString(button1), getString(button2), callback);
     }
 
     /**
