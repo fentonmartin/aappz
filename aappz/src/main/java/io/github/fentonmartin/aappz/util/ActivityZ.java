@@ -48,7 +48,7 @@ public class ActivityZ extends AppCompatActivity {
         toastZ = new ToastZ();
         viewZ = new ViewZ();
 
-        /* Initiate Fragment Transaction */
+        /* Fragment Transaction */
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         /* Initiate Loading Dialog */
         dialogInput = InputDialog.create();
