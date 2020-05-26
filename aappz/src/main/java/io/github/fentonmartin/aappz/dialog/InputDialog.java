@@ -110,6 +110,10 @@ public class InputDialog extends DialogFragment {
         this.dialogCallback = callback;
     }
 
+    public void setDialogTwoCallback(CallbackTwo callback) {
+        this.dialogCallbackTwo = callback;
+    }
+
     public interface Callback {
         void onButtonPressed(String text);
     }

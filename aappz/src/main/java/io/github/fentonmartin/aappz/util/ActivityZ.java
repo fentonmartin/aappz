@@ -912,6 +912,15 @@ public class ActivityZ extends AppCompatActivity {
     /**
      * Set input dialog
      *
+     * @param message set dialog message
+     */
+    public void setViewInputDialog(String message, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(null, message, null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
      * @param title   set dialog title
      * @param message set dialog message
      */
@@ -924,16 +933,86 @@ public class ActivityZ extends AppCompatActivity {
      *
      * @param title   set dialog title
      * @param message set dialog message
+     */
+    public void setViewInputDialog(String title, String message, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(title, message, null, null, null, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
      * @param button  set dialog button
      */
     public void setViewInputDialog(String title, String message, String button, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, null, null, button, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param button  set dialog button
+     */
+    public void setViewInputDialog(String title, String message, String button, InputDialog.CallbackTwo callback) {
+        setViewInputDialog(title, message, null, null, button, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputDialog(String title, String message, String button1, String button2, InputDialog.Callback callback) {
+        setViewInputDialog(title, message, null, button1, button2, callback);
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputDialog(String title, String message, String text, String button1, String button2, InputDialog.Callback callback) {
         try {
             if (fragmentTransaction != null)
                 getSupportFragmentManager().beginTransaction()
                         .remove(dialogInput).commit();
-            dialogInput = InputDialog.create(title, message, button);
+            dialogInput = InputDialog.create(title, message, text, button1, button2);
             dialogInput.setCancelable(false);
             dialogInput.setDialogCallback(callback);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(dialogInput, "DIALOG_INPUT");
+            fragmentTransaction.commitAllowingStateLoss();
+        } catch (NullPointerException | IllegalStateException ignored) {
+        }
+    }
+
+    /**
+     * Set input dialog
+     *
+     * @param title   set dialog title
+     * @param message set dialog message
+     * @param text    set dialog edit text
+     * @param button1 set dialog 1st button
+     * @param button2 set dialog 2nd button
+     */
+    public void setViewInputDialog(String title, String message, String text, String button1, String button2, InputDialog.CallbackTwo callback) {
+        try {
+            if (fragmentTransaction != null)
+                getSupportFragmentManager().beginTransaction()
+                        .remove(dialogInput).commit();
+            dialogInput = InputDialog.create(title, message, text, button1, button2);
+            dialogInput.setCancelable(false);
+            dialogInput.setDialogTwoCallback(callback);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(dialogInput, "DIALOG_INPUT");
             fragmentTransaction.commitAllowingStateLoss();
