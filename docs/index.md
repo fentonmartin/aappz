@@ -42,7 +42,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.8.0'
+implementation 'io.github.fentonmartin:aappz:1.9.0'
 ```
 
 Usage
@@ -79,18 +79,6 @@ RecyclerView Click and Snap Helper:
 ```
 RecyclerItemClickListener (addOnItemTouchListener)
 RecyclerViewSnapHelper (snapping any child view)
-```
-
------
-If want to use FirebaseZ and GoogleAdsZ functions, just configure:
-```
-Firebase SDK: https://firebase.google.com/docs/android/setup
-```
-
-And copy FirebaseZ and GoogleAdsZ functions to your project:
-```
-- FirebaseZ  (manual configuration)
-- GoogleAdsZ (manual configuration)
 ```
 
 If you only want to use basic functions (without it), just leave it. :)
@@ -188,23 +176,6 @@ Functions
 **EncryptZ**
 * encryptTo(String text, String key)
 * decryptTo(String text, String key)
-
-**FirebaseZ**
-* firebaseLog(String type, String log)
-* firebaseLog(String event, String type, String log)
-* firebaseScreen()
-* firebaseProperty(String property, String type)
-
-**GoogleAdsZ**
-* adsGoogleBanner(String unitId, int id)
-* adsGoogleBanner(String unitId, int id, AdListener listener)
-* adsGoogleInterstitial(final String unitId)
-* adsGoogleInterstitial(String unitId, AdListener listener)
-* adsGoogleInterstitialShow()
-* adsGoogleVideo(final String unitId)
-* adsGoogleVideo(String unitId, RewardedVideoAdListener listener)
-* adsGoogleVideoLoad(String unitId)
-* adsGoogleVideoShow()
 
 **IntentZ**
 * setActivity(Class activity)
