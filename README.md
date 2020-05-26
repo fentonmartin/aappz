@@ -28,8 +28,6 @@ AappZ library offers convenient tools for android application:
 * DialogZ: Show dialog loading easily
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
-* FirebaseZ: Firebase tools for your development
-* GoogleAdsZ: Google Ads tools for your application
 * IntentZ: Intent collections for any usage
 * LogZ: Just log for debugging purpose
 * NumberZ: Number converter and formatting tools
