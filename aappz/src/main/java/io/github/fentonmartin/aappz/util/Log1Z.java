@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.util.Log;
 
 @SuppressWarnings("unused")
-class LogZ {
+class Log1Z {
     void setLog(String log) {
         Log.d("LogZ ", log);
     }

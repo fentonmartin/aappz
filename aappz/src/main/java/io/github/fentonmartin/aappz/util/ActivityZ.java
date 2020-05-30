@@ -34,7 +34,7 @@ public class ActivityZ extends AppCompatActivity {
     private NormalDialog dialogNormal;
 
     private IntentZ intentZ;
-    private LogZ logZ;
+    private Log1Z logZ;
     private ToastZ toastZ;
     private ViewZ viewZ;
 
@@ -44,7 +44,7 @@ public class ActivityZ extends AppCompatActivity {
 
         /* Initializations */
         intentZ = new IntentZ();
-        logZ = new LogZ();
+        logZ = new Log1Z();
         toastZ = new ToastZ();
         viewZ = new ViewZ();
 
