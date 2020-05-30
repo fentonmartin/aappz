@@ -8,6 +8,7 @@ import io.github.fentonmartin.aappz.location.util.GeofenceModel;
 import io.github.fentonmartin.aappz.util.LogZ;
 
 public interface GeofencingListener {
+
     void init(Context context, LogZ.Logger logger);
 
     void start(OnGeofencingTransitionListener listener);
