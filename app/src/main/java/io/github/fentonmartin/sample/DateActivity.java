@@ -6,9 +6,9 @@ import android.view.View;
 
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.constant.DateConstant;
-import io.github.fentonmartin.aappz.util.DateZ;
-import io.github.fentonmartin.aappz.util.DelayZ;
-import io.github.fentonmartin.aappz.util.ThreadZ;
+import io.github.fentonmartin.aappz.DateZ;
+import io.github.fentonmartin.aappz.DelayZ;
+import io.github.fentonmartin.aappz.ThreadZ;
 import io.github.fentonmartin.sample.databinding.ActivityDateBinding;
 
 public class DateActivity extends AappZ {

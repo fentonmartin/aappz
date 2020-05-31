@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.List;
 
 import io.github.fentonmartin.aappz.location.util.GeofenceModel;
-import io.github.fentonmartin.aappz.util.LogZ;
+import io.github.fentonmartin.aappz.LogZ;
 
 public interface GeofencingListener {
 

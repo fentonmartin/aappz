@@ -1,4 +1,4 @@
-package io.github.fentonmartin.aappz.util;
+package io.github.fentonmartin.aappz;
 
 import android.content.Context;
 import android.widget.Toast;

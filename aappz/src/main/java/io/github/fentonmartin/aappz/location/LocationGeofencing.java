@@ -33,7 +33,7 @@ import io.github.fentonmartin.aappz.location.listener.OnGeofencingTransitionList
 import io.github.fentonmartin.aappz.location.util.GeofenceModel;
 import io.github.fentonmartin.aappz.location.util.GeofencingStore;
 import io.github.fentonmartin.aappz.location.util.TransitionGeofence;
-import io.github.fentonmartin.aappz.util.LogZ;
+import io.github.fentonmartin.aappz.LogZ;
 
 /**
  * Geofencing provider based on Android's Geofencing class.

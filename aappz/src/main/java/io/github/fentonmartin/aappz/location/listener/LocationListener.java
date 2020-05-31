@@ -4,7 +4,7 @@ import android.content.Context;
 import android.location.Location;
 
 import io.github.fentonmartin.aappz.location.util.LocationParams;
-import io.github.fentonmartin.aappz.util.LogZ;
+import io.github.fentonmartin.aappz.LogZ;
 
 public interface LocationListener {
 

@@ -3,9 +3,6 @@ package io.github.fentonmartin.aappz;
 import android.content.ContextWrapper;
 import android.os.Bundle;
 
-import io.github.fentonmartin.aappz.util.ActivityZ;
-import io.github.fentonmartin.aappz.util.PrefZ;
-
 public class AappZ extends ActivityZ {
 
     @Override

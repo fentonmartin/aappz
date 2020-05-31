@@ -1,4 +1,4 @@
-package io.github.fentonmartin.aappz.util;
+package io.github.fentonmartin.aappz;
 
 public class ThreadZ {
 

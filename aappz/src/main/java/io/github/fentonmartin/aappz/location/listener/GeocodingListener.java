@@ -3,7 +3,7 @@ package io.github.fentonmartin.aappz.location.listener;
 import android.content.Context;
 import android.location.Location;
 
-import io.github.fentonmartin.aappz.util.LogZ;
+import io.github.fentonmartin.aappz.LogZ;
 
 public interface GeocodingListener {
 

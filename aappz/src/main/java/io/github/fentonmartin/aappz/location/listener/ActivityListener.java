@@ -5,7 +5,7 @@ import android.content.Context;
 import com.google.android.gms.location.DetectedActivity;
 
 import io.github.fentonmartin.aappz.location.util.ActivityParams;
-import io.github.fentonmartin.aappz.util.LogZ;
+import io.github.fentonmartin.aappz.LogZ;
 
 public interface ActivityListener {
 
