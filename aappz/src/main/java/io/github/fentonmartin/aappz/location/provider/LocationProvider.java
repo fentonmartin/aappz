@@ -29,7 +29,7 @@ import io.github.fentonmartin.aappz.location.listener.ServiceConnectionListener;
 import io.github.fentonmartin.aappz.location.listener.ServiceLocationListener;
 import io.github.fentonmartin.aappz.location.util.LocationParams;
 import io.github.fentonmartin.aappz.location.util.LocationStore;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 public class LocationProvider implements ServiceLocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ResultCallback<Status> {
 

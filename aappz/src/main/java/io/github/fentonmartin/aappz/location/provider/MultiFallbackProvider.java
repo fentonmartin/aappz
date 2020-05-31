@@ -14,7 +14,7 @@ import io.github.fentonmartin.aappz.location.listener.OnLocationUpdatedListener;
 import io.github.fentonmartin.aappz.location.listener.ServiceConnectionListener;
 import io.github.fentonmartin.aappz.location.listener.ServiceLocationListener;
 import io.github.fentonmartin.aappz.location.util.LocationParams;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 /**
  * A {@link LocationListener} that allows multiple location services to be used. <br/><br/> New

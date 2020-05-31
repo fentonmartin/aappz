@@ -14,7 +14,7 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 
-import io.github.fentonmartin.aappz.PermissionZ;
+import io.github.fentonmartin.aappz.util.PermissionZ;
 
 /**
  * Additional activity for handling runtime permissions.

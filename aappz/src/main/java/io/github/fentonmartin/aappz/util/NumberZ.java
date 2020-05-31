@@ -1,4 +1,4 @@
-package io.github.fentonmartin.aappz;
+package io.github.fentonmartin.aappz.util;
 
 import java.util.Date;
 

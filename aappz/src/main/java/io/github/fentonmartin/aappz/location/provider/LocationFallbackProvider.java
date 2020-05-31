@@ -11,7 +11,7 @@ import io.github.fentonmartin.aappz.location.listener.GooglePlayServicesListener
 import io.github.fentonmartin.aappz.location.listener.LocationListener;
 import io.github.fentonmartin.aappz.location.listener.OnLocationUpdatedListener;
 import io.github.fentonmartin.aappz.location.util.LocationParams;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 public class LocationFallbackProvider implements LocationListener, GooglePlayServicesListener {
 

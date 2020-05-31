@@ -25,7 +25,7 @@ import io.github.fentonmartin.aappz.location.listener.GooglePlayServicesListener
 import io.github.fentonmartin.aappz.location.listener.OnActivityUpdatedListener;
 import io.github.fentonmartin.aappz.location.util.ActivityParams;
 import io.github.fentonmartin.aappz.location.util.ActivityStore;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 public class ActivityProvider implements ActivityListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ResultCallback<Status> {
 

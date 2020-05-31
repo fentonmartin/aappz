@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.fentonmartin.aappz.AappZ;
-import io.github.fentonmartin.aappz.DelayZ;
-import io.github.fentonmartin.aappz.TextZ;
+import io.github.fentonmartin.aappz.util.DelayZ;
+import io.github.fentonmartin.aappz.util.TextZ;
 
 public class TextActivity extends AappZ {
 

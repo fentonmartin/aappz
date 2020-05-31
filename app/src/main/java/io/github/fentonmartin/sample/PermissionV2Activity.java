@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import io.github.fentonmartin.aappz.AappZ;
 import io.github.fentonmartin.aappz.permission.PermissionHandler;
-import io.github.fentonmartin.aappz.PermissionZ;
+import io.github.fentonmartin.aappz.util.PermissionZ;
 
 public class PermissionV2Activity extends AappZ {
 

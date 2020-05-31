@@ -19,7 +19,7 @@ import io.github.fentonmartin.aappz.location.listener.GeocodingListener;
 import io.github.fentonmartin.aappz.location.listener.OnGeocodingListener;
 import io.github.fentonmartin.aappz.location.listener.OnReverseGeocodingListener;
 import io.github.fentonmartin.aappz.location.util.LocationAddress;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 /**
  * Geocoding provider based on Android's Geocoder class.

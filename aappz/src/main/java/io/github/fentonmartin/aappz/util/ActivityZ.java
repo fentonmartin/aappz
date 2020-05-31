@@ -1,4 +1,4 @@
-package io.github.fentonmartin.aappz;
+package io.github.fentonmartin.aappz.util;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -19,6 +19,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import io.github.fentonmartin.aappz.R;
 import io.github.fentonmartin.aappz.anim.BounceAnimation;
 import io.github.fentonmartin.aappz.dialog.InputDialog;
 import io.github.fentonmartin.aappz.dialog.LoadingDialog;

@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import io.github.fentonmartin.aappz.PermissionZ;
+import io.github.fentonmartin.aappz.util.PermissionZ;
 
 /**
  * The class for handling permission callbacks.

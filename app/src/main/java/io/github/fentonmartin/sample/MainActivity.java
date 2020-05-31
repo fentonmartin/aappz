@@ -7,9 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import io.github.fentonmartin.aappz.AappZ;
-import io.github.fentonmartin.aappz.DateZ;
-import io.github.fentonmartin.aappz.EncryptZ;
-import io.github.fentonmartin.aappz.PrefZ;
+import io.github.fentonmartin.aappz.util.DateZ;
+import io.github.fentonmartin.aappz.util.EncryptZ;
+import io.github.fentonmartin.aappz.util.PrefZ;
 
 public class MainActivity extends AappZ {
 

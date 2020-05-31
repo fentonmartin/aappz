@@ -16,7 +16,7 @@ import io.github.fentonmartin.aappz.location.listener.OnLocationUpdatedListener;
 import io.github.fentonmartin.aappz.location.util.LocationAccuracy;
 import io.github.fentonmartin.aappz.location.util.LocationParams;
 import io.github.fentonmartin.aappz.location.util.LocationStore;
-import io.github.fentonmartin.aappz.LogZ;
+import io.github.fentonmartin.aappz.util.LogZ;
 
 public class LocationManagerProvider implements LocationListener, android.location.LocationListener {
 
