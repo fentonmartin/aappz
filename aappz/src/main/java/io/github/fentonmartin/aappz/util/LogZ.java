@@ -53,6 +53,8 @@ public class LogZ {
 
     private static class Blabber implements Logger {
 
+        private String TAG = "LogZ ";
+
         private String getTag() {
             return new Exception().getStackTrace()[3].getMethodName();
         }
@@ -63,59 +65,59 @@ public class LogZ {
 
         @Override
         public void v(String message, Object... args) {
-            Log.v(getTag(), formatMessage(message, args));
+            Log.v(TAG + getTag(), formatMessage(message, args));
         }
 
         @Override
         public void v(Throwable t, String message, Object... args) {
-            Log.v(getTag(), formatMessage(message, args), t);
+            Log.v(TAG + getTag(), formatMessage(message, args), t);
         }
 
         @Override
         public void d(String message, Object... args) {
-            Log.d(getTag(), formatMessage(message, args));
+            Log.d(TAG + getTag(), formatMessage(message, args));
 
         }
 
         @Override
         public void d(Throwable t, String message, Object... args) {
-            Log.d(getTag(), formatMessage(message, args), t);
+            Log.d(TAG + getTag(), formatMessage(message, args), t);
 
         }
 
         @Override
         public void i(String message, Object... args) {
-            Log.i(getTag(), formatMessage(message, args));
+            Log.i(TAG + getTag(), formatMessage(message, args));
 
         }
 
         @Override
         public void i(Throwable t, String message, Object... args) {
-            Log.i(getTag(), formatMessage(message, args), t);
+            Log.i(TAG + getTag(), formatMessage(message, args), t);
 
         }
 
         @Override
         public void w(String message, Object... args) {
-            Log.w(getTag(), formatMessage(message, args));
+            Log.w(TAG + getTag(), formatMessage(message, args));
 
         }
 
         @Override
         public void w(Throwable t, String message, Object... args) {
-            Log.w(getTag(), formatMessage(message, args), t);
+            Log.w(TAG + getTag(), formatMessage(message, args), t);
 
         }
 
         @Override
         public void e(String message, Object... args) {
-            Log.e(getTag(), formatMessage(message, args));
+            Log.e(TAG + getTag(), formatMessage(message, args));
 
         }
 
         @Override
         public void e(Throwable t, String message, Object... args) {
-            Log.e(getTag(), formatMessage(message, args), t);
+            Log.e(TAG + getTag(), formatMessage(message, args), t);
         }
     }
 
