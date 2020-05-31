@@ -33,7 +33,8 @@ public class DateActivity extends AappZ {
     }
 
     public void onCheck(View view) {
-        setViewNormalDialog("Kenapa Sih", "Kenapa kamu harus menjadi seperti itu sih, aku salah apa sama kamu?");
+        setLog("Test Click!");
+        setViewNormalDialog("Normal Dialog", "This is a normal dialog example for you!");
         DelayZ.post(5000, new DelayZ.Callback() {
             @Override
             public void onDelayed() {
@@ -45,6 +46,7 @@ public class DateActivity extends AappZ {
 
     @SuppressLint("SetTextI18n")
     private void onCheck() {
+        setLog("Test Function!");
         binding.label1.setText(DateZ.RANGE_1);
         binding.label2.setText(DateZ.RANGE_2);
         binding.label3.setText(DateZ.RANGE_3);

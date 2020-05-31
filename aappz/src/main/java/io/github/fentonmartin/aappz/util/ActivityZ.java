@@ -34,6 +34,7 @@ public class ActivityZ extends AppCompatActivity {
     private NormalDialog dialogNormal;
 
     private IntentZ intentZ;
+    private LogZ.Logger logZ;
     private ToastZ toastZ;
     private ViewZ viewZ;
 
@@ -283,8 +284,6 @@ public class ActivityZ extends AppCompatActivity {
 
     /* HERE: LogZ --------------------------------------------------------------------------------*/
 
-    private LogZ.Logger logger;
-
     /**
      * Set logger from activity
      *
@@ -300,18 +299,8 @@ public class ActivityZ extends AppCompatActivity {
      * @param log the message is being logged
      */
     public void setLog(String log) {
-        logger.d(log);
-    }
-
-    /**
-     * Set logger from activity
-     *
-     * @param log     the message is being logged
-     * @param isDebug the debug is enabled
-     */
-    public void setLog(String log, boolean isDebug) {
-        if (isDebug)
-            logger.d(log);
+        LogZ.build(true);
+        logZ.d(log);
     }
 
     /**
@@ -321,7 +310,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param log      the message is being logged
      */
     public void setLog(Activity activity, String log) {
-        logger.d(activity + " " + log);
+        setLog(activity + " " + log);
     }
 
     /* HERE: ToastZ ------------------------------------------------------------------------------*/
