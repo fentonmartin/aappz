@@ -44,6 +44,7 @@ public class ActivityZ extends AppCompatActivity {
 
         /* Initializations */
         intentZ = new IntentZ();
+        logZ = LogZ.build(true);
         toastZ = new ToastZ();
         viewZ = new ViewZ();
 
@@ -59,48 +60,48 @@ public class ActivityZ extends AppCompatActivity {
         dialogNormal = NormalDialog.create();
         dialogNormal.setCancelable(false);
 
-        setLog(this, "ActivityZ: onCreate");
+        setLog(this, "onCreate");
     }
 
     @Override
     protected void onStart() {
-        setLog(this, "ActivityZ: onStart");
+        setLog(this, "onStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        setLog(this, "ActivityZ: onResume");
+        setLog(this, "onResume");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        setLog(this, "ActivityZ: onPause");
+        setLog(this, "onPause");
         super.onPause();
     }
 
     @Override
     protected void onStop() {
-        setLog(this, "ActivityZ: onStop");
+        setLog(this, "onStop");
         super.onStop();
     }
 
     @Override
     protected void onRestart() {
-        setLog(this, "ActivityZ: onRestart");
+        setLog(this, "onRestart");
         super.onRestart();
     }
 
     @Override
     protected void onDestroy() {
-        setLog(this, "ActivityZ: onDestroy");
+        setLog(this, "onDestroy");
         super.onDestroy();
     }
 
     @Override
     public void onBackPressed() {
-        setLog(this, "ActivityZ: onBackPressed");
+        setLog(this, "onBackPressed");
         super.onBackPressed();
     }
 
@@ -290,7 +291,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param isDebug the debug is enabled
      */
     public void setLog(boolean isDebug) {
-        LogZ.build(isDebug);
+        logZ = LogZ.build(isDebug);
     }
 
     /**
@@ -299,7 +300,6 @@ public class ActivityZ extends AppCompatActivity {
      * @param log the message is being logged
      */
     public void setLog(String log) {
-        LogZ.build(true);
         logZ.d(log);
     }
 
@@ -310,7 +310,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param log      the message is being logged
      */
     public void setLog(Activity activity, String log) {
-        setLog(activity + " " + log);
+        setLog(activity.getClass().getSimpleName() + " " + log);
     }
 
     /* HERE: ToastZ ------------------------------------------------------------------------------*/

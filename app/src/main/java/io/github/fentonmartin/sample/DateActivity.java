@@ -21,6 +21,7 @@ public class DateActivity extends AappZ {
         binding = ActivityDateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        setLog(false);
         setLog("Test!");
 
         ThreadZ.valid(1589474530764L, new ThreadZ.Callback() {
