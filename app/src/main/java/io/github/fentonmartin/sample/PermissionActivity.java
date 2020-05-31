@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import io.github.fentonmartin.aappz.AappZ;
-import io.github.fentonmartin.aappz.permission.PermissionZ;
+import io.github.fentonmartin.aappz.PermissionZ;
 
 public class PermissionActivity extends AappZ implements View.OnClickListener {
 

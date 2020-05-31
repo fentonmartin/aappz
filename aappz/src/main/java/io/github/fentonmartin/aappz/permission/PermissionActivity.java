@@ -14,6 +14,8 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 
+import io.github.fentonmartin.aappz.PermissionZ;
+
 /**
  * Additional activity for handling runtime permissions.
  */
@@ -23,11 +25,11 @@ public class PermissionActivity extends Activity {
     private static final int RC_SETTINGS = 6739;
     private static final int RC_PERMISSION = 6937;
 
-    static final String EXTRA_PERMISSIONS = "permissions";
-    static final String EXTRA_RATIONALE = "rationale";
-    static final String EXTRA_OPTIONS = "options";
+    public static final String EXTRA_PERMISSIONS = "permissions";
+    public static final String EXTRA_RATIONALE = "rationale";
+    public static final String EXTRA_OPTIONS = "options";
 
-    static PermissionHandler permissionHandler;
+    public static PermissionHandler permissionHandler;
 
     private ArrayList<String> allPermissions, deniedPermissions, noRationaleList;
     private PermissionZ.Options options;

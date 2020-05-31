@@ -1,4 +1,4 @@
-package io.github.fentonmartin.aappz.permission;
+package io.github.fentonmartin.aappz;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import io.github.fentonmartin.aappz.permission.PermissionActivity;
+import io.github.fentonmartin.aappz.permission.PermissionHandler;
 
 /**
  * Helper class for handling runtime permissions.
@@ -27,7 +30,7 @@ public class PermissionZ {
         loggingEnabled = false;
     }
 
-    static void log(String message) {
+    public static void log(String message) {
         if (loggingEnabled) Log.d("PermissionZ", message);
     }
 
@@ -203,12 +206,12 @@ public class PermissionZ {
      */
     public static class Options implements Serializable {
 
-        String settingsText = "Settings";
-        String rationaleDialogTitle = "Permissions Required";
-        String settingsDialogTitle = "Permissions Required";
-        String settingsDialogMessage = "Required permission(s) have been set" +
+        public String settingsText = "Settings";
+        public String rationaleDialogTitle = "Permissions Required";
+        public String settingsDialogTitle = "Permissions Required";
+        public String settingsDialogMessage = "Required permission(s) have been set" +
                 " not to ask again! Please provide them from settings.";
-        boolean sendBlockedToSettings = true;
+        public boolean sendBlockedToSettings = true;
         boolean createNewTask = false;
 
         /**
