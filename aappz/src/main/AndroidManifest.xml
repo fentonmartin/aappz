@@ -11,6 +11,16 @@
         <activity
             android:name=".permission.PermissionActivity"
             android:theme="@style/Permissions.TransparentTheme" />
+
+        <service
+            android:name=".location.provider.ActivityProvider$ActivityRecognitionService"
+            android:exported="false" />
+        <service
+            android:name=".location.LocationGeofencing$GeofencingService"
+            android:exported="false" />
+        <service
+            android:name=".location.LocationGeocoding$AndroidGeocodingService"
+            android:exported="false" />
     </application>
 
 </manifest>
