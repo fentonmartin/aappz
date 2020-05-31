@@ -17,7 +17,7 @@ import io.github.fentonmartin.aappz.location.util.LocationParams;
 import io.github.fentonmartin.aappz.util.LogZ;
 
 /**
- * A {@link LocationListener} that allows multiple location services to be used. <br/><br/> New
+ * A {@link LocationListener} that allows multiple location services to be used. <br><br> New
  * instances of <code>MultiFallbackProvider</code> must be initialized via the Builder class:
  * <pre>
  * LocationProvider provider = new MultiLocationProvider.Builder()
@@ -27,7 +27,7 @@ import io.github.fentonmartin.aappz.util.LogZ;
  * </pre>
  * <code>MultiFallbackProvider</code> will attempt to use the location services in the order they
  * were added to the builder.  If the provider fails to connect to the underlying service, the next
- * provider in the list is used. <br/><br/> If no providers are added to the builder, the {@link
+ * provider in the list is used. <br><br> If no providers are added to the builder, the {@link
  * LocationManagerProvider} is used by default.
  */
 public class MultiFallbackProvider implements LocationListener {
@@ -107,7 +107,7 @@ public class MultiFallbackProvider implements LocationListener {
 
     /**
      * Fetches the next location provider in the fallback list, and initializes it. If location
-     * updates have already been started, this restarts location updates.<br/><br/>If there are no
+     * updates have already been started, this restarts location updates.<br><br>If there are no
      * location providers left, no action occurs.
      */
     void fallbackProvider() {
