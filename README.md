@@ -29,7 +29,8 @@ AappZ library offers convenient tools for android application:
 * ExceptionZ: Some functions for handle exceptions
 * EncryptZ: Simple customizable encryption and decryption
 * IntentZ: Intent collections for any usage
-* LogZ: Just log for debugging purpose
+* LocationZ: Simplified location and activity recognition
+* LogZ: Log tools for debugging purpose
 * NumberZ: Number converter and formatting tools
 * PermissionZ: Some new runtime permissions functions
 * PrefZ: Some functions for SharedPreferences
@@ -46,7 +47,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:1.9.0'
+implementation 'io.github.fentonmartin:aappz:2.0.0'
 ```
 
 Usage
@@ -199,10 +200,27 @@ Functions
 * setActivityWebsite(int website)
 * setActivityWebsite(String website)
 
+**LocationZ**
+* LocationZ.with(context).activity().start(..);
+* LocationZ.with(context).activity().stop();
+* LocationZ.with(context).geocoding().add(..).add(..).start(..);
+* LocationZ.with(context).geocoding().direct(..);
+* LocationZ.with(context).geocoding().reverse(..);
+* LocationZ.with(context).geocoding().stop();
+* LocationZ.with(context).location().start(..);
+* LocationZ.with(context).location().oneFix().start(..);
+* LocationZ.with(context).location().state().locationServicesEnabled();
+* LocationZ.with(context).location().state().isAnyProviderAvailable();
+* LocationZ.with(context).location().state().isGpsAvailable();
+* LocationZ.with(context).location().state().isNetworkAvailable();
+* LocationZ.with(context).location().state().isPassiveAvailable();
+* LocationZ.with(context).location().state().isMockSettingEnabled();
+* LocationZ.with(context).location(..).start(..);
+* LocationZ.with(context).location().stop();
+
 **LogZ**
 * setLog(boolean isDebug)
 * setLog(String log)
-* setLog(String log, boolean isDebug) {
 * setLog(Activity activity, String log)
 
 **NumberZ**
