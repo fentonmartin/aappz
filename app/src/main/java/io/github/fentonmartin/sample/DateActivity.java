@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import io.github.fentonmartin.aappz.AappZ;
-import io.github.fentonmartin.aappz.constant.DateConstant;
 import io.github.fentonmartin.aappz.DateZ;
 import io.github.fentonmartin.aappz.DelayZ;
 import io.github.fentonmartin.aappz.ThreadZ;
@@ -21,6 +20,8 @@ public class DateActivity extends AappZ {
         super.onCreate(savedInstanceState);
         binding = ActivityDateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        setLog("Test!");
 
         ThreadZ.valid(1589474530764L, new ThreadZ.Callback() {
             @Override
@@ -86,7 +87,7 @@ public class DateActivity extends AappZ {
         binding.text16.setText("Check 2:" + DateZ.getTimeRangeCheck(limit - 3 * DateZ.DAYS, DateZ.WEEKS));
         binding.text17.setText("Check 3:" + DateZ.getTimeRangeCheck(limit, 3 * DateZ.SECONDS));
         binding.text18.setText(DateZ.getTimestampString());
-        binding.text19.setText(DateZ.getDateTime(DateConstant.CUSTOM_49));
-        binding.text20.setText(DateZ.getDateTime(DateConstant.CUSTOM_50));
+        binding.text19.setText(DateZ.getDateTime(DateZ.CUSTOM_49));
+        binding.text20.setText(DateZ.getDateTime(DateZ.CUSTOM_50));
     }
 }
