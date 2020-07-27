@@ -47,7 +47,7 @@ Installation
 -----
 If you already have jcenter() in your build.gradle. So, just add a dependency:
 ```
-implementation 'io.github.fentonmartin:aappz:2.0.0'
+implementation 'io.github.fentonmartin:aappz:2.1.0'
 ```
 
 Usage
@@ -84,6 +84,15 @@ RecyclerView Click and Snap Helper:
 ```
 RecyclerItemClickListener (addOnItemTouchListener)
 RecyclerViewSnapHelper (snapping any child view)
+```
+
+RecyclerView on Item View Click:
+```
+{
+    if (view.getId() == R.id.some_layout_id) {
+        ...
+    }
+}
 ```
 
 If you only want to use basic functions (without it), just leave it. :)
