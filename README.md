@@ -355,8 +355,8 @@ To draw shadow, Paint object with shadow layer is used. Bitmap is generated to s
 
 Explanation:
 - `app:cornerRadius="56dp"` - set corner radius to the same value as child view size to make it circle.
-- `app:dx="0dp"` `app:dy="0dp"` - center shadow.
-- `app:shadowColor="#AA000000"`- shadow color.
+- `app:dx="0dp"` `app:dy="0dp"` - centered offset shadow.
+- `app:shadowColor="#AA000000"`- set shadow color.
 - `app:shadowRadius="4dp"`- shadow radius (shadow distance and bluer - works as `elevation`)
 
 Alternative:
