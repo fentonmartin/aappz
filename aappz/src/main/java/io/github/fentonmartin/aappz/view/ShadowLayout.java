@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 
 import io.github.fentonmartin.aappz.R;
 
+@SuppressWarnings("unused")
 public class ShadowLayout extends FrameLayout {
 
     private int shadowColor;
@@ -101,7 +102,7 @@ public class ShadowLayout extends FrameLayout {
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     private void setBackgroundCompat(int w, int h) {
-        Bitmap bitmap = createShadowBitmap(w, h, cornerRadius, shadowRadius, dx, dy, shadowColor, Color.TRANSPARENT);
+        Bitmap bitmap = createShadowBitmap(w, h, cornerRadius, shadowRadius, dx, dy, shadowColor);
         BitmapDrawable drawable = new BitmapDrawable(getResources(), bitmap);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             setBackground(drawable);
@@ -135,7 +136,7 @@ public class ShadowLayout extends FrameLayout {
 
     @NonNull
     private Bitmap createShadowBitmap(int shadowWidth, int shadowHeight, float cornerRadius, float shadowRadius,
-                                      float dx, float dy, int shadowColor, int fillColor) {
+                                      float dx, float dy, int shadowColor) {
 
         Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ALPHA_8);
         Canvas canvas = new Canvas(output);
@@ -162,7 +163,7 @@ public class ShadowLayout extends FrameLayout {
         }
         Paint shadowPaint = new Paint();
         shadowPaint.setAntiAlias(true);
-        shadowPaint.setColor(fillColor);
+        shadowPaint.setColor(Color.TRANSPARENT);
         shadowPaint.setStyle(Paint.Style.FILL);
 
         if (!isInEditMode()) {
