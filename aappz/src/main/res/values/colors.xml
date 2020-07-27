@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ShadowLayout-->
+    <color name="defaultFillColor">#ffffff</color>
+    <color name="defaultShadowColor">#88757575</color>
+</resources>
