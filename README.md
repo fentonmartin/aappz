@@ -322,6 +322,46 @@ Functions
 
 [More information: AappZ's wiki](https://github.com/fentonmartin/aappz/wiki)
 
+Components
+-----
+**ShadowLayout**
+```
+ShadowLayout is a custom view group which wrap View and display shadow. ShadowLayout can draw square, rounded corner or circle shadow.
+
+To draw shadow, Paint object with shadow layer is used. Bitmap is generated to set a background to ShadowLayout with padding, to prevent child view overlap shadow.
+```
+
+**ShadowLayout Usage**
+```xml
+<io.github.fentonmartin.aappz.view.ShadowLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:shadowRadius="4dp"
+        app:shadowColor="#AA000000"
+        app:dx="0dp"
+        app:dy="0dp"
+        app:cornerRadius="56dp">
+
+    <ImageButton
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_add_white"
+            android:background="@drawable/fab_selector"
+            tools:ignore="ContentDescription"/>
+
+</io.github.fentonmartin.aappz.view.ShadowLayout>
+```
+
+Explanation:
+- `app:cornerRadius="56dp"` - set corner radius to the same value as child view size to make it circle.
+- `app:dx="0dp"` `app:dy="0dp"` - center shadow.
+- `app:shadowColor="#AA000000"`- shadow color.
+- `app:shadowRadius="4dp"`- shadow radius (shadow distance and bluer - works as `elevation`)
+
+Alternative:
+- `app:dx="2dp"` `app:dy="2dp"` - offset shadow to right and bottom for `2dp`.
+
 License
 -----
 
