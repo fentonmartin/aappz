@@ -746,12 +746,9 @@ public class ActivityZ extends AppCompatActivity {
     public void setViewDialogDismiss() {
         try {
             if (fragmentTransaction != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogInput).commit();
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogNormal).commit();
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogLoading).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogInput).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogNormal).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogLoading).commit();
             }
             dialogInput.dismiss();
             dialogNormal.dismiss();
