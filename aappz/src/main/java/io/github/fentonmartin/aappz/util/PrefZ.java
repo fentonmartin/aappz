@@ -176,6 +176,16 @@ public final class PrefZ {
     }
 
     /**
+     * Get string from Encrypted SharedPreferences
+     *
+     * @param key the preference key
+     * @return the result
+     */
+    public static String getStringEncrypt(final String key) {
+        return EncryptZ.decryptDefault(getPreferences().getString(key, ""));
+    }
+
+    /**
      * Get string set from SharedPreferences
      *
      * @param key      the preference key
@@ -278,6 +288,18 @@ public final class PrefZ {
     public static void setString(final String key, final String value) {
         final Editor editor = getPreferences().edit();
         editor.putString(key, value);
+        editor.apply();
+    }
+
+    /**
+     * Set string value to Encrypted SharedPreferences
+     *
+     * @param key   the preference key
+     * @param value the value
+     */
+    public static void setStringEncrypt(final String key, final String value) {
+        final Editor editor = getPreferences().edit();
+        editor.putString(key, EncryptZ.encryptDefault(value));
         editor.apply();
     }
 
