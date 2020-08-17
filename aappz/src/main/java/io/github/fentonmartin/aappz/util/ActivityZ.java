@@ -28,7 +28,7 @@ import io.github.fentonmartin.aappz.dialog.InputDialog;
 import io.github.fentonmartin.aappz.dialog.LoadingDialog;
 import io.github.fentonmartin.aappz.dialog.NormalDialog;
 
-@SuppressWarnings({"unused"})
+@SuppressWarnings("ALL")
 public class ActivityZ extends AppCompatActivity {
 
     private FragmentTransaction fragmentTransaction;
@@ -1376,6 +1376,11 @@ public class ActivityZ extends AppCompatActivity {
     public static final String CONSTANT_INTENT_3 = "CONSTANT_INTENT_3";
     public static final String CONSTANT_INTENT_4 = "CONSTANT_INTENT_4";
     public static final String CONSTANT_INTENT_5 = "CONSTANT_INTENT_5";
+    public static final String CONSTANT_INTENT_6 = "CONSTANT_INTENT_6";
+    public static final String CONSTANT_INTENT_7 = "CONSTANT_INTENT_7";
+    public static final String CONSTANT_INTENT_8 = "CONSTANT_INTENT_8";
+    public static final String CONSTANT_INTENT_9 = "CONSTANT_INTENT_9";
+    public static final String CONSTANT_INTENT_10 = "CONSTANT_INTENT_10";
     public static final String CONSTANT_INTENT_CRASH = "CONSTANT_INTENT_CRASH";
     public static final String CONSTANT_INTENT_CRASH_LOG = "CONSTANT_INTENT_CRASH_LOG";
 }
