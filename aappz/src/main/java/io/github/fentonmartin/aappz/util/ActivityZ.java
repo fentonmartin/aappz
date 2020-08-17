@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.AndroidRuntimeException;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -207,6 +209,14 @@ public class ActivityZ extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setSubtitle(subtitle);
         }
+    }
+
+    /**
+     * Set status bar light
+     */
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void setStatusBarLight() {
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
 
     /* HERE: ExceptionZ --------------------------------------------------------------------------------*/
