@@ -468,6 +468,136 @@ public class ActivityZ extends AppCompatActivity {
      * Set activity from current activity with extra
      *
      * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     * @param text6    the 6th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5, String text6) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT_6, text6);
+        startActivity(intent);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     * @param text6    the 6th string extra
+     * @param text7    the 7th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5, String text6, String text7) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT_6, text6);
+        intent.putExtra(CONSTANT_INTENT_7, text7);
+        startActivity(intent);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     * @param text6    the 6th string extra
+     * @param text7    the 7th string extra
+     * @param text8    the 8th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT_6, text6);
+        intent.putExtra(CONSTANT_INTENT_7, text7);
+        intent.putExtra(CONSTANT_INTENT_8, text8);
+        startActivity(intent);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     * @param text6    the 6th string extra
+     * @param text7    the 7th string extra
+     * @param text8    the 8th string extra
+     * @param text9    the 9th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT_6, text6);
+        intent.putExtra(CONSTANT_INTENT_7, text7);
+        intent.putExtra(CONSTANT_INTENT_8, text8);
+        intent.putExtra(CONSTANT_INTENT_9, text9);
+        startActivity(intent);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
+     * @param text1    the 1st string extra
+     * @param text2    the 2nd string extra
+     * @param text3    the 3rd string extra
+     * @param text4    the 4th string extra
+     * @param text5    the 5th string extra
+     * @param text6    the 6th string extra
+     * @param text7    the 7th string extra
+     * @param text8    the 8th string extra
+     * @param text9    the 9th string extra
+     * @param text10   the 10th string extra
+     */
+    public void setActivity(Class activity, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        intent.putExtra(CONSTANT_INTENT, text1);
+        intent.putExtra(CONSTANT_INTENT_2, text2);
+        intent.putExtra(CONSTANT_INTENT_3, text3);
+        intent.putExtra(CONSTANT_INTENT_4, text4);
+        intent.putExtra(CONSTANT_INTENT_5, text5);
+        intent.putExtra(CONSTANT_INTENT_6, text6);
+        intent.putExtra(CONSTANT_INTENT_7, text7);
+        intent.putExtra(CONSTANT_INTENT_8, text8);
+        intent.putExtra(CONSTANT_INTENT_9, text9);
+        intent.putExtra(CONSTANT_INTENT_10, text10);
+        startActivity(intent);
+    }
+
+    /**
+     * Set activity from current activity with extra
+     *
+     * @param activity the targeted activity
      * @param bundle   the bundle extra
      */
     public void setActivity(Class activity, Bundle bundle) {
@@ -646,6 +776,61 @@ public class ActivityZ extends AppCompatActivity {
         else return "";
     }
 
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent6From(Intent intent) {
+        if (intent.getStringExtra(CONSTANT_INTENT_6) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_6);
+        else return "";
+    }
+
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent7From(Intent intent) {
+        if (intent.getStringExtra(CONSTANT_INTENT_7) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_7);
+        else return "";
+    }
+
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent8From(Intent intent) {
+        if (intent.getStringExtra(CONSTANT_INTENT_8) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_8);
+        else return "";
+    }
+
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent9From(Intent intent) {
+        if (intent.getStringExtra(CONSTANT_INTENT_9) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_9);
+        else return "";
+    }
+
+    /**
+     * Get the 5th string from intent
+     *
+     * @param intent the intent with setActivity
+     */
+    public String getIntent10From(Intent intent) {
+        if (intent.getStringExtra(CONSTANT_INTENT_10) != null)
+            return intent.getStringExtra(CONSTANT_INTENT_10);
+        else return "";
+    }
+
     /* HERE: ViewZ -------------------------------------------------------------------------------*/
 
     /**
@@ -725,7 +910,7 @@ public class ActivityZ extends AppCompatActivity {
      * @param view the current focused view
      */
     public void setViewBounce(View view) {
-        setViewBounce(view,0.3, 20);
+        setViewBounce(view, 0.3, 20);
     }
 
     /**
