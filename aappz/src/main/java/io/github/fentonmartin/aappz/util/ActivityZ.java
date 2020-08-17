@@ -19,6 +19,7 @@ import android.widget.EditText;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fentonmartin.aappz.R;
@@ -209,6 +210,17 @@ public class ActivityZ extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setSubtitle(subtitle);
         }
+    }
+
+    /**
+     * Set status bar light
+     */
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void setStatusBar(int color) {
+        int flags = getWindow().getDecorView().getSystemUiVisibility();
+        flags = flags ^ View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+        getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), color));
     }
 
     /**
