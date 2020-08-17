@@ -731,6 +731,18 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
+     * Set current view bounced
+     *
+     * @param view the current focused view
+     */
+    public void setViewBounce(View view, double amplitude, double frequency) {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        BounceAnimation interpolator = new BounceAnimation(amplitude, frequency);
+        animation.setInterpolator(interpolator);
+        view.startAnimation(animation);
+    }
+
+    /**
      * Dismiss all dialog types
      */
     public void setViewDialogDismiss() {
