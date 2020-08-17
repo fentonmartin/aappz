@@ -776,8 +776,7 @@ public class ActivityZ extends AppCompatActivity {
         try {
             if (isShow) {
                 if (fragmentTransaction != null)
-                    getSupportFragmentManager().beginTransaction()
-                            .remove(dialogLoading).commit();
+                    getSupportFragmentManager().beginTransaction().remove(dialogLoading).commit();
                 if (title.isEmpty())
                     dialogLoading = LoadingDialog.create();
                 else
@@ -788,8 +787,7 @@ public class ActivityZ extends AppCompatActivity {
                 fragmentTransaction.commitAllowingStateLoss();
             } else {
                 if (fragmentTransaction != null)
-                    getSupportFragmentManager().beginTransaction()
-                            .remove(dialogLoading).commit();
+                    getSupportFragmentManager().beginTransaction().remove(dialogLoading).commit();
                 dialogLoading.dismiss();
             }
         } catch (NullPointerException | IllegalStateException ignored) {
