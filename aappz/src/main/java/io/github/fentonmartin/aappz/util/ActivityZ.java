@@ -289,12 +289,21 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
-     * Set current view bounced
-     *
-     * @param view the current focused view
+     * Default class for ExceptionZ
      */
-    public void setViewBounce(View view) {
-        setViewBounce(view,0.3, 20);
+    @SuppressWarnings("rawtypes")
+    private class ExceptionZ implements Thread.UncaughtExceptionHandler {
+
+        final Class activity;
+
+        ExceptionZ(Class activity) {
+            this.activity = activity;
+        }
+
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            setUncaughtExceptionHandler(e, activity);
+        }
     }
 
     /* HERE: LogZ --------------------------------------------------------------------------------*/
@@ -711,21 +720,12 @@ public class ActivityZ extends AppCompatActivity {
     }
 
     /**
-     * Default class for ExceptionZ
+     * Set current view bounced
+     *
+     * @param view the current focused view
      */
-    @SuppressWarnings("rawtypes")
-    private class ExceptionZ implements Thread.UncaughtExceptionHandler {
-
-        final Class activity;
-
-        ExceptionZ(Class activity) {
-            this.activity = activity;
-        }
-
-        @Override
-        public void uncaughtException(Thread t, Throwable e) {
-            setUncaughtExceptionHandler(e, activity);
-        }
+    public void setViewBounce(View view) {
+        setViewBounce(view,0.3, 20);
     }
 
     /**
