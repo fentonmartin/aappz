@@ -952,8 +952,7 @@ public class ActivityZ extends AppCompatActivity {
     public void setViewNormalDialog(String title, String message, String button1, String button2, NormalDialog.CallbackTwo callback) {
         try {
             if (fragmentTransaction != null)
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogNormal).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogNormal).commit();
             dialogNormal = NormalDialog.create(title, message, button1, button2, null);
             dialogNormal.setCancelable(false);
             dialogNormal.setDialogTwoCallback(callback);
@@ -991,8 +990,7 @@ public class ActivityZ extends AppCompatActivity {
     public void setViewNormalDialog(String title, String message, String button1, String button2, String button3, NormalDialog.CallbackThree callback) {
         try {
             if (fragmentTransaction != null)
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogNormal).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogNormal).commit();
             dialogNormal = NormalDialog.create(title, message, button1, button2, button3);
             dialogNormal.setCancelable(false);
             dialogNormal.setDialogThreeCallback(callback);
@@ -1172,8 +1170,7 @@ public class ActivityZ extends AppCompatActivity {
     public void setViewInputDialog(String title, String message, String text, String button1, String button2, InputDialog.Callback callback) {
         try {
             if (fragmentTransaction != null)
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogInput).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogInput).commit();
             dialogInput = InputDialog.create(title, message, text, button1, button2);
             dialogInput.setCancelable(false);
             dialogInput.setDialogCallback(callback);
@@ -1209,8 +1206,7 @@ public class ActivityZ extends AppCompatActivity {
     public void setViewInputDialog(String title, String message, String text, String button1, String button2, InputDialog.CallbackTwo callback) {
         try {
             if (fragmentTransaction != null)
-                getSupportFragmentManager().beginTransaction()
-                        .remove(dialogInput).commit();
+                getSupportFragmentManager().beginTransaction().remove(dialogInput).commit();
             dialogInput = InputDialog.create(title, message, text, button1, button2);
             dialogInput.setCancelable(false);
             dialogInput.setDialogTwoCallback(callback);
