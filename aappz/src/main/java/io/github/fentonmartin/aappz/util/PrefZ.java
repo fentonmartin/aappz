@@ -369,10 +369,10 @@ public final class PrefZ {
 
     public final static class Builder {
 
-        private String mKey;
-        private Context mContext;
-        private int mMode = -1;
-        private boolean mUseDefault = false;
+        private String key;
+        private Context context;
+        private int mode = -1;
+        private boolean isDefault = false;
 
         /**
          * Set name to SharedPreference
@@ -381,7 +381,7 @@ public final class PrefZ {
          * @return the result
          */
         public Builder setPrefsName(final String prefsName) {
-            mKey = prefsName;
+            key = prefsName;
             return this;
         }
 
@@ -392,7 +392,7 @@ public final class PrefZ {
          * @return the result
          */
         public Builder setContext(final Context context) {
-            mContext = context;
+            this.context = context;
             return this;
         }
 
@@ -406,7 +406,7 @@ public final class PrefZ {
         public Builder setMode(final int mode) {
             if (mode == ContextWrapper.MODE_PRIVATE || mode == ContextWrapper.MODE_WORLD_READABLE ||
                     mode == ContextWrapper.MODE_WORLD_WRITEABLE || mode == ContextWrapper.MODE_MULTI_PROCESS)
-                mMode = mode;
+                this.mode = mode;
             else
                 throw new RuntimeException("The mode in the SharedPreference can only be set too ContextWrapper.MODE_PRIVATE, ContextWrapper.MODE_WORLD_READABLE, ContextWrapper.MODE_WORLD_WRITEABLE or ContextWrapper.MODE_MULTI_PROCESS");
             return this;
@@ -419,7 +419,7 @@ public final class PrefZ {
          * @return the result
          */
         public Builder setUseDefaultSharedPreference(boolean defaultSharedPreference) {
-            mUseDefault = defaultSharedPreference;
+            isDefault = defaultSharedPreference;
             return this;
         }
 
@@ -427,15 +427,15 @@ public final class PrefZ {
          * Build the PrefZ class
          */
         public void build() {
-            if (mContext == null)
+            if (context == null)
                 throw new RuntimeException("Context not set, please set context before building the PrefZ instance.");
-            if (TextUtils.isEmpty(mKey))
-                mKey = mContext.getPackageName();
-            if (mUseDefault)
-                mKey += _SUFFIX;
-            if (mMode == -1)
-                mMode = ContextWrapper.MODE_PRIVATE;
-            PrefZ.init(mContext, mKey, mMode);
+            if (TextUtils.isEmpty(key))
+                key = context.getPackageName();
+            if (isDefault)
+                key += _SUFFIX;
+            if (mode == -1)
+                mode = ContextWrapper.MODE_PRIVATE;
+            PrefZ.init(context, key, mode);
         }
     }
 }
