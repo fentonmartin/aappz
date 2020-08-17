@@ -16,7 +16,7 @@ public class ThreadZ {
     /**
      * Make a request checker based on limit
      *
-     * @param limit    set request limit by long DateZ (hours, monutes, etc)
+     * @param limit    set request limit by long DateZ (hours, minutes, etc)
      * @param callback set thread callback (functions, etc)
      */
     public static void request(long limit, final ThreadZ.Callback callback) {
@@ -40,7 +40,7 @@ public class ThreadZ {
      * Make a valid checker based on limit
      *
      * @param timestamp set long timestamp for check the validity
-     * @param limit     set request limit by long DateZ (hours, monutes, etc)
+     * @param limit     set request limit by long DateZ (hours, minutes, etc)
      * @param callback  set thread callback (functions, etc)
      */
     public static void valid(long timestamp, long limit, final ThreadZ.Callback callback) {
