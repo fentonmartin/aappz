@@ -5,12 +5,37 @@ public class ThreadZ {
     /**
      * Make a request checker based on 1 minute
      *
+     * @param key      set request unique key for Prefs ID
+     * @param callback set thread callback (functions, etc)
+     */
+    public static void request(String key, final ThreadZ.Callback callback) {
+        if (PrefZ.getLong("ThreadZ_" + key) <= 0)
+            PrefZ.setLong("ThreadZ_" + key, DateZ.getTimestamp());
+        valid(PrefZ.getLong("ThreadZ_" + key), callback);
+    }
+
+    /**
+     * Make a request checker based on 1 minute
+     *
      * @param callback set thread callback (functions, etc)
      */
     public static void request(final ThreadZ.Callback callback) {
         if (PrefZ.getLong("ThreadZ") <= 0)
             PrefZ.setLong("ThreadZ", DateZ.getTimestamp());
         valid(PrefZ.getLong("ThreadZ"), callback);
+    }
+
+    /**
+     * Make a request checker based on limit
+     *
+     * @param key      set request unique key for Prefs ID
+     * @param limit    set request limit by long DateZ (hours, minutes, etc)
+     * @param callback set thread callback (functions, etc)
+     */
+    public static void request(String key, long limit, final ThreadZ.Callback callback) {
+        if (PrefZ.getLong("ThreadZ_" + key) <= 0)
+            PrefZ.setLong("ThreadZ_" + key, DateZ.getTimestamp());
+        valid(PrefZ.getLong("ThreadZ_" + key), limit, callback);
     }
 
     /**
