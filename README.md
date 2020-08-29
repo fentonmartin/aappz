@@ -1,6 +1,5 @@
 # AappZ | A to Z Application Functions in One Library
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a38afc2d387497caff3c20895fd47c3)](https://app.codacy.com/manual/fentonmartin/aappz?utm_source=github.com&utm_medium=referral&utm_content=fentonmartin/aappz&utm_campaign=Badge_Grade_Dashboard)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e97290ca5f06488bb81e493e2ac0f245)](https://www.codacy.com/manual/fentonmartin/aappz?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fentonmartin/aappz&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
